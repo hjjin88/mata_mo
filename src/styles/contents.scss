@@ -1,4 +1,4 @@
-$res_root: 'http://localhost:3000';
+$res_root: 'http://localhost:3001';
 
 html {
   width: 100%;
@@ -1671,6 +1671,7 @@ color: #fff;
 }
 .Alarm.ty-02{
   width: 500px;
+  dl{padding-bottom: 22px;}
   dt{margin-bottom:11px;}
   dd{line-height:100%;word-break: keep-all;}
   dd:nth-of-type(2){padding: 20px 0 11px;}
@@ -3026,4 +3027,19 @@ border-radius: 5px;
       .table th:last-child {width: 600px;}
     }
   }
+}
+// 상담 참여 요청
+.RequestMsg_con{
+  width: 340px;
+  height: 86px;
+  margin: 0 auto 23px;
+padding: 20px;
+border: 1px solid #E2E2E2;
+border-radius: 20px;
+text-align: left;
+input{
+  border: 0;
+  padding-top: 13px;
+  width: 300px;
+}
 }

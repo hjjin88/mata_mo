@@ -1,4 +1,4 @@
-$res_root: 'http://localhost:3000';
+$res_root: 'http://localhost:3001';
 
 // 백그라운드 
 @mixin bg($name, $path: $res_root +"/resources/img/", $format: "svg") {
@@ -131,10 +131,15 @@ $res_root: 'http://localhost:3000';
 
   // 메시지 숫자 표기
   .-No{@include LtCon(-3px, 12px, 0);}
-
   // 팝업창 타이틀
   .popTit{@include flexCtr(0);width: 100%;padding: 20px 0;font-size: 17px;}  
-
+  .subTit{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    color: #000;
+    padding: 21px 0 18px;text-align: center
+  }
   // 알수없는 버튼 모음 박스
   .UnKnowBtn{
     width: 60%;
@@ -300,6 +305,81 @@ $res_root: 'http://localhost:3000';
     }
   }
   
+
+// 맵
+  .Map{
+    @include LtCon(0, 0, 11);
+    display: unset;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    .MapCon{
+      @include bg('map_mo', $format: "png");
+      width: 100%;
+      height: 714px;
+      padding: 0;
+    }
+    .MapSearch{
+      @include flexCol(0);
+      padding-top: 20px;
+      border-bottom: 0;
+      .MapSearchBox{
+        &::before{content: '';@include bg('location12');@include LtCon(22px, 20px, 0);width: 12px;height: 12px;}
+          input{
+            width: 335px;
+            height: 54px;
+            padding: 0 49px 0 41px;border: 2px solid #ddd;border-radius: 99px;color: #333;}
+          input::placeholder{font-weight: 500;font-size: 16px;line-height: 100%;color: #ddd;}
+          button{@include RtCon(14px, 21px, 0)}
+        }
+      }
+      .SearchList{    
+        width: 335px;
+        padding-top:10px;
+        li{
+          width: 160px;    
+          background: #fff;
+        }
+      }
+      .MapLists{
+        @include flexCol(0);justify-content: unset;overflow-y: scroll;overflow-x: hidden;height: 100%;margin: 20px 0;padding-right: 7px;font-weight: 400;font-size: 13px;line-height: 100%;color: #707070;
+        li{@include flexSb(0);width: 100%;padding: 15px 0;border-bottom: 1px solid rgba(238, 238, 238, 0.6);
+          .bldgImg{width: 60px;height: 60px;border-radius: 20px;}
+          .MapList{
+            @include flexCtr(12px);
+            .titDesc{width: 115px;@include ellipsis(1);}
+            .tit{@include flexArCtr(5px);width: 132px;
+              p{@include ellipsis(1);}
+            }
+          }
+        }
+      }
+      .MapScreen{
+        position: relative;width: 1043px;height: 1080px;margin-top: -1118px;z-index: -1;overflow: hidden;@include bg('mapBg', $format: "png");
+        .locationTxt{
+          @include LtCon(233px, 788px, 0);padding-right: 12px;
+          p{@include ellipsis(1);}
+          button{@include flexArCtr(5px);@include LtCon(0, 0, 0);width: 210px;padding-right: 12px;height: 40px;background: #FFFFFF;border-radius: 99px;font-weight: 700;font-size: 15px;line-height: 100%;color: #333333;
+            &:before{content: "";@include bg('blTail');@include LtCon(38px, 13px, 0);width: 14px;height: 6px;}
+          }
+        }
+        .currentLoc{
+          @include LtCon(496px, 611px, 0);@include flexArCtr(3px);width: 95px;height: 40px;background: linear-gradient(269.81deg, #A371FF 0%, #1593FC 51.58%, #5FC1FF 97.22%);border-radius: 99px;font-weight: 700;font-size: 15px;line-height: 100%;color: #FFFFFF;
+          .currentLocBg{@include bg('currentLoc');width: 40px;height: 64px;margin-top: 24px;
+            img{width: 32px;height: 32px;margin: 4px;border-radius: 100px;}
+          }
+        }
+        .MapScreenBtns{
+          @include BtRtCon(30px, 30px, 0);@include flexCol(10px);
+          .zoomInOut{@include flexCol(0);justify-content: space-around;width: 40px;height: 80px;background: #fff;border-radius: 10px;}
+          .currentLocBtn{
+            position: relative;
+            &::before{content: '';@include LtCon(0, 0, -1);width: 40px;height: 40px;background: #fff;border-radius: 100px;}
+          }
+        }
+      }
+    }
+
 }
 
 //landscape
@@ -320,7 +400,6 @@ $res_root: 'http://localhost:3000';
 
   // 팝업창 타이틀
   .popTit{padding: 20px 0;font-size: 17px;}
-
   // 우측 중앙 팝업창
   @mixin popBtRt(){@include BtLtCon(0, 50%, 10);width: 375px;transform: translateX(-50%);}
 

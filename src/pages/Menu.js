@@ -49,7 +49,9 @@ const Menu = ({setPopName }) => {
                 <div className="MenuList">
                     <button type="button" className="btn" onClick={ e => { setPopName('ProfileDrawer'); }}>프로필 변경</button>
                     <button type="button" className="btn Txt-pkgr">마이룸 이동</button>
+                    <div className="Top-line"></div>
                     <button type="button" className="btn">고객센터</button>
+                    <div className="Top-line"></div>
                     <button type="button" className="btn" onClick={() => {setLogIn(!LogIn)}}>로그인</button>
                     <button type="button" className="btn" onClick={() => {setLogOut(!LogOut)}}>로그아웃</button>
                     {/* 로그인 */}

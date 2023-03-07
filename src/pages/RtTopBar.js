@@ -27,7 +27,7 @@ const RtTopBar = ({ popName, setPopName }) => {
             </div>
             {view && 
                 <div className="SubjectLists ty-01 mgt6">
-                    <div className="SubjectList bd0">
+                    <div className="SubjectList bd0 pb0">
                         <button type="button" onClick={() => {setPlay(!Play)}} className={`Play ${Play ? "stop12" : "play12"}`} />
                         <div className="txt-15 subjectName">
                             <input type="text" placeholder="과목명은 여덟글자"></input>

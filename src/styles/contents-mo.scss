@@ -113,9 +113,25 @@ $res_root: 'http://localhost:3000';
 // 공통영역
 @mixin close($top, $Rt, $zIndex){position: absolute;top: $top;right: $Rt;z-index: $zIndex;}
 
-// 우측 하단 팝업창
-@mixin popBtRt(){@include BtRtCon(0, 0, 10);width: 375px;}
+// 메인 중앙 팝업창
+@mixin CenterCon(){@include LtCon(50%, 50%, 10);transform: translate(-50%, -50%);width: 100%; max-height:100vh;overflow: hidden;background: #FFFFFF;border-radius: 0;}
 
+// 우측 중앙 팝업창
+@mixin popCenter(){@include RtCon(0, 0, 10); transform: translateY(0); border-radius: 0; width: 100%; max-height: 100vh;}
+
+/* moving pad */
+.moving-pad {
+  position: absolute; bottom: 50px; width: 75px; height: 75px; border: 1px solid rgba(255, 255, 255, 0.2); background-color: rgba(0,0,0,0.4); border-radius: 50%; box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.05); backdrop-filter: blur(5px);
+  .handler {position: relative; display: block; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+  &.left {
+    left: 60px;
+    .handler {width: 23px; height: 23px; background-color: #fff; border-radius: 50%; opacity: 0.6; }
+  }
+  &.right {
+    right: 110px;
+    .handler {width: 24px; height: 17px; @include bg('img_tri_handler');}
+  }
+}
 
 //********* portrait
 @media all and (orientation: portrait) {
@@ -127,7 +143,7 @@ $res_root: 'http://localhost:3000';
   .menuclose{@include close(20px, 24px, 0);}
   .mapclose{@include close(0, -20px, 10);width: 50px;height: 50px;background: #fff;}
   .subclose{@include close(21px, 20px, 0);}
-  .entireclose{@include close(34px, 34.1px, 0);}
+  .entireclose{@include close(61px, 24px, 0);}
 
   // 메시지 숫자 표기
   .-No{@include LtCon(-3px, 12px, 0);}
@@ -139,6 +155,34 @@ $res_root: 'http://localhost:3000';
   .UnKnowBtn{
     width: 60%;
     height: 500px;
+  }
+
+  // 모바일 팝업 상단 바
+  .popMoBar {@include LtCon(9px, 50%, 1); width: 80px; height: 6px; border-radius: 5px; background: #ddd; transform: translateX(-50%); }
+
+  // 우측 하단 팝업창
+  @mixin popBtRt(){@include BtRtCon(0, 0, 10);width: 375px;}
+  .popCenter, .Chat, .ProfileView, .Voters{@include popCenter();}
+  .Around, .Emoji {@include popBtRt(); border-radius: 30px 30px 0 0;}
+  .AroundAll {@include BtRtCon(0 , 0, 10); top: 0; max-height: 100vh; border-radius: 0;}
+  .EmojiAll {max-height: none; height: 365px;}
+  .popCon{
+    overflow-y: scroll;max-height: 844px;margin: 30px 10px 30px 0;padding: 0 15px 0 30px;
+  }
+  .popCon.ty-01{
+    @include flexCol03(20px);
+    max-height: 704px;
+    margin-bottom: 20px;
+    .Profile-set{    
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .Profile-con{@include flexArCtr(14px);}
+    .popCon [class*="btn-L"]{
+      width: 335px;
+      padding: 17px;
+      margin: 0 20px 20px;
+    }
   }
 
   // 메인 우측바
@@ -170,40 +214,36 @@ $res_root: 'http://localhost:3000';
   }
 
   // 참여모드 메인 좌측상단 박스
-.RtTopBar{
-  @include LtCon(109px, 50%, 5); right: auto; transform: translateX(-50%);
-  .RtTopBarCon{width: 338px; padding: 20px 16px;
-    .playSubject{
-      button img{@include flexCtr(0); width: 12px; height: 12px;}
-      .playTime{padding: 0 16px 0 16px;}
-      .subjectName{padding: 0 20px 0 15px;
-      }
-    }
-  }
-  // 미작업
-  .SubjectLists.ty-01{
-    height: 56px;
-    border-radius: 99px;
-    .subjectName input{margin-top: 5px;}
-  }
-  .SubjectLists{
-    @include flexCol02(12px);width: 450px;padding: 19px 22px 15px;background: rgba(0, 0, 0, 0.3);border-radius: 27px;
-    .SubjectListPlus{@include flexCtr(0);padding: 3px 0 0;border: 0;}
-    .SubjectList{@include flexArCtr(0);width: 100%;padding-bottom: 10px;border-bottom: 1px solid #ddd;
-      .subjectName{@include flexArCtr(0);width: 100%;height: 30px;margin: 0 10px;
-        input{padding:9px;background: rgba(0, 0, 0, 0.5);border: 1px solid rgba(0, 0, 0, 0.4);border-radius: 5px;color: #fff;
-          &::placeholder{font-weight: 500;font-size: 14px;line-height: 100%;color: #A7A7A7;}
+  .RtTopBar{
+    @include LtCon(109px, 50%, 5); right: auto; transform: translateX(-50%);
+    .RtTopBarCon{width: 335px; padding: 19px 22px;
+      .playSubject{
+        button img{@include flexCtr(0); width: 12px; height: 12px;}
+        .playTime{padding: 0 16px 0 16px;}
+        .subjectName{padding: 0 20px 0 15px;
         }
       }
-      .playTime{
-        position: relative;padding: 0 20px;margin-left: 10px;
-        &::before{content: ''; @include LtCon(0, 0, 0);width: 1px;height: 100%;background: #ddd;}
-      }
     }
-    .closeWt12{width: 18px; height: 14px}
-    .stop12, .play12{width: 25px;height: 14px;}
+
+    .SubjectLists.ty-01{
+      height: 54px;
+      .subjectName input{margin-top: 0px;}
+    }
+    .SubjectLists{
+      width: 335px; padding: 16px 21px 16px 16px;
+      .SubjectList{
+        .subjectName{ width: 137px; flex-shrink: 0;
+          input{width: 137px;
+          }
+        }
+        .playTime{
+          position: relative; padding: 0 10px 0 8px; margin-left: 9px;
+        }
+      }
+      .closeWt12{width: 12px; height: 12px; flex-shrink: 0;}
+      .stop12, .play12{width: 12px;height: 14px; flex-shrink: 0;}
+    }
   }
-}
 
   // 메인 하단 바
   .BtBar{
@@ -231,6 +271,9 @@ $res_root: 'http://localhost:3000';
       .btn{font-weight: 500;font-size: 16px;color: #222;
         &::after{width: 6px;height:12px;}
       }
+      .Top-line {
+        width: 100%; height: 1px; background: #EEEEEE; border-radius: 6px;
+      }
     }
   }
 
@@ -247,8 +290,8 @@ $res_root: 'http://localhost:3000';
 
   // 로그인
   .Alarm.LogIn {
-    width: 375px;
-    height: 100vh;
+    width: 335px;
+    height: 517px;
   }
   // 이메일로 로그인 
   .Alarm.ELogin{
@@ -266,9 +309,23 @@ $res_root: 'http://localhost:3000';
     }
   }
 
+  // 메인 하단 채팅 버튼
+  .Chat{
+    .ChatCon{
+      max-height: 662px;
+    }
+  }
+
+  // 메인 하단 주변 버튼
+  .Around{
+    .AroundCon{
+      margin: 35px 20px 8px; padding-bottom: 6px;
+    }
+  }
+
   // 메인 하단 더보기 버튼
   .More{
-    @include popBtRt(); padding: 66px 25px 50px;
+    @include popBtRt(); padding: 66px 25px 50px; border-radius: 30px 30px 0px 0px;
   }
 
   .ProfileDrawer{
@@ -299,10 +356,88 @@ $res_root: 'http://localhost:3000';
       }
     }
   }
+
+  // 튜토리얼
+  .Tutorial{
+    .Tutorial-con{
+      @include flexCtr(0);
+      height: 100vh;
+      text-align: center;
+      p{
+        margin: 0 0 29px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 160%;
+        color: #fff;
+      }
+      .sec-btn.on-02{
+        padding: 17px;
+        margin-top: 0;
+        position: relative;
+        bottom: auto;
+        margin-left: 0;
+      }
+      .swiper-button-next, .swiper-button-prev {
+        width: 8px;
+        height: 13px;
+      }
+      .swiper-button-next:after, .swiper-button-prev:after{
+        width: 8px;
+        height: 13px;
+        color: #fff;
+        font-size: 0;        
+      }
+      .swiper-button-prev:after {
+        @include bg('icon_swiper_prev_01');
+      }
+      .swiper-button-next:after {
+        @include bg('icon_swiper_next_01');
+      }
+      .swiper-pagination {
+        z-index: 0;
+      }
+      .swiper-pagination-bullet{
+        width: 9.14px; height: 9.14px;
+        background: rgba(255, 255, 255, 0.2);opacity:1;
+      }
+      .swiper-pagination-bullet-active{
+        background:#fff;
+      }
+      .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+        margin:0 5px;
+      }
+
+      .pad-guide {
+        position: absolute;
+        .guide-tit {margin-bottom: 5px; color: #fff; font-size: 22px; line-height: 22px; font-weight: 700; text-align: center;}
+        &.left {
+          left: 11px; bottom: 139px;
+          .guide-tit {padding-left: 35px; margin-bottom: 33px; text-align: right;}
+          .moving-pad {
+            position: relative; left: 10px; bottom: 10px;
+            &::before {
+              content: ''; position: absolute; left: -10px; top: -10px; width: 93px; height: 93px; border: 2px solid #fff; border-radius: 50%;
+            }
+          }
+        }
+        &.right {
+          right: 7px; bottom: 110px;
+          img {width: 189.5px; height: 130.5px;}
+        }
+      }
+    }
+  }
+  .entire-tit{
+    @include LtCon(56px, 50%, 0); transform: translateX(-50%);
+    width: auto;  
+    padding: 0;
+    font-size: 24px;
+    font-weight: 700;
+  }
   
 }
 
-//landscape
+//********** landscape
 @media all and (orientation: landscape) {
 
   // 공통영역
@@ -321,6 +456,15 @@ $res_root: 'http://localhost:3000';
   // 팝업창 타이틀
   .popTit{padding: 20px 0;font-size: 17px;}
 
+  // 우측 하단 팝업창 컨테이너
+  .popCon{
+    overflow-y: scroll;max-height: 844px;margin: 30px 10px 30px 0;padding: 0 15px 0 30px;
+  }
+  .popCon.ty-01{
+    max-height: 310px;
+    padding-bottom: 50px;
+  }
+
   // 우측 중앙 팝업창
   @mixin popBtRt(){@include BtLtCon(0, 50%, 10);width: 375px;transform: translateX(-50%);}
 
@@ -328,6 +472,18 @@ $res_root: 'http://localhost:3000';
   .UnKnowBtn{
     height: 300px;
   }
+
+  // 모바일 팝업 상단 바
+  .popMoBar {@include LtCon(9px, 50%, 1); width: 80px; height: 6px; border-radius: 5px; background: #ddd; transform: translateX(-50%); }
+
+  // 우측 중앙 팝업창
+  @mixin popCenter(){@include RtCon(0, 0, 10); transform: translateY(0); border-radius: 0; width: 462px; max-height: 100vh;}
+  .popCenter, .Chat, .ProfileView, .Voters{@include popCenter();}
+
+  // 우측 하단 팝업창
+  @mixin popBtRt(){@include BtRtCon(0, 50px, 10);width: 391px;}
+  .popCenter, .Chat, .ProfileView, .Voters, .AroundAll{@include popCenter();}
+  .Around, .Emoji {@include popBtRt(); border-radius: 30px 30px 0 0;}
 
   // 메인 우측바
   .RtBar{
@@ -357,6 +513,53 @@ $res_root: 'http://localhost:3000';
     &::before{display: none;}
   }
 
+  // 참여모드 메인 좌측상단 박스
+  .RtTopBar{
+    @include LtCon(7px, 50%, 5); right: auto; transform: translateX(-50%);
+    .RtTopBarCon{width: 335px; padding: 19px 22px;
+      .playSubject{
+        button img{@include flexCtr(0); width: 12px; height: 12px;}
+        .playTime{padding: 0 16px 0 16px;}
+        .subjectName{padding: 0 20px 0 15px;
+        }
+      }
+    }
+
+    .SubjectLists.ty-01{
+      height: 54px;
+      .subjectName input{margin-top: 0px;}
+    }
+    .SubjectLists{
+      width: 335px; padding: 16px 21px 16px 16px;
+      .SubjectList{
+        .subjectName{ width: 137px; flex-shrink: 0;
+          input{width: 137px;
+          }
+        }
+        .playTime{
+          position: relative; padding: 0 10px 0 8px; margin-left: 9px;
+        }
+      }
+      .closeWt12{width: 12px; height: 12px; flex-shrink: 0;}
+      .stop12, .play12{width: 12px;height: 14px; flex-shrink: 0;}
+    }
+  }
+
+  // 메인 하단 바
+  .BtBar{
+    @include BtLtCon(22px, 50%, 6); @include flexCol(0); width: 100%;
+    &::before{display: none;}
+    .sayBox{width: 210px; margin-bottom: 5.42px;}
+    .sayBoxCon{
+      padding: 15px 19px 22px; @include bg('sayBox_mo');
+      .sayIcon{width: 17px;height: 17px;border-radius: 5px;}
+      .say{@include ellipsis(1);}
+    }
+    .BtBarCon{
+      @include flexCtr(27px);
+    }
+  }
+
   // 좌측상단 메뉴 버튼
   .Menu{
     @include flexCol03(36px); width: 437px; padding: 35px 60px 0 70px; 
@@ -369,6 +572,9 @@ $res_root: 'http://localhost:3000';
       @include flexCol03(26px);
       .btn{font-weight: 500;font-size: 16px;color: #222;
         &::after{width: 6px;height:12px;}
+      }
+      .Top-line {
+        display: none;
       }
     }
   }
@@ -414,9 +620,24 @@ $res_root: 'http://localhost:3000';
     }
   }
 
+  // 메인 하단 채팅 버튼
+  .Chat{
+    .recentTxt{left: 50%; bottom: 95px; transform: translateX(-50%);}
+    .ChatCon{
+      max-height: 225px;        
+    }
+  }
+
+  // 메인 하단 주변 버튼
+  .Around{
+    .AroundCon{
+      margin: 35px 20px 8px; padding-bottom: 6px;
+    }
+  }
+
   // 메인 하단 더보기 버튼
   .More{
-    @include popBtRt(); padding: 45px 25px 30px; right: auto;
+    @include BtLtCon(0px, 50%, 10); transform: translateX(-50%); right: auto; padding: 45px 25px 30px; border-radius: 30px 30px 0px 0px;
   }
 
   .ProfileDrawer{
@@ -454,5 +675,6 @@ $res_root: 'http://localhost:3000';
       }
     }
   }
+  
 
 }

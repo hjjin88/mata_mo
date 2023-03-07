@@ -6,8 +6,7 @@ const Around = ({popName, setPopName }) => {
     return (
         <>
         <div className="Around">
-            <button type="button" className="subclose close16" onClick={ e => { setPopName(); }} />
-            <div className="popTit">주변</div>
+            <div className="popMoBar"></div>
             <ul className="AroundCon txt-12Gy6">
                 <li className="Profile-set"><button type="button" onClick={ e => { setPopName('AroundAll'); }}><div className="allBtn">ALL</div></button></li>
                 <li className="Profile-set"><img className="Profile-img" src="/resources/img/bg.png" alt="프로필 사진 이미지" /><img className="Profile-mark" src="/resources/img/host.svg" alt="방장 아이콘 이미지" /><p className="txt-pu">방장</p></li>

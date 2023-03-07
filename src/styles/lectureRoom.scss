@@ -247,13 +247,59 @@ $res_root: 'http://localhost:3000';
       border-radius: 20px;
 
       &-select {
+        position: relative;
         width: 100%;
-        aspect-ratio: 282 / 116;
-        margin-bottom: 16px;
+        aspect-ratio: 282 / 93;
+        margin-bottom: 10px;
         border: {
-          radius: 20px;
+          radius: 8px;
         };
         background-color: #F2F3F8;
+
+        &-range {
+          position: absolute;
+          left: -1px;
+          bottom: -1px;
+          width: 100%;
+
+          .color-range {
+            height: 25px;
+            border-radius: 0px 0px 8px 8px;
+
+            &::after {
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 0px 0px 8px 8px;
+            }
+          }
+        }
+
+      }
+
+      &-info {
+        position: absolute;
+        left: 8px;
+        top: 8px;
+        color: #fff;
+        font-size: 8px;
+        line-height: 100%;
+        .hex {
+          margin-bottom: 6px;
+        }
+        .rgb {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+        }
+      }
+
+      &-title {
+        font: {
+          size: 12px;
+          weight: 400;
+        };
+        margin-bottom: 10px;
+        color: #000;
+        line-height: 100%;
       }
 
       &-range {

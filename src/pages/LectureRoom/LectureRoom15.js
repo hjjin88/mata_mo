@@ -19,8 +19,29 @@ const LectureRoom15 = ({setPopName }) => {
                                 <button className="lecture-chromakey-pointer" style={{top: '10px', left: '10px'}}></button>
                             </div>
                             <div className="lecture-chromakey-color">
-                                <div className="lecture-chromakey-color-select" style={{backgroundColor: '#1F1F1F'}}></div>
+                                <div className="lecture-chromakey-color-select" style={{backgroundColor: '#1F1F1F'}}>
+                                    <div className="lecture-chromakey-color-info">
+                                        <div className="hex">Hex : #1F1F1F</div>
+                                        <div className="rgb">
+                                            <span>R : 31</span>
+                                            <span>G : 31</span>
+                                            <span>B : 31</span>
+                                        </div>
+                                    </div>
+                                    <div className="lecture-chromakey-color-select-range">
+                                        <div className="color-range" style={{background: `linear-gradient(90deg, #FFFFFF 20.65%, #1F1F1F 100%)`}}>
+                                        <i style={{left: `50%`}}></i>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div className="lecture-chromakey-color-range">
+                                    <div className="lecture-chromakey-color-title">Cutoff</div>
+                                    <div className="color-range" style={{background: `linear-gradient(90deg, #FFFFFF 20.65%, #1F1F1F 100%)`}}>
+                                        <i style={{left: `5%`}}></i>
+                                    </div>
+                                </div>
+                                <div className="lecture-chromakey-color-range">
+                                    <div className="lecture-chromakey-color-title">Falloff</div>
                                     <div className="color-range" style={{background: `linear-gradient(90deg, #FFFFFF 20.65%, #1F1F1F 100%)`}}>
                                         <i style={{left: `80%`}}></i>
                                     </div>

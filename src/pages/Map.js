@@ -8,7 +8,7 @@ const Map = ({setPopName }) => {
 
     return (
         <>
-        <div className="layer" />
+        {/* <div className="layer" />
         <div className="Map">
             <button type="button" className="mapclose" onClick={ e => { setPopName(); }}><img src="/resources/img/close16.svg" alt="닫기 버튼 이미지" /></button>
             <div className="MapCon">
@@ -303,6 +303,40 @@ const Map = ({setPopName }) => {
                     </div>
                 </div>
             </div>
+            </div>
+        </div> */}
+        <div className="Map">
+            <div className="subtop">
+                <button type="button" className="subclose close16" onClick={(e) => {setPopName();}}/>
+                <div className="subTit">숙명여대 맵</div>
+            </div>
+            <div className="MapCon">
+                <div className="MapSearch">
+                        <div className="MapSearchBox">
+                            <input type="text" placeholder="순헌관으로 가보자요" />
+                            <button type="button" className="search24" />
+                        </div>
+                        <ul className="SearchList">
+                            <li>
+                                <p>눈꽃광앙앙아아아아장</p>
+                                <button type="button" className="close24"/>
+                            </li>
+                            <li>
+                                <p>미수루루루대학</p>
+                                <button type="button" className="close24" />
+                            </li>
+                        </ul>
+                </div>
+                <div className="locationTxt">
+                    <button type="button">
+                        <img src="/resources/img/locationBtnMap40.svg" alt="위치 아이콘 이미지" />
+                        <p>순헌관열글자까지표시해야합니다</p>
+                    </button>
+                </div>
+                <div className="currentLoc">
+                    <div className="currentLocBg"><img src="/resources/img/bg.png" alt="프로필 이미지 이미지" /></div>
+                    <p>현위치</p>
+                </div>
             </div>
         </div>
         </>

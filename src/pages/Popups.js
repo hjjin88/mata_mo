@@ -72,7 +72,7 @@ import Makeup from "./Makeup";
 import CampusSelect from "./CampusSelect";
 import StudentCertified from "./StudentCertified";
 import Account from "./Account";
-
+import ConsRequestAlarm02 from "./ConsRequestAlarm02";
 
 
 import Promotion01 from "./Promotion/Promotion01";
@@ -358,6 +358,9 @@ const Popups = ({ popName, setPopName }) => {
         )}
         { popName === 'Account' && (
           <Account setPopName={setPopName} />
+        )}
+        { popName === 'ConsRequestAlarm02' && (
+          <ConsRequestAlarm02 setPopName={setPopName} />
         )}
 
 

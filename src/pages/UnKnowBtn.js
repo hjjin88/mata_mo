@@ -7,6 +7,7 @@ const UnKnowBtn = ({ popName, setPopName }) => {
         <>
         <div className="UnKnowBtn">
             <div className="Btns">
+                <button onClick={ e => { setPopName('ConsRequestAlarm02'); }}>0307추가팝업-상담대기실_추가기능패널</button>
                 <button onClick={ e => { setPopName('More01'); }}>참여모드 팝업 창01</button>
                 <button onClick={ e => { setPopName('More02'); }} style={{background:'pink'}}>More02/ 도서관 스터디 공통UI 더보기</button>
                 <button onClick={ e => { setPopName('MicCamSet'); }} style={{background:'pink'}}>MicCamSet/ 도서관 마이크창</button>

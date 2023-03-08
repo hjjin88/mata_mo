@@ -6,7 +6,7 @@ const Emoji = ({setPopName }) => {
     return (
         <>
         <div className="Emoji">
-            <div className="popMoBar"></div>
+            <div className="popMoBar" />
             <div className="EmojiCon popCon">
                 <ul className="EmojiList">
                     <li><button type="button" onClick={ e => { setPopName('EmojiAll'); }}><div className="allBtn">ALL</div></button></li>

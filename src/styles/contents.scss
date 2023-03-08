@@ -1,4 +1,4 @@
-$res_root: 'http://localhost:3001';
+$res_root: 'http://localhost:3000';
 
 html {
   width: 100%;
@@ -37,9 +37,11 @@ html {
 .play12{@include bg('play12');width: 12px;height: 12px;}
 .favoritesOn12{@include bg('FavoritesOn12');width: 12px;height: 12px;}
 .favoritesOff12{@include bg('FavoritesOff12');width: 12px;height: 12px;}
+.locationBtnMap40{@include bg('locationBtnMap40');width: 40px;height: 40px;}
 .locationBtnOn40{@include bg('locationBtnOn40');width: 40px;height: 40px;}
 .locationBtnOff40{@include bg('locationBtnOff40');width: 40px;height: 40px;}
 .mapCurrentLocation40{@include bg('mapCurrentLocation40');width: 40px;height: 40px;}
+.mapCurrentLocation40_02{@include bg('mapCurrentLocation40_02');width: 40px;height: 40px;}
 .zoomIn{@include bg('zoomIn');width: 14px;height: 14px;}
 .zoomOut{@include bg('zoomOut');width: 14px;height: 14px;}
 .personFirst24{@include bg('personFirst24');width: 24px;height: 24px;}
@@ -78,6 +80,7 @@ html {
 .Play-gy12{@include bg('Play-gy12');width: 12px;height: 14px;}
 .error16{@include bg('error16');width: 16px;height: 16px;}
 .edit-pen{@include bg('edit-pen');width: 14px;height: 14px;}
+.search54{@include bg('search54');width: 54px;height: 54px;}
 
 
 // absolute

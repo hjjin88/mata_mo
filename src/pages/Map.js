@@ -365,9 +365,6 @@ const Map = ({setPopName }) => {
                 <div className="MapLists_mo">
                     <Swiper
                     loop={true}
-                    // slidesOffsetBefore={20}
-                    // showsPagination={false} 
-                    // centeredSlides={true}
                     breakpoints={{
                         0: {
                             slidesOffsetBefore: 20,

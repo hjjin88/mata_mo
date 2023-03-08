@@ -16,7 +16,7 @@ const Invite = ({ popName, setPopName }) => {
             <div className="con-wrap">
                 <div className="con-inner-col">
                     <div className="Invite-guide tit-15Bk lh140">
-                        아래의 url을 복사해 친구에게 보내면 유버스에 초대할 수 있어요. <br/>
+                        아래의 url을 복사해 친구에게 보내면 <br/> <span className="txt-Pu">유버스에 초대</span>할 수 있어요.<br/>
                         얼른 내 옆에 친구를 불러봐요!
                     </div>
                     <div className="url-con">

@@ -22,7 +22,7 @@ const MyProfile = ({ popName, setPopName }) => {
                             <div className="markOn"></div>
                             <button type="button" onClick={() => {setView(!view)}}>
                                 <div>Online{" "}</div>
-                                {view ? <svg className="downArrow" /> : <svg className="downArrow up" />} 
+                                {view ? <svg className="downArrow up" /> : <svg className="downArrow" />} 
                             </button>
                         </div>
                         {view && 

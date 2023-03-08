@@ -11,14 +11,16 @@ const Announcement = ({ popName, setPopName }) => {
         <>
         <div className="layer" />
             <div className="Announcement">
-                <button type="button" className="subclose close16" onClick={ e => { setPopName(); }} />
-                <div className="popTit">공지사항</div>
+                <div className="entire-tit">튜토리얼</div>
+                <button type="button" className="entireclose closeWt16" onClick={ e => { setPopName(); }} />
+                <div className="Announcement-con">
                     <Swiper className="con-wrap"
                     modules={[Navigation, Pagination]}
-                    spaceBetween={70}
+                    spaceBetween={25}
                     slidesPerView={1}
                     navigation
                     pagination={{ clickable: true }}
+                    centeredSlides={true}
                     // scrollbar={{ draggable: true }}
                     >
                     <SwiperSlide className="con-inner-slide">
@@ -68,7 +70,8 @@ const Announcement = ({ popName, setPopName }) => {
                         <input type="checkbox" name="ex-chk" id="ex-chk" />
                         <label htmlFor="ex-chk">오늘 하루 보지 않기</label>
                     </fome>
-        </div>
+                </div>
+            </div>
         </>
     )
 }

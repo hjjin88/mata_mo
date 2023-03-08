@@ -6,7 +6,7 @@ const TourParticipant = ({ setPopName }) => {
     
     return (
         <>
-            <div className={`Tour tit-25Gy1 ${Toggle ? "on" : null}`}>
+            <div className={`Tour ${Toggle ? "on" : null}`}>
                 <button
                     onClick={() => {
                         setToggle(!Toggle);

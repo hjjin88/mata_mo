@@ -22,15 +22,24 @@ const Tutorial  = ({setPopName }) => {
               scrollbar={{ draggable: true }}
             >
               <SwiperSlide>
-                <img src="/resources/img/Keyboard01.svg" alt="키보드 이미지" />
-                <p>메타스쿨에 오신 것을 환영합니다!<br />키보드 버튼을 눌러 내 아바타와 카메라를 움직일 수 있습니다.</p>
+                <p>메타스쿨에 오신 것을 환영합니다!<br />토글버튼과 배경을 터치 조작해<br /> 내 아바타와 시점을 움직일 수 있습니다.</p>
               </SwiperSlide>
               <SwiperSlide>
-                <img src="/resources/img/Keyboard02.svg" alt="키보드 이미지" />
                 <p>화면 하단의 버튼을 눌러<br />해당 장소로 이동할 수 있습니다.</p>
                 <button type="button" className="sec-btn on-02 tit-26Wt">시작하기</button>
               </SwiperSlide>
             </Swiper>
+
+            <div className="pad-guide left">
+                <div className="guide-tit">이동 키</div>
+                <div className="moving-pad left">
+                    <span className="handler"></span>
+                </div>
+            </div>
+            <div className="pad-guide right">
+                <div className="guide-tit">배경</div>
+                <img src="/resources/img/img_guide.png" alt="배경 가이드 이미지" />
+            </div>
           </div>
         </div>
         </>

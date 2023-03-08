@@ -6,7 +6,7 @@ const More10 = ({setPopName }) => {
     return (
         <>
         <div className="More">
-            <button type="button" className="subclose close16" onClick={ e => { setPopName(); }} />
+            <div className="popMoBar"></div>
             <ul className="more-ty02 txt-11">
                 <li><img src="/resources/img/lecture-information24.svg" alt="강의 정보 버튼 이미지" /><p>강의 정보</p></li>
                 <li><img src="/resources/img/privateScreen24.svg" alt="전용화면 버튼 이미지" /><p>전용화면</p></li>

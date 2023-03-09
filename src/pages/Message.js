@@ -195,6 +195,44 @@ const Message = ({ popName, setPopName }) => {
                                 <button className="">나가기</button>
                             </div>
                         </li>
+                        <li>
+                            <div className="Profile-box">
+                                <div className="Profile-set" >
+                                    <img className="Profile-img" src="/resources/img/bg.png" alt="프로필 사진 이미지" />
+                                </div>
+                                <div className="IDBox">
+                                    <p className="ID txt-15Bk">ZZAZANG</p>
+                                    <p className="txt-11Gy3 message-txt">안녕하세요. ZZAZANG입니다. 안녕하세요. ZZAZANG입니다.안녕하세요. ZZAZANG입니다.안녕하세요.ZZAZANG입니다.안녕하세요. ZZAZANG입니다.안녕하세요.ZZAZANG입니다.안녕하세요. ZZAZANG입니다.안녕하세요.ZZAZANG입니다.안녕하세요. ZZAZANG입니다.안녕하세요.ZZAZANG입니다.안녕하세요. ZZAZANG입니다.안녕하세요. </p>
+                                </div>
+                            </div>
+                            <div className="message-desc txt-11Wt">
+                                <div className="message-time txt-11Gy112">오전 9:08</div>
+                                <div className="-No">99</div>
+                            </div>
+                            <div className="message-btn txt-13Wt">
+                                <button className="">읽음</button>
+                                <button className="">나가기</button>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="Profile-box">
+                                <div className="Profile-set" >
+                                    <img className="Profile-img" src="/resources/img/bg.png" alt="프로필 사진 이미지" />
+                                </div>
+                                <div className="IDBox">
+                                    <p className="ID txt-15Bk">ZZAZANG</p>
+                                    <p className="txt-11Gy3 message-txt">안녕하세요. ZZAZANG입니다. 안녕하세요. ZZAZANG입니다.안녕하세요. ZZAZANG입니다.안녕하세요.ZZAZANG입니다.안녕하세요. ZZAZANG입니다.안녕하세요.ZZAZANG입니다.안녕하세요. ZZAZANG입니다.안녕하세요.ZZAZANG입니다.안녕하세요. ZZAZANG입니다.안녕하세요.ZZAZANG입니다.안녕하세요. ZZAZANG입니다.안녕하세요. </p>
+                                </div>
+                            </div>
+                            <div className="message-desc txt-11Wt">
+                                <div className="message-time txt-11Gy112">오전 9:08</div>
+                                <div className="-No">99</div>
+                            </div>
+                            <div className="message-btn txt-13Wt">
+                                <button className="">읽음</button>
+                                <button className="">나가기</button>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <PopFooter popName={popName} setPopName={setPopName} />

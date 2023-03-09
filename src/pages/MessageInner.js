@@ -8,7 +8,7 @@ const Chatting = ({setPopName, selectedGnbIndex }) => {
     return (
         <>
         <div className="MessageInner">
-            <img className="msg-pfp" src="/resources/img/bg.png" alt="프로필 사진 이미지" />
+            <button type="button" className="backBtn"><img src="/resources/img/backArrow.svg" alt="뒤로가기 버튼 이미지" /></button>
             <button type="button" className="subclose close16" onClick={ e => { setPopName(); }} />
             <div className="popTit">채팅</div>
             <div className="con-wrap">

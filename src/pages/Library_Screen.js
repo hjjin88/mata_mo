@@ -21,9 +21,9 @@ const Library_Screen = ({popName, setPopName}) => {
                         <img className="bottom-pfp" src="/resources/img/bg.png" alt="프로필 이미지" />
                         <p>Sophia</p>
                     </div>
-                    <button type="button" className="topRt">
-                        <img src="/resources/img/Full19.svg" alt="화면 확대 버튼 이미지" />
-                    </button>                    
+                    <div className="topRt">
+                        <p className="time">22:00:00</p>
+                    </div>
                     <button type="button" className="btRt-pfp br-100" onClick={toggleHandler}>
                         <img src={`/resources/img/${isOn ? "mikeOn20_02" : "mikeOff20_02" }.svg`} alt="마이크 버튼 이미지" />
                     </button>   
@@ -35,9 +35,9 @@ const Library_Screen = ({popName, setPopName}) => {
                         <img className="bottom-pfp" src="/resources/img/bg.png" alt="프로필 이미지" />
                         <p>Sophia</p>
                     </div>
-                    <button type="button" className="topRt">
-                        <img src="/resources/img/Full19.svg" alt="화면 확대 버튼 이미지" />
-                    </button>                    
+                    <div className="topRt">
+                        <p className="time">22:00:00</p>
+                    </div>
                     <button type="button" className="btRt-pfp br-100" onClick={toggleHandler}>
                         <img src={`/resources/img/${isOn ? "mikeOn20_02" : "mikeOff20_02" }.svg`} alt="마이크 버튼 이미지" />
                     </button> 
@@ -48,9 +48,9 @@ const Library_Screen = ({popName, setPopName}) => {
                         <img className="bottom-pfp" src="/resources/img/bg.png" alt="프로필 이미지" />
                         <p>Sophia</p>
                     </div>
-                    <button type="button" className="topRt">
-                        <img src="/resources/img/Full19.svg" alt="화면 확대 버튼 이미지" />
-                    </button>                    
+                    <div className="topRt">
+                        <p className="time">22:00:00</p>
+                    </div>
                     <button type="button" className="btRt-pfp br-100" onClick={toggleHandler}>
                         <img src={`/resources/img/${isOn ? "mikeOn20_02" : "mikeOff20_02" }.svg`} alt="마이크 버튼 이미지" />
                     </button>   
@@ -61,9 +61,9 @@ const Library_Screen = ({popName, setPopName}) => {
                         <img className="bottom-pfp" src="/resources/img/bg.png" alt="프로필 이미지" />
                         <p>Sophia</p>
                     </div>
-                    <button type="button" className="topRt">
-                        <img src="/resources/img/Full19.svg" alt="화면 확대 버튼 이미지" />
-                    </button>                    
+                    <div className="topRt">
+                        <p className="time">22:00:00</p>
+                    </div>
                     <button type="button" className="btRt-pfp br-100" onClick={toggleHandler}>
                         <img src={`/resources/img/${isOn ? "mikeOn20_02" : "mikeOff20_02" }.svg`} alt="마이크 버튼 이미지" />
                     </button>   
@@ -75,9 +75,9 @@ const Library_Screen = ({popName, setPopName}) => {
                         <img className="bottom-pfp" src="/resources/img/bg.png" alt="프로필 이미지" />
                         <p>Sophia</p>
                     </div>
-                    <button type="button" className="topRt">
-                        <img src="/resources/img/Full19.svg" alt="화면 확대 버튼 이미지" />
-                    </button>                    
+                    <div className="topRt">
+                        <p className="time">22:00:00</p>
+                    </div>
                     <button type="button" className="btRt-pfp br-100" onClick={toggleHandler}>
                         <img src={`/resources/img/${isOn ? "mikeOn20_02" : "mikeOff20_02" }.svg`} alt="마이크 버튼 이미지" />
                     </button>   
@@ -89,9 +89,9 @@ const Library_Screen = ({popName, setPopName}) => {
                         <img className="bottom-pfp" src="/resources/img/bg.png" alt="프로필 이미지" />
                         <p>Sophia</p>
                     </div>
-                    <button type="button" className="topRt">
-                        <img src="/resources/img/Full19.svg" alt="화면 확대 버튼 이미지" />
-                    </button>                    
+                    <div className="topRt">
+                        <p className="time">22:00:00</p>
+                    </div>
                     <button type="button" className="btRt-pfp br-100" onClick={toggleHandler}>
                         <img src={`/resources/img/${isOn ? "mikeOn20_02" : "mikeOff20_02" }.svg`} alt="마이크 버튼 이미지" />
                     </button> 
@@ -102,9 +102,9 @@ const Library_Screen = ({popName, setPopName}) => {
                         <img className="bottom-pfp" src="/resources/img/bg.png" alt="프로필 이미지" />
                         <p>Sophia</p>
                     </div>
-                    <button type="button" className="topRt">
-                        <img src="/resources/img/Full19.svg" alt="화면 확대 버튼 이미지" />
-                    </button>                    
+                    <div className="topRt">
+                        <p className="time">22:00:00</p>
+                    </div>
                     <button type="button" className="btRt-pfp br-100" onClick={toggleHandler}>
                         <img src={`/resources/img/${isOn ? "mikeOn20_02" : "mikeOff20_02" }.svg`} alt="마이크 버튼 이미지" />
                     </button>   
@@ -115,9 +115,9 @@ const Library_Screen = ({popName, setPopName}) => {
                         <img className="bottom-pfp" src="/resources/img/bg.png" alt="프로필 이미지" />
                         <p>Sophia</p>
                     </div>
-                    <button type="button" className="topRt">
-                        <img src="/resources/img/Full19.svg" alt="화면 확대 버튼 이미지" />
-                    </button>                    
+                    <div className="topRt">
+                        <p className="time">22:00:00</p>
+                    </div>
                     <button type="button" className="btRt-pfp br-100" onClick={toggleHandler}>
                         <img src={`/resources/img/${isOn ? "mikeOn20_02" : "mikeOff20_02" }.svg`} alt="마이크 버튼 이미지" />
                     </button>   

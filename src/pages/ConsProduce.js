@@ -10,6 +10,7 @@ const ConsProduce = ({ popName, setPopName}) => {
     <>
         <div className="layer" />
         <div className="ConsProduce">
+            <div className="popMoBar bt" />
             <button type="button" className="subclose close16" onClick={(e) => {setPopName();}}/>
             <div className="subTit">상담 등록</div>
             <div className="con-wrap">

@@ -18,7 +18,7 @@ const MyActivity = ({ popName, setPopName }) => {
                             <div className="ui-dropdown">
                                 <button type="button" className="txt-13Gy2" onClick={() => {setView(!view)}}>
                                     옵션{" "}
-                                    {view ? <svg className="downArrow" /> : <svg className="downArrow up" />} 
+                                    {view ? <svg className="downArrow up" /> : <svg className="downArrow " />} 
                                 </button>
                                 {view && 
                                     <div className="dropdown-layer txt-13Gy2">
@@ -55,7 +55,7 @@ const MyActivity = ({ popName, setPopName }) => {
                                         <td><span>23-01-26</span></td>
                                         <td>
                                             <button type="button" onClick={() => {setDetail(!Detail)}}>
-                                                {" "}{Detail ? <span className="downArrow"></span> : <span className="downArrow up"></span>} 
+                                                {" "}{Detail ? <span className="downArrow up"></span> : <span className="downArrow "></span>} 
                                             </button>
                                         </td>
                                     </tr>
@@ -85,7 +85,7 @@ const MyActivity = ({ popName, setPopName }) => {
                                         <td><span>23-01-26</span></td>
                                         <td>
                                             <button type="button" onClick={() => {setDetail(!Detail)}}>
-                                                {" "}{Detail ? <span className="downArrow"></span> : <span className="downArrow up"></span>} 
+                                                {" "}{Detail ? <span className="downArrow up"></span> : <span className="downArrow "></span>} 
                                             </button>
                                         </td>
                                     </tr>
@@ -115,7 +115,7 @@ const MyActivity = ({ popName, setPopName }) => {
                                         <td><span>23-01-26</span></td>
                                         <td>
                                             <button type="button" onClick={() => {setDetail(!Detail)}}>
-                                                {" "}{Detail ? <span className="downArrow"></span> : <span className="downArrow up"></span>} 
+                                                {" "}{Detail ? <span className="downArrow up"></span> : <span className="downArrow "></span>} 
                                             </button>
                                         </td>
                                     </tr>
@@ -145,7 +145,7 @@ const MyActivity = ({ popName, setPopName }) => {
                                         <td><span>23-01-26</span></td>
                                         <td>
                                             <button type="button" onClick={() => {setDetail(!Detail)}}>
-                                                {" "}{Detail ? <span className="downArrow"></span> : <span className="downArrow up"></span>} 
+                                                {" "}{Detail ? <span className="downArrow up"></span> : <span className="downArrow "></span>} 
                                             </button>
                                         </td>
                                     </tr>
@@ -175,7 +175,7 @@ const MyActivity = ({ popName, setPopName }) => {
                                         <td><span>23-01-26</span></td>
                                         <td>
                                             <button type="button" onClick={() => {setDetail(!Detail)}}>
-                                                {" "}{Detail ? <span className="downArrow"></span> : <span className="downArrow up"></span>} 
+                                                {" "}{Detail ? <span className="downArrow up"></span> : <span className="downArrow "></span>} 
                                             </button>
                                         </td>
                                     </tr>

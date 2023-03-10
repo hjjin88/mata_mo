@@ -1,7 +1,8 @@
 
 import { useEffect, useState } from "react";
+import PopFooter from "./PopFooter";
 
-const StudyRanking = ({setPopName }) => {
+const StudyRanking = ({popName, setPopName }) => {
 
     const [isOn, setisOn] = useState(false);
     const toggleHandler = () => {
@@ -10,7 +11,7 @@ const StudyRanking = ({setPopName }) => {
 
     return (
         <>
-        <div className="StudyRanking TopCtPop">
+        <div className="StudyRanking CtPop">
             <button type="button" className="subclose close16" onClick={(e) => {setPopName();}}/>
             <div className="popTit">실시간 스터디 팝업</div>
             <div className="realTimeStudy-container">
@@ -58,9 +59,9 @@ const StudyRanking = ({setPopName }) => {
                 <table className="board-list">
                     <caption><p>BGM 리스트</p></caption>
                     <colgroup>
-                        <col width="8%"/>
-                        <col width="80%"/>
                         <col width="12%"/>
+                        <col width="68%"/>
+                        <col width="20%"/>
                     </colgroup>
                     <tbody>
                         <tr>
@@ -68,7 +69,7 @@ const StudyRanking = ({setPopName }) => {
                             <td className="align-left">
                                 학생 입니다.
                             </td>
-                            <td className="align-left">
+                            <td>
                                 00:00:00
                             </td>
                         </tr>
@@ -77,7 +78,7 @@ const StudyRanking = ({setPopName }) => {
                             <td className="align-left">
                                 학생 입니다.
                             </td>
-                            <td className="align-left">
+                            <td>
                                 00:00:00
                             </td>
                         </tr>
@@ -86,7 +87,7 @@ const StudyRanking = ({setPopName }) => {
                             <td className="align-left">
                                 학생 입니다.
                             </td>
-                            <td className="align-left">
+                            <td>
                                 00:00:00
                             </td>
                         </tr>
@@ -95,7 +96,7 @@ const StudyRanking = ({setPopName }) => {
                             <td className="align-left">
                                 학생 입니다.
                             </td>
-                            <td className="align-left">
+                            <td>
                                 00:00:00
                             </td>
                         </tr>
@@ -104,7 +105,7 @@ const StudyRanking = ({setPopName }) => {
                             <td className="align-left">
                                 학생 입니다.
                             </td>
-                            <td className="align-left">
+                            <td>
                                 00:00:00
                             </td>
                         </tr>
@@ -113,6 +114,7 @@ const StudyRanking = ({setPopName }) => {
                 </div>
                 </div>
             </div>
+            <PopFooter popName={popName} setPopName={setPopName} />
         </div>
         </>
     )

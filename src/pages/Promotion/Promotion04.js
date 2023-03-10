@@ -1,7 +1,8 @@
 
 import { useEffect, useState } from "react";
+import PopFooter from "../PopFooter";
 
-const Promotion04 = ({setPopName }) => {
+const Promotion04 = ({popName, setPopName }) => {
 
     const [View, setView] = useState(false); 
 
@@ -18,7 +19,7 @@ const Promotion04 = ({setPopName }) => {
                         className={`box-gray type1 mb40 ${View ? "d-none" : null }`}
                         >
                             <p className="mb10"><img src="../resources/img/sendSquare36.svg" alt="" /></p>
-                            <span className="txt">※ 1MB 미만의 jpg, jpeg, png, bmp 이미지만 설정할 수 있습니다.</span>
+                            <span className="txt">※ 1MB 미만의 jpg, jpeg, png, bmp 이미지만 <br />설정할 수 있습니다.</span>
                             <button type="button" className="fileselect mt20" onClick={() => {setView(!View)}} >파일선택 &gt;</button>
                         </div>
                         {View && 
@@ -31,19 +32,20 @@ const Promotion04 = ({setPopName }) => {
                             </div>
                         }
                         <h6 className="h6-title pb20">홍보물 링크 설정</h6>
-                        <div className="linkaddress pb200">
+                        <div className="linkaddress">
                             <input type="text" className="linkaddresswrite w-100" placeholder="홍보물을 클릭했을 때 이동할 홈페이지를 작성해주세요." />
                             <button type="button" 
                             className={`closeGy20 ${View ? null : "d-none" }`}/>
                         </div>
                     </div>
+                    <div className="center mb30">
+                        <button type="button" 
+                        className={`sec-btn-L${View ? "-on02" : null } tit-20Gy3`}
+                        >확인</button>
+                    </div>
                 </div>
-            </div>
-            <div className="center mb30">
-                <button type="button" 
-                className={`sec-btn-L${View ? "-on02" : null } tit-20Gy3`}
-                >확인</button>
-            </div>
+            </div>      
+            <PopFooter popName={popName} setPopName={setPopName} />      
         </div>
         </>
     )

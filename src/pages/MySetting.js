@@ -19,6 +19,10 @@ const MySetting = ({ popName, setPopName }) => {
                         <div className="con-left">
                             <h2 className="ct-title">디바이스 설정</h2>
                             <div className="cam-view">
+                                <p className="cam-notice">
+                                    마이크/카메라 연결 확인
+                                    <span>(설정 &gt; 개인정보 및 보안 &gt; 권한에서 카메라와 마이크 권한 허용이 <br />되어있는지 확인하세요.</span>
+                                </p>
                                 <div className="cam-box">
                                     <video className="video" src="" />
                                     <p>카메라 없음</p>
@@ -31,10 +35,6 @@ const MySetting = ({ popName, setPopName }) => {
                                         </button>
                                     </div>                            
                                 </div>
-                                <p className="cam-notice">
-                                    마이크/카메라 연결 확인
-                                    <span>(설정 &gt; 개인정보 및 보안 &gt; 권한에서 카메라와 마이크 권한 허용이 <br />되어있는지 확인하세요.</span>
-                                </p>
                             </div>
                         </div>
                         <div className="con-right">
@@ -71,6 +71,10 @@ const MySetting = ({ popName, setPopName }) => {
                                     </div>
                                     }
                                 </div>
+                                <p className="cam-notice">
+                                    마이크/카메라 연결 확인
+                                    <span>(설정 &gt; 개인정보 및 보안 &gt; 권한에서 카메라와 마이크 권한 허용이 <br />되어있는지 확인하세요.</span>
+                                </p>
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,8 @@
 
 import { useEffect, useState } from "react";
+import PopFooter from "../PopFooter";
 
-const Promotion01 = ({setPopName }) => {
+const Promotion01 = ({popName, setPopName }) => {
 
     return (
         <>
@@ -14,13 +15,13 @@ const Promotion01 = ({setPopName }) => {
                         <h6 className="h6-title pb20">홍보물 썸네일 설정</h6>
                         <div className="box-gray type1 mb40">
                             <p className="mb10"><img src="../resources/img/sendSquare36.svg" alt="" /></p>
-                            <span className="txt">※ 1MB 미만의 jpg, jpeg, png, bmp 이미지만 설정할 수 있습니다.</span>
+                            <span className="txt">※ 1MB 미만의 jpg, jpeg, png, bmp 이미지만 <br />설정할 수 있습니다.</span>
                             <button type="button" className="fileselect mt20">파일선택 &gt;</button>
                         </div>
                         <h6 className="h6-title pb20">홍보물 이미지 설정</h6>
                         <div className="box-gray type1 mb30">
                             <p className="mb10"><img src="../resources/img/sendSquare36.svg" alt="" /></p>
-                            <span className="txt">※ 3MB 미만의 jpg, jpeg, png, bmp 이미지만 설정할 수 있습니다.</span>
+                            <span className="txt">※ 3MB 미만의 jpg, jpeg, png, bmp 이미지만 <br />설정할 수 있습니다.</span>
                             <button type="button" className="fileselect mt20">파일선택 &gt;</button>
                         </div>
                     </div>
@@ -29,6 +30,7 @@ const Promotion01 = ({setPopName }) => {
                     </div>
                 </div>
             </div>
+            <PopFooter popName={popName} setPopName={setPopName} />
         </div>
         </>
     )

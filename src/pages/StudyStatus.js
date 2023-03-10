@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PopFooter from "./PopFooter";
 
 const StudyStatus = ({ popName, setPopName }) => {
 
@@ -18,7 +19,7 @@ const StudyStatus = ({ popName, setPopName }) => {
             <div className="con-wrap">
                 <div className="con-inner">
                     <div className="con-left">
-                        <dl className="write-wrap pdb50">
+                        <dl className="write-wrap">
                             <dt className="tit-13Bk">나의 다짐</dt>
                             <dd className="write-con">
                                 <textarea type="text" rows="1" placeholder="다짐의 말을 작성하세요. 1줄"/>
@@ -41,7 +42,7 @@ const StudyStatus = ({ popName, setPopName }) => {
                                 </div>
                             </div>
                         }
-                        <dl className="write-wrap pdb50">
+                        <dl className="write-wrap">
                             <dt className="tit-13Bk">D-Day</dt>
                             <dd className="write-con">
                                 <textarea type="text" rows="1" placeholder="D-Day를 선택하세요."/>
@@ -90,8 +91,10 @@ const StudyStatus = ({ popName, setPopName }) => {
                                     <img src="/resources/img/graph.png" alt="수정 버튼 이미지" />
                                     <div className="tit-34Gy3">13%</div>
                                 </div>
-                                <div className="txt-15Gy2 center pdb10">목표 달성까지<br/>24시간 59분 남았어요!</div>
-                                <button type="button" className="sec-btn-on01 txt-13Pu" onClick={() => {setTarget(!Target)}} >목표 설정</button>
+                                <div>
+                                    <div className="txt-15Gy2 center pdb10">목표 달성까지<br/>24시간 59분 남았어요!</div>
+                                    <button type="button" className="sec-btn-on01 txt-13Pu center" onClick={() => {setTarget(!Target)}} >목표 설정</button>
+                                </div>                                
                             </dd>
                         </dl>
                         {Target && 
@@ -147,11 +150,12 @@ const StudyStatus = ({ popName, setPopName }) => {
                         </div>
                         <div className="tit-13Bk pdb20">주간 스터디</div>
                         <div className="calendar">
-                            <img src="/resources/img/calendar.png" alt="달력 이미지" />
+                            <img src="/resources/img/calendar03.png" alt="달력 이미지" />
                         </div>
                     </div>
                 </div>
             </div>
+            <PopFooter popName={popName} setPopName={setPopName} />
         </div>
     </>
     );

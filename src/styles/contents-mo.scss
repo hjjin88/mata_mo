@@ -219,8 +219,8 @@ $res_root: 'http://localhost:3000';
     }
   }
   .CtPop{@include CenterCon();}
-  .Invite, .Connect, .StudentCertified {@include CenterCon2();}  
-  .ConsProduce, .ConsEntrance, .NpcInstlReg, .Npc-instl, .Npc-guide, .MyProfile, .MyFriend, .Follow, .Message, .MessageInner, .MyActivity, .MySetting{@include CenterCon();}
+  .Invite {@include CenterCon2();}  
+  .ConsProduce, .ConsEntrance, .NpcInstlReg, .Npc-instl, .Npc-guide, .Announcement, .MyProfile, .MyFriend, .Follow, .Message, .MessageInner, .MyActivity, .MySetting{@include CenterCon();}
 
   // 메인 중앙 팝업창 하단 공통 영역
   .PopFooter{

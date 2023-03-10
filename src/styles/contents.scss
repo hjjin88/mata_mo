@@ -1334,38 +1334,38 @@ background:#fff;
     }
   }
 
-  .swiper-pagination-bullet {
-    width: 16px;
-    height: 16px;
-    background: #8265F6;
-  }
+  // .swiper-pagination-bullet {
+  //   width: 16px;
+  //   height: 16px;
+  //   background: #8265F6;
+  // }
 
-  .swiper-horizontal>.swiper-pagination-bullets,
-  .swiper-pagination-bullets.swiper-pagination-horizontal,
-  .swiper-pagination-custom,
-  .swiper-pagination-fraction {
-    bottom: 30px;
-  }
+  // .swiper-horizontal>.swiper-pagination-bullets,
+  // .swiper-pagination-bullets.swiper-pagination-horizontal,
+  // .swiper-pagination-custom,
+  // .swiper-pagination-fraction {
+  //   bottom: 30px;
+  // }
 
-  .swiper-button-next:after,
-  .swiper-button-prev:after {
-    border-radius: 50%;
-    border: 1.5px solid #8265F6;
-    padding: 6.47px 7.5px 6.47px 8.74px;
-    color: #8265F6;
-    font-size: 4px;
-    background: #fff;
-  }
+  // .swiper-button-next:after,
+  // .swiper-button-prev:after {
+  //   border-radius: 50%;
+  //   border: 1.5px solid #8265F6;
+  //   padding: 6.47px 7.5px 6.47px 8.74px;
+  //   color: #8265F6;
+  //   font-size: 4px;
+  //   background: #fff;
+  // }
 
-  .swiper-button-prev,
-  .swiper-rtl .swiper-button-next {
-    left: var(--swiper-navigation-sides-offset, 57px);
-  }
+  // .swiper-button-prev,
+  // .swiper-rtl .swiper-button-next {
+  //   left: var(--swiper-navigation-sides-offset, 57px);
+  // }
 
-  .swiper-button-next,
-  .swiper-rtl .swiper-button-prev {
-    right: var(--swiper-navigation-sides-offset, 57px);
-  }
+  // .swiper-button-next,
+  // .swiper-rtl .swiper-button-prev {
+  //   right: var(--swiper-navigation-sides-offset, 57px);
+  // }
 }
 
 .Voters{
@@ -2602,70 +2602,97 @@ table{
 
 
 
-.Closet.CtPop{
-  height: 834px;
-  .popCon{
-display: flex;
-gap: 20px;
+// 마이룸 옷장
+.Closet{
+  @include LtCon(50%, 50%, 10);
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 143px;
+  .Closet_con{
+    height: 834px;
+    width: 729px;
+    max-height: 800px;
+    overflow: hidden;
+    background: #FFFFFF;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    .popCon{
+      margin: 30px 0;
+      padding: 0 20px 0 20px;
+    }
+    .con-left{
+        .nav-tabs{
+          width: 310px;
+          @include flexFs(34px);
+          padding-bottom: 20px;
+          padding-left: 27px;
+          button{
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 100%;
+            color: #333333;
+            @include flexCol(4px);
+            .iconbg{
+              width: 40px;
+              height: 40px;
+              @include flexCtr(0);
+              &:hover{
+                background: #E9E9E9;
+              }
+            }
+            .iconbg.on{
+              background: linear-gradient(180deg, #824DF3 9.9%, #5D43C7 100%);
+              border-radius: 3px;
+            }
+          }
+        }
+      }
+      .myroom-itemboxs{
+        // width: 373px;
+        height: 538px;
+        padding: 10px 5px 10px 11px;
+        background: #F2F3F8;
+        border-radius: 10px;
+        .itembox{
+          height: 515px;
+          overflow-x: hidden;
+          overflow-y: scroll;
+          display: flex;
+          gap: 9px;
+          flex-wrap: wrap;
+          align-content: flex-start;
+          padding: 5px 0;
+  
+          .nav-item{
+            width: 124px;
+            height: 124px;
+            border-radius: 10px;
+            background: #fff;
+            .item{
+              width: 108px;
+              height: 93px;
+            }
+          }
+          .nav-item.on{
+            position: relative;
+            border: 2px solid #8265F6;
+            &::after{
+              content: '';
+              position: absolute;
+              bottom: 6px;
+              right: 3px;
+              @include bg('checkbox-pu');
+              width:15px;
+              height: 15px;
+            }
+          }
+        }
+      }
+   .sec-btns{
+    @include flexCtr(11px);
+    padding-bottom: 30px;
+   }
   }
-  .con-left{
-      .nav-tabs{
-        width: 310px;
-        // height: 48px;
-        @include flexArCtr(34px);
-        margin: 0 auto 20px;
-        button{
-          font-weight: 500;
-          font-size: 11px;
-          line-height: 100%;
-          color: #333333;
-          @include flexCol(4px);
-          .iconbg{
-            width: 40px;
-            height: 40px;
-            @include flexCtr(0);
-          }
-          .iconbg.on{
-            background: linear-gradient(180deg, #824DF3 9.9%, #5D43C7 100%);
-            border-radius: 3px;
-          }
-        }
-      }
-    }
-    .myroom-itemboxs{
-      width: 373px;
-      height: 538px;
-      padding: 10px 5px 10px 11px;
-      background: #F2F3F8;
-      border-radius: 10px;
-      .itembox{
-        height: 515px;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        display: flex;
-        gap: 9px;
-        flex-wrap: wrap;
-        align-content: flex-start;
-        padding: 5px 0;
-        .nav-item{
-          width: 80px;
-          height: 80px;
-          border-radius: 10px;
-        }
-        .nav-item.on{
-          border: 2px solid #8265F6;
-          background: #FFFFFF;
-        }
-      }
-    }
-    .con-right img{
-      width: 334px;
-    height: 613px;
-    }
- .sec-btns{
-  @include flexCtr(11px);
-  padding-bottom: 30px;
- }
 }
 
 .CampusSelect{

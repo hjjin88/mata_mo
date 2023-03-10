@@ -138,6 +138,58 @@ $res_root: 'http://localhost:3000';
   }
 }
 
+// *************************************************추가 공통
+
+.con-wrap {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+  height: auto;
+  max-height: 679px;
+  padding: 20px 5px 20px 20px;
+  .con-inner-col {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 589px;
+    padding: 0px 10px 0 0;
+}
+}
+.write-con {
+  color: #222;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+  padding: 18px 20px;
+  border-radius: 20px;
+  border: 1px solid #E2E2E2;
+}
+
+button[class*="-L"] {
+  width: 335px;
+  padding: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //********* portrait
 @media all and (orientation: portrait) {
 
@@ -172,7 +224,7 @@ $res_root: 'http://localhost:3000';
   .popMoBar {@include LtCon(9px, 50%, 1); width: 80px; height: 6px; border-radius: 5px; background: #ddd; transform: translateX(-50%); }
 
   // 우측 하단 팝업창
-  @mixin popBtRt(){@include BtRtCon(0, 0, 10);width: 375px;}
+  @mixin popBtRt(){@include BtRtCon(0, 50%, 10);transform: translateX(50%);width: 100%;}
   .popCenter, .ProfileView, .Voters{@include popCenter();}
   .Around, .Emoji {@include popBtRt(); border-radius: 30px 30px 0 0;}
   .AroundAll {@include BtRtCon(0 , 0, 10); top: 0; max-height: 100vh; border-radius: 0;}
@@ -577,8 +629,10 @@ $res_root: 'http://localhost:3000';
     max-height: 558px;
   }
 }
+// 채팅
 .Chat {
   @include popBtRt();
+  top: auto;
   background: #fff;
   font-weight: 400;
   font-size: 13px;
@@ -608,7 +662,131 @@ $res_root: 'http://localhost:3000';
   }
   .recentTxt{display: none;}
 }
+// 상담실-상담등록
+.ConsProduce{
+  .subTit{border-bottom: 1px solid rgba(0, 0, 0, 0.1);}
+  .write-con.detail.more{height: 210px;margin-bottom: 20px}
+  .ConsProduce-inner .txt-13Gy2{
+    text-align: left;
+    line-height: 140%;
+  }
+  .write-con.detail{height: 210px;}
+  .ConsProduce-inner .write-con.code{position: unset;padding: 15px 20px;}
+  .Copypop-bk{
+    top: auto;
+    bottom: 33px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
+// 마이룸 메인페이지 버튼
+.CampusGoing{bottom: 100px;}
+// 마이룸 옷장
+.Closet{
+  display: block;
+  @include flexCol(24px);
+  padding-top: 37px;
+  top: auto;
+  bottom: 0;
+  transform: translatex(-50%);
+  .Closet_character{
+    width: 101.27px;
+    height: 299px;
+  }
+  .Closet_con{
+    width: 375px;
+    height: 452px;
+    border-radius: 10px 10px 0 0;
+    .popCon{
+      padding: 0 15px;
+      margin: 30px 0 15px;
+      max-height: unset;
+      overflow: hidden;
+    }
+    .con-left .nav-tabs{
+      padding-left: 14px;
+      gap: 29px;
+      button{gap: 2px;}
+    }
+    .myroom-itemboxs{
+      height: 334px;
+      padding: 20px 5px 20px 19px;
+      .itembox{
+        .nav-item{
+          width: 69px;
+          height: 69px;
+          .item{
+            width: 59.39px;
+            height: 50.9px;
+          }
+        }
+        .nav-item.on::after{
+          bottom: 3px;
+        }
+      }
+    }
+    .sec-btns{
+      padding: 0;
+      @include BtLtCon(20px,50%,0);
+      transform: translatex(-50%);
+    }
+  }
+}
+// 마이룸 화장대
+.Closet.Makeup{
+  .Closet_character{
+    width: 264.24px;
+    height: 780.14px;
+    @include LtCon(28%,50%, -1);
+    transform: translate(-50%, -50%);
+  }
+}
+// 마이룸 캠퍼스 선택
+.CampusSelect{
+  .subTit{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .wrap-btn-selectcampus{
+    padding: 20px 40px;
+    gap: 20px;
+  }
+  .btn-selectcampus{
+    width: 100%;
+  }
+}
+
+// 공지사항
+.Announcement{
+  width: 356.52px;
+  height: 322px;
+  .Announcement-con{
+    width: 325px;
+  }
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //landscape
 @media all and (orientation: landscape) {
@@ -902,28 +1080,6 @@ $res_root: 'http://localhost:3000';
     }
 
   }
-  // .MapSearch {
-  //   @include flexCol02(0);
-  //   padding: 11px 0 0 40px;
-  //   border-bottom: 0;
-
-  //   .MapSearchBox {
-  //     &::before{
-  //       top: 23px;
-  //       left: 21px;
-  //     }
-  //     input {
-  //       width: 335px;
-  //       height: 54px;
-  //       padding: 0 49px 0 41px;
-  //     }
-
-  //     button {
-  //       @include LtCon(15px, 290px, 0)
-  //     }
-  //   }
-  // }
-
   .SearchList {
     width: 335px;
     padding: 11px 0 0 40px;
@@ -1008,7 +1164,7 @@ $res_root: 'http://localhost:3000';
   }
 }
 
-// 채팅창
+// 채팅
   .Chat{
     bottom:0;
     background: #fff;
@@ -1077,4 +1233,98 @@ $res_root: 'http://localhost:3000';
   button:hover {color: #62BD53;}
 }
   }
+// 상담실-상담등록 -----   진희씨 css 중복작업 확인하기
+  .ConsProduce{
+    .subTit{border-bottom: 1px solid rgba(0, 0, 0, 0.1);}
+    .con-wrap{max-height: 295px;}
+    .write-con.detail.more{height: 157px;margin-bottom: 20px}
+    .ConsProduce-inner .txt-13Gy2{
+      text-align: left;
+      line-height: 140%;
+    }
+    .write-con.detail{height: 157px;margin-bottom: 20px;}
+    .ConsProduce-inner .write-con.code{position: unset;padding: 15px 20px;}
+    .Copypop-bk{
+      top: auto;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+// 마이룸 메인페이지 버튼
+.CampusGoing{bottom: 70px;}
+// 마이룸 옷장
+.Closet{
+  position: relative;
+  display: flex;
+  width: 100%;
+  .Closet_character_box{
+    width: 50%;
+    @include flexCtr(0);
+    margin-bottom: 42px;
+    .Closet_character{
+      width: 87.39px;
+      height: 258px;
+    }
+  }
+  .Closet_con{
+    width: 375px;
+    height: 375px;
+    border-radius: 0;
+    .popCon{
+      padding: 0 15px;
+      max-height: unset;
+      overflow: hidden;
+    }
+    .con-left .nav-tabs{
+      padding-left: 15px;
+      gap: 29px;
+    }
+    .myroom-itemboxs{
+      height: 264px;
+      padding: 20px 5px 20px 19px;
+      .itembox{
+        .nav-item{
+          width: 69px;
+          height: 69px;
+          .item{
+            width: 59.39px;
+            height: 50.9px;
+          }
+        }
+        .nav-item.on::after{
+          bottom: 3px;
+        }
+      }
+    }
+    .sec-btns{
+      padding: 0;
+      @include BtLtCon(20px,25%,0);
+      transform: translatex(-50%);
+    }
+  }
+}
+// 마이룸 화장대
+.Closet.Makeup{
+  .Closet_character{
+    width: 264.24px;
+    height: 780.14px;
+    position: absolute;
+    top: 53px;
+  }
+}
+// 마이룸 캠퍼스 선택
+.CampusSelect{
+  .subTit{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .wrap-btn-selectcampus{
+    padding: 20px 30px;
+    gap: 12px;
+  }
+  .btn-selectcampus{
+    width: 241px;
+  }
+}
 }

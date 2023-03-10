@@ -10,9 +10,9 @@ const Announcement = ({ popName, setPopName }) => {
     return (
         <>
         <div className="layer" />
-            <div className="Announcement">
                 <div className="entire-tit">튜토리얼</div>
                 <button type="button" className="entireclose closeWt16" onClick={ e => { setPopName(); }} />
+            <div className="Announcement">
                 <div className="Announcement-con">
                     <Swiper className="con-wrap"
                     modules={[Navigation, Pagination]}

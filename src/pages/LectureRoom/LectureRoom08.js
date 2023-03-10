@@ -1,4 +1,5 @@
 import {useState} from "react";
+import PopFooter from "../PopFooter";
 
 const ToggleItem = ({ placeholder, item = []}) => {
 
@@ -16,7 +17,7 @@ const ToggleItem = ({ placeholder, item = []}) => {
         </div>
     );
 };
-const LectureRoom14 = ({setPopName }) => {
+const LectureRoom14 = ({popName, setPopName }) => {
 
     const [View, setView] = useState(false); 
 
@@ -55,6 +56,7 @@ const LectureRoom14 = ({setPopName }) => {
                         >시작</button>
                     </div>
                 </div>
+                <PopFooter popName={popName} setPopName={setPopName} />
             </div>
         </>
     )

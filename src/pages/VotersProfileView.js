@@ -40,7 +40,7 @@ const VotersProfileView = ({setPopName}) => {
                         </button>
                         <button type="button">
                             <img src="/resources/img/forced-exit24.svg" alt="유저 아이콘 이미지" />
-                            <p>강제퇴장</p>                          
+                            <p>강제퇴장</p>
                         </button>
                     </div>
                 </div>

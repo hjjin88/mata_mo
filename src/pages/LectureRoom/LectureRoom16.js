@@ -1,8 +1,9 @@
-const LectureRoom00 = ({setPopName }) => {
+import PopFooter from "../PopFooter";
+const LectureRoom00 = ({popName, setPopName }) => {
     return (
         <>
             <div className="layer" />
-            <div className="lecture-room layer-right-bottom">
+            <div className="lecture-room layer-center">
                 <button type="button" className="subclose close16" onClick={(e) => {setPopName();}} />
                 <div className="layer-wrap">
                     <div className="layer-head">강의 정보</div>
@@ -64,6 +65,7 @@ const LectureRoom00 = ({setPopName }) => {
                         </div>
                     </div>
                 </div>
+                <PopFooter popName={popName} setPopName={setPopName} />
             </div>
         </>
     )

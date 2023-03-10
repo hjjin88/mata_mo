@@ -21,8 +21,8 @@ const MyProfile = ({ popName, setPopName }) => {
                 <div className="popTit">마이 친구</div>
                 <div className="con-wrap">
                     <div className="MyFriendToggle" onClick={toggleHandler}>
-                        <button type="button" className={`toggle-btn ${isOn ? null : "toggle-btnOn"}`}>팔로잉</button>
                         <button type="button" className={`toggle-btn ${isOn ? "toggle-btnOn" : null}`}>팔로워</button>
+                        <button type="button" className={`toggle-btn ${isOn ? null : "toggle-btnOn"}`}>팔로잉</button>
                     </div>
                 {isOn === false ?
                     <ul className="con-inner-col">

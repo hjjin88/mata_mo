@@ -584,10 +584,24 @@ $res_root: 'http://localhost:3000';
     // height: 390px;
     right: auto;
     left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
     max-height: none;
+    border-radius: 20px;
     .MyProfileCon{
       .MyProfileInner{padding: 30px 0;}
+    }
+    .ProfileView-btns {
+      padding-top: 40px;
+      width: 129px;
+      .LRBar::before {display: none;}
+    }
+  }
+  .Voters {
+    .ProfileView-btns {
+      padding-top: 30px;
+      width: 223px;
+      .LRBar::before {display: block;}
     }
   }
 
@@ -1874,15 +1888,24 @@ $res_root: 'http://localhost:3000';
     transform: translate(-50%, -50%);
     max-height: 354px;
     border-radius: 20px;
-    .MyProfileCon{
-      
+    .MyProfileCon{      
       .MyProfileInner{padding: 9px 0 25px;}
     }
     .distance{
       @include RtCon(122px, 93px, 0);
     }
-    .ProfileView-btns{
+    .ProfileView-btns {
       padding-top: 30px;
+      width: 129px;
+      .LRBar::before {display: none;}
+    }
+  }
+
+  .Voters {
+    .ProfileView-btns {
+      padding-top: 30px;
+      width: 223px;
+      .LRBar::before {display: block;}
     }
   }
 

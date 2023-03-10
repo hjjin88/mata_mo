@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PopFooter from "../PopFooter";
 
 const ToggleItem = ({placeholder, item = []}) => {
     const [SelectToggle, setSelectToggle] = useState(false);
@@ -16,7 +17,7 @@ const ToggleItem = ({placeholder, item = []}) => {
         </div>
     );
 };
-const LectureRoom00 = ({setPopName}) => {
+const LectureRoom00 = ({popName, setPopName}) => {
     const [MikeOn, setMikeOn] = useState(false);
     const [CamOn, setCamOn] = useState(false);
     const [View, setView] = useState(false); 
@@ -37,6 +38,10 @@ const LectureRoom00 = ({setPopName}) => {
                             <div className="con-row">
                                 <div className="con-col">
                                     <div className="cam-view">
+                                        <div className="cam-notice">
+                                            마이크/카메라 연결 확인
+                                            <small>(설정 &gt; 개인정보 및 보안 &gt; 권한에서 카메라와 마이크 권한 허용이 되어있는지 확인하세요.)</small>
+                                        </div>
                                         <div className="webcam">
                                             <video className="webcam-video" src="" />
                                             <p className="webcam-none-camera">카메라 없음</p>
@@ -58,11 +63,7 @@ const LectureRoom00 = ({setPopName}) => {
                                                     </button>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className="cam-notice">
-                                            마이크/카메라 연결 확인
-                                            <small>(설정 &gt; 개인정보 및 보안 &gt; 권한에서 카메라와 마이크 권한 허용이 되어있는지 확인하세요.)</small>
-                                        </div>
+                                        </div>                                        
                                     </div>
                                 </div>
                                 <div className="con-col">
@@ -127,6 +128,7 @@ const LectureRoom00 = ({setPopName}) => {
                         >등록</button>
                     </div>
                 </div>
+                <PopFooter popName={popName} setPopName={setPopName} />
             </div>
         </>
     )

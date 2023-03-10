@@ -1,13 +1,14 @@
 import {useState} from "react";
+import PopFooter from "../PopFooter";
 
-const LectureRoom00 = ({setPopName }) => {
+const LectureRoom00 = ({popName, setPopName }) => {
 
     const [View, setView] = useState(false); 
 
     return (
         <>
             <div className="layer" />
-            <div className="lecture-room layer-center">
+            <div className="lecture-room layer-center layer-none-height">
                 <button type="button" className="subclose close16" onClick={(e) => {setPopName();}} />
                 <div className="layer-wrap">
                     <div className="layer-head">투표 목록</div>
@@ -37,6 +38,61 @@ const LectureRoom00 = ({setPopName }) => {
                                     <td><del>종료</del></td>
                                     <td><button type="button" className="button button-outline button-sm">상세</button></td>
                                 </tr>
+                                <tr>
+                                    <td>제목 최대 30글자에요.</td>
+                                    <td><del>종료</del></td>
+                                    <td><button type="button" className="button button-outline button-sm">상세</button></td>
+                                </tr>
+                                <tr>
+                                    <td>제목 최대 30글자에요.</td>
+                                    <td><del>종료</del></td>
+                                    <td><button type="button" className="button button-outline button-sm">상세</button></td>
+                                </tr>
+                                <tr>
+                                    <td>제목 최대 30글자에요.</td>
+                                    <td><del>종료</del></td>
+                                    <td><button type="button" className="button button-outline button-sm">상세</button></td>
+                                </tr>
+                                <tr>
+                                    <td>제목 최대 30글자에요.</td>
+                                    <td><del>종료</del></td>
+                                    <td><button type="button" className="button button-outline button-sm">상세</button></td>
+                                </tr>
+                                <tr>
+                                    <td>제목 최대 30글자에요.</td>
+                                    <td><del>종료</del></td>
+                                    <td><button type="button" className="button button-outline button-sm">상세</button></td>
+                                </tr>
+                                <tr>
+                                    <td>제목 최대 30글자에요.</td>
+                                    <td><del>종료</del></td>
+                                    <td><button type="button" className="button button-outline button-sm">상세</button></td>
+                                </tr>
+                                <tr>
+                                    <td>제목 최대 30글자에요.</td>
+                                    <td><del>종료</del></td>
+                                    <td><button type="button" className="button button-outline button-sm">상세</button></td>
+                                </tr>
+                                <tr>
+                                    <td>제목 최대 30글자에요.</td>
+                                    <td><del>종료</del></td>
+                                    <td><button type="button" className="button button-outline button-sm">상세</button></td>
+                                </tr>
+                                <tr>
+                                    <td>제목 최대 30글자에요.</td>
+                                    <td><del>종료</del></td>
+                                    <td><button type="button" className="button button-outline button-sm">상세</button></td>
+                                </tr>
+                                <tr>
+                                    <td>제목 최대 30글자에요.</td>
+                                    <td><del>종료</del></td>
+                                    <td><button type="button" className="button button-outline button-sm">상세</button></td>
+                                </tr>
+                                <tr>
+                                    <td>제목 최대 30글자에요.</td>
+                                    <td><del>종료</del></td>
+                                    <td><button type="button" className="button button-outline button-sm">상세</button></td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -48,6 +104,7 @@ const LectureRoom00 = ({setPopName }) => {
                         >새투표</button>
                     </div>
                 </div>
+                <PopFooter popName={popName} setPopName={setPopName} />
             </div>
         </>
     )

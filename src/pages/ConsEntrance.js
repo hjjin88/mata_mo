@@ -6,6 +6,7 @@ const ConsEntrance = ({ popName, setPopName }) => {
     <>
         <div className="layer" />
         <div className="ConsEntrance">
+            <div className="popMoBar bt" />
             <button type="button" className="subclose close16" onClick={(e) => {setPopName();}}/>
             <div className="popTit">상담실 입장</div>
             <div className="con-wrap">
@@ -19,7 +20,7 @@ const ConsEntrance = ({ popName, setPopName }) => {
                         권한 설정을 확인해주세요.
                     </p>
                 </div>
-            </div>
+            </div>            
         </div>
     </>
     );

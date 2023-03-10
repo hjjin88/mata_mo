@@ -1,7 +1,8 @@
 
 import { useEffect, useState } from "react";
+import PopFooter from "../PopFooter";
 
-const Promotion03 = ({setPopName }) => {
+const Promotion03 = ({popName, setPopName }) => {
 
     return (
         <>
@@ -28,11 +29,12 @@ const Promotion03 = ({setPopName }) => {
                             </div>
                         </div>
                     </div>
+                    <div className="center mb30">
+                        <button type="button" className="sec-btn-L-on02 tit-20Gy3">확인</button>
+                    </div>
                 </div>
-            </div>
-            <div className="center mb30">
-                <button type="button" className="sec-btn-L-on02 tit-20Gy3">확인</button>
-            </div>
+            </div>            
+            <PopFooter popName={popName} setPopName={setPopName} />
         </div>
         </>
     )

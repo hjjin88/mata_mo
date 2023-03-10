@@ -11,7 +11,7 @@ const CheongjuConnect = ({setPopName }) => {
 
     return (
         <>
-        <div className="Connect CtPop">
+        <div className="Connect">
             <button type="button" className="subclose close16" onClick={(e) => {setPopName();}} />
             <div className="popTit">청주대 재학생/교직원 인증</div>
             <div className="popCon">
@@ -65,14 +65,14 @@ const CheongjuConnect = ({setPopName }) => {
                     </div>
                     <span className="er">닉네임을 정확히 입력해 주세요.</span>
                 </div>
-            </div>
-            <div className="sec-btns">
-                <button type="button" className="sec-btn">이전</button>
-                <button type="button" 
-                className={`sec-btn ${Complete ? "off03" : "on02"}`}
-                onClick={() => {setComplete(!Complete)}}
-                >인증 완료</button>
-            </div>
+                <div className="sec-btns">
+                    <button type="button" className="sec-btn">이전</button>
+                    <button type="button" 
+                    className={`sec-btn ${Complete ? "off03" : "on02"}`}
+                    onClick={() => {setComplete(!Complete)}}
+                    >인증 완료</button>
+                </div>
+            </div>            
         </div>
         </>
     )

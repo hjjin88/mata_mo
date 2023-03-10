@@ -16,7 +16,7 @@ const ConsProduce02 = ({ popName, setPopName}) => {
                     <div className="write-con consCode">
                         <textarea type="text" rows="1" placeholder="1자 이상 입력하세요."/>
                     </div>
-                    <div className="Lbtns mgb70">
+                    <div className="Lbtns mb25">
                         <button type="button" 
                             className="sec-btn-L tit-20Gy3 btn-hover"
                             >

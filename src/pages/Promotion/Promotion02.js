@@ -7,8 +7,8 @@ const Promotion02 = ({setPopName }) => {
 
     return (
         <>
-        <div className="Promotion CtPop">
-            <button type="button" className="subclose close16" onClick={(e) => {setPopName();}} />
+        <div className="Promotion Promotion02 CtPop">
+            <button type="button" className="subclose close16" onClick={(e ) => {setPopName();}} />
             <div className="popTit">이미지 선택</div>
             <div className="final-check">
                 <label className="checkbox-label">

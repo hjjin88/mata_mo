@@ -13,7 +13,7 @@ const MicCamSet = ({setPopName }) => {
             <div className="popTit">마이크/카메라 설정</div>
             <div className="con-wrap">
                 <div className="con-inner-col">
-                    <p className="center txt-10Bk6">(설정 &gt; 개인정보 및 보안 &gt; 권한에서 카메라와 마이크 권한 허용이 되어있는지 확인하세요.</p>
+                    <p className="txt-10Bk6">(설정 &gt; 개인정보 및 보안 &gt; 권한에서 카메라와 마이크 권한 허용이 <br />되어있는지 확인하세요.</p>
                     <div className="cam-box">
                         <video src="" />
                         <p>카메라 없음</p>
@@ -28,7 +28,7 @@ const MicCamSet = ({setPopName }) => {
                     </div>
                 </div>
             </div>
-            <div className="center pdb20">
+            <div className="center">
                 <button type="button" className="sec-btn-L-on02">확인</button>
             </div>
         </div>

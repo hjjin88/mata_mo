@@ -3,7 +3,10 @@ import { useEffect, useState } from "react";
 
 const MyProfileView = ({setPopName}) => {
 
-    const [view, setView] = useState(false); 
+    const [isOn, setisOn] = useState(false);
+    const toggleHandler = () => {
+    setisOn(!isOn)
+    }
 
     return (
         <>
@@ -25,7 +28,7 @@ const MyProfileView = ({setPopName}) => {
                     <div className="tit-18Bk2">Jennie Park</div>
                     <div className="phone-number txt-14Gy2">
                         <div className="userID">CA761232-ED42-11CE-BACD-00AA0057B223</div>
-                        <button type="button" className="copy17" onClick={ e => { setPopName('Copypop'); }} />
+                        <button type="button" className="copy17" onClick={toggleHandler} />
                     </div>
                     <div className="Point tit-13Wt">
                         <img src="/resources/img/user12.svg" alt="유저 아이콘 이미지" />
@@ -33,6 +36,9 @@ const MyProfileView = ({setPopName}) => {
                     </div>
                 </div>
             </div>
+            {isOn &&
+                <div className="Copypop txt-13Gy5">복사되었습니다.</div>
+            }
         </div>
     </>
     )

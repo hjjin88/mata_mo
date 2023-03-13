@@ -1,4 +1,4 @@
-$res_root: 'http://localhost:3000';
+$res_root: 'http://localhost:3001';
 
 html {
   width: 100%;
@@ -37,11 +37,9 @@ html {
 .play12{@include bg('play12');width: 12px;height: 12px;}
 .favoritesOn12{@include bg('FavoritesOn12');width: 12px;height: 12px;}
 .favoritesOff12{@include bg('FavoritesOff12');width: 12px;height: 12px;}
-.locationBtnMap40{@include bg('locationBtnMap40');width: 40px;height: 40px;}
 .locationBtnOn40{@include bg('locationBtnOn40');width: 40px;height: 40px;}
 .locationBtnOff40{@include bg('locationBtnOff40');width: 40px;height: 40px;}
 .mapCurrentLocation40{@include bg('mapCurrentLocation40');width: 40px;height: 40px;}
-.mapCurrentLocation40_02{@include bg('mapCurrentLocation40_02');width: 40px;height: 40px;}
 .zoomIn{@include bg('zoomIn');width: 14px;height: 14px;}
 .zoomOut{@include bg('zoomOut');width: 14px;height: 14px;}
 .personFirst24{@include bg('personFirst24');width: 24px;height: 24px;}
@@ -80,16 +78,10 @@ html {
 .Play-gy12{@include bg('Play-gy12');width: 12px;height: 14px;}
 .error16{@include bg('error16');width: 16px;height: 16px;}
 .edit-pen{@include bg('edit-pen');width: 14px;height: 14px;}
-.search54{@include bg('search54');width: 54px;height: 54px;}
-.Enter20{@include bg('Enter20');width: 20px;height: 20px;}
-.Enteroff32{@include bg('Enteroff32');width: 32px;height: 32px;}
-.Enteron32{@include bg('Enteron32');width: 32px;height: 32px;}
-.EnterOff20{@include bg('EnterOff20');width: 32px;height: 32px;}
-.EnterOn20{@include bg('EnterOn20');width: 32px;height: 32px;}
 .copyWt17{@include bg('copyWt17');width: 17px;height: 17px;}
-.copyGy17{@include bg('copyGy17');width: 17px;height: 17px;}
-.manageGy16{@include bg('manageGy16');width: 16px;height: 16px;}
-
+.guide24{@include bg('guide24');width: 24px;height: 24px;}
+.checkbox-pu{@include bg('checkbox-pu');width: 15px;height: 15px;}
+.plus12{@include bg('plus12');width: 12px;height: 12px;}
 
 // absolute
 @mixin RtCon($top, $Rt, $zIndex){
@@ -255,7 +247,7 @@ html {
 .Around, .AroundAll, .Emoji{@include popBtRt();}
 // 우측 중앙 팝업창
 @mixin popCenter(){overflow: hidden;@include RtCon(50%, 84px, 10);transform: translateY(-50%);border-radius: 20px;width: 375px;height: auto;max-height: 860px;color: #707070;background:#fff;}
-.popCenter, .ProfileView, .Voters{@include popCenter();}
+.popCenter, .Chat, .ProfileView, .Voters{@include popCenter();}
 // 메인 중앙 팝업창
 @mixin CenterCon(){@include LtCon(50%, 50%, 10);transform: translate(-50%, -50%);width: 787px;max-height:800px;overflow: hidden;background: #FFFFFF;box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);border-radius: 20px;}
 .CtPop{@include CenterCon();}
@@ -341,6 +333,7 @@ button[class*="off01"]{color: #ddd;border: 1px solid #ddd;}
 button[class*="off02"]{border: 1px solid #bbb;}
 button[class*="off03"]{background: #eee;color: #fff;border: 1px solid #eee;}
 button[class*="off04"]{background: #eee;color: #373C45;opacity: 0.4;border: 1px solid #eee;}
+button[class*="off05"]{background: #F0F0F0;;color: #333333;border: 0;}
 
 .sec-btn.on{color: #8265F6;border: 1px solid #8265F6;}
 .sec-btn.on-02{color: #fff;border: 1px solid #8265F6;background:#8265F6;}
@@ -387,7 +380,6 @@ button[class*="off04"]{background: #eee;color: #373C45;opacity: 0.4;border: 1px 
     }
   }
 }
-// 체크박스 공통
 .form-check{
   position: absolute;
   bottom: 32px;
@@ -410,7 +402,69 @@ button[class*="off04"]{background: #eee;color: #373C45;opacity: 0.4;border: 1px 
     color: #8265F6;
   }
 }
+//토글 박스
+
+.toggle_box{
+  @include flexArCtr(10px);
+  label {
+    right: 9px;
+    bottom: 9px;
+    display: flex;
+    align-items: center;
+    span {
+      order: 0;
+      color: #fff;
+      font: {
+        size: 20px;
+        weight: 500;
+      };
+      margin-right: 10px;
+    }
   
+    input {
+      &:checked ~ i {
+        &::before {
+          background-color: #8265F6;
+        }
+  
+        &::after {
+          transform: translateX(100%);
+        }
+      }
+    }
+    i {
+      position: relative;
+      display: block;
+      width: 37px;
+      height: 20px;
+  
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 14px;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: #D0D0D0;
+        transition: background-color 0.3s;
+      }
+  
+      &::after {
+        content: '';
+        position: relative;
+        display: block;
+        width: 14px;
+        height: 14px;
+        margin: 3px;
+        border-radius: 10px;
+        background-color: #fff;
+        transition: transform 0.3s;
+      }
+    }
+  }
+}
 
 // 알수없는 버튼 모음 박스
 .UnKnowBtn{
@@ -481,6 +535,10 @@ button[class*="off04"]{background: #eee;color: #373C45;opacity: 0.4;border: 1px 
   }
   .BtBarCon{
     @include flexCtr(30px);
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 100%;
+    color: #fff;
     button{@include flexCol(5px);}
   }
 }
@@ -725,7 +783,7 @@ button[class*="off04"]{background: #eee;color: #373C45;opacity: 0.4;border: 1px 
         &::placeholder{@include flexCtr(0);}
       }
       .MessageBoxBtn{
-        @include flexCtr(7px);height: 100%;
+        @include flexCtr(7px);height: 100%;padding-right: 26px;border-right: 1px solid rgba(221, 221, 221, 0.8);
         .downArrow{top: 14px;left: 46px;right: 0;}
       }
     }
@@ -764,7 +822,12 @@ button[class*="off04"]{background: #eee;color: #373C45;opacity: 0.4;border: 1px 
     li{ @include flexCol(9px);}
     button{@include flexCol(9px);}
   }
-  .more-ty02{@include flexFs(35px 12px);flex-wrap: wrap;
+  .more-ty02{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 35px 12px;
+    flex-wrap: wrap;
     li{@include flexCol(9px);width: 72px;}
     button{@include flexCol(9px);width: 72px;}
   }
@@ -1198,7 +1261,7 @@ color: #333333;
     .ProfileView-btns{
       width: 219px;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       padding-top: 35px;
       button{
         position: relative;
@@ -1206,6 +1269,15 @@ color: #333333;
         flex-direction: column;
         align-items: center;
         gap: 10px;
+        &:first-child::after{
+          content: '';
+          width: 1px;
+          height: 37px;
+          background: #D9D9D9;
+          position: absolute;
+          top: 0;
+          left: 69px;
+        }
       }
     }
     .LRBar::before, .LRBar::after{
@@ -1271,9 +1343,7 @@ color: #333333;
     height: 100vh;
     text-align: center;
     img{
-      // width: 100%;
       height: 420px;
-      // margin: 0 89px;
     }
     p{
       margin: 80px 0 100px;
@@ -1339,40 +1409,179 @@ background:#fff;
     }
   }
 
-  // .swiper-pagination-bullet {
-  //   width: 16px;
-  //   height: 16px;
-  //   background: #8265F6;
-  // }
+  .swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+    background: #8265F6;
+  }
 
-  // .swiper-horizontal>.swiper-pagination-bullets,
-  // .swiper-pagination-bullets.swiper-pagination-horizontal,
-  // .swiper-pagination-custom,
-  // .swiper-pagination-fraction {
-  //   bottom: 30px;
-  // }
+  .swiper-horizontal>.swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    bottom: 30px;
+  }
 
-  // .swiper-button-next:after,
-  // .swiper-button-prev:after {
-  //   border-radius: 50%;
-  //   border: 1.5px solid #8265F6;
-  //   padding: 6.47px 7.5px 6.47px 8.74px;
-  //   color: #8265F6;
-  //   font-size: 4px;
-  //   background: #fff;
-  // }
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    border-radius: 50%;
+    border: 1.5px solid #8265F6;
+    padding: 6.47px 7.5px 6.47px 8.74px;
+    color: #8265F6;
+    font-size: 4px;
+    background: #fff;
+  }
 
-  // .swiper-button-prev,
-  // .swiper-rtl .swiper-button-next {
-  //   left: var(--swiper-navigation-sides-offset, 57px);
-  // }
+  .swiper-button-prev,
+  .swiper-rtl .swiper-button-next {
+    left: var(--swiper-navigation-sides-offset, 57px);
+  }
 
-  // .swiper-button-next,
-  // .swiper-rtl .swiper-button-prev {
-  //   right: var(--swiper-navigation-sides-offset, 57px);
-  // }
+  .swiper-button-next,
+  .swiper-rtl .swiper-button-prev {
+    right: var(--swiper-navigation-sides-offset, 57px);
+  }
 }
+.Announcement02 {
+  @include flexArCtr(0);
 
+  .Tutorial-con {
+    width: 947px;
+    height: 690px;
+    padding-top: 50px;
+    margin: 0 auto;
+
+    img {
+      width: 787px;
+      height: 450px;
+    }
+
+    .Slide_textarea {
+      margin: 82px auto;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 160%;
+      color: #FFFFFF;
+    }
+
+    .check {
+      @include RtCon(470px, 100px, 0);
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 100%;
+
+      input {
+        width: 12px;
+        height: 12px;
+        border: 1px solid #E2E2E2;
+        background: transparent;
+        margin-left: 6px;
+      }
+    }
+  }
+
+  .swiper-button-next,
+  .swiper-rtl .swiper-button-prev,
+  .swiper-button-prev,
+  .swiper-rtl .swiper-button-next {
+    top: 35%;
+  }
+
+  ;
+
+  // 이미지 등록
+  .img_box {
+    @include flexCtr(0);
+    width: 787px;
+    height: 450px;
+    margin: 0 auto;
+    background: #FFFFFF;
+
+    .img_box_inner {
+      position: relative;
+      width: 747px;
+      height: 410px;
+      background: #FFFFFF;
+      border: 1px dashed #DDDDDD;
+      border-radius: 10px;
+
+      .sec-btn-L {
+        @include BtLtCon(15px, 50%, 0);
+        transform: translateX(-50%);
+      }
+    }
+
+    .btns {
+      @include RtCon(20px, 100px, 0);
+      @include flexCtr(4px);
+
+      button {
+        width: 63px;
+        height: 20px;
+        background: #FFFFFF;
+        border: 1px solid #F1F1F1;
+        border-radius: 999px;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 100%;
+        color: #000000;
+      }
+    }
+  }
+
+  .check.plus {
+    input {
+      @include bg('plus12');
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  .Slide_textarea.cor {
+    position: relative;
+    width: 344px;
+
+    textarea {
+      width: 344px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #fff;
+
+      &::placeholder {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 100%;
+        color: #FFFFFF;
+        opacity: 0.5;
+      }
+    }
+
+    button {
+      @include RtCon(0, 0, 0);
+      font-weight: 700;
+      font-size: 23px;
+      line-height: 100%;
+      color: #FFFFFF;
+    }
+  }
+
+  .Slide_textarea.textarea_check {
+    width: 478px;
+    height: 54px;
+
+    .txt {
+      margin: 0 auto;
+      padding-bottom: 9px;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 160%;
+      border-bottom: 1px solid #ffffff50;
+    }
+
+    button {
+      top: 90px;
+    }
+  }
+}
 .Voters{
   .popCon{
     @include flexCol03(20px);
@@ -1482,6 +1691,7 @@ background:#fff;
   padding-bottom: 30px;
   .con-wrap {
     padding-right: 0;
+    padding-bottom: 32px;
     .con-inner-col {
       overflow: unset;
       gap: 0;
@@ -1525,7 +1735,7 @@ background:#fff;
   .write-con.detail{
     padding: 18px 5px 18px 20px; 
     align-items:unset;
-    height: 188px;
+    height: 148px;
     overflow-y: scroll;
     overflow-x: hidden;
     max-height: 188px;
@@ -1533,6 +1743,10 @@ background:#fff;
       overflow-y: scroll;
       padding-right:15px
     }
+  }
+  .toggle_box{
+    justify-content: flex-end;
+    padding-top: 13px;
   }
 }
 
@@ -2428,16 +2642,21 @@ table{
   width: 375px;
   height: 390px;
   .write-con.memo{
+    display: block;
     width: 355px;
     height: 324px;
     margin: 10px;
-    padding-right: 0;
-    justify-content: unset;
-    align-items: unset;
-    textarea{
+    padding-right: 8px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    color: #222222;
+    opacity: 0.8;
+    p{
       overflow-y: scroll;
       overflow-x: hidden;
-      padding-right: 8px;
+      height: 295px;
+      padding-right: 5px;
     }
   }
 }
@@ -2605,8 +2824,6 @@ table{
   }
 
 
-
-
 // 마이룸 옷장
 .Closet{
   @include LtCon(50%, 50%, 10);
@@ -2700,30 +2917,34 @@ table{
   }
 }
 
-.CampusSelect{
+.CampusSelect {
   height: 450px;
-  .wrap-btn-selectcampus{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 20px;
+
+  .wrap-btn-selectcampus {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 20px;
   }
-  .btn-selectcampus{
+
+  .btn-selectcampus {
     width: 241px;
     padding: 29px 0 28px;
     font-weight: 800;
-font-size: 16px;
-line-height: 100%;
-color: #000;
-background: #F8F8F8;
-border: 1px solid #E7E7E7;
-border-radius: 5px;
-}
-.btn-selectcampus.on{
+    font-size: 16px;
+    line-height: 100%;
+    color: #000;
+    background: #F8F8F8;
+    border: 1px solid #E7E7E7;
+    border-radius: 5px;
+  }
+
+  .btn-selectcampus.on {
     color: #fff;
     background: linear-gradient(180deg, #824DF3 9.9%, #5D43C7 100%);
   }
-  .sec-btns{
+
+  .sec-btns {
     @include flexCtr(11px);
     @include BtLtCon(20px, 50%, 0);
     transform: translateX(-50%);
@@ -2740,7 +2961,7 @@ border-radius: 5px;
   .stu-certi {
     width: 335px; min-height: 349px; padding: 20px 15px;
     .txt-notice {
-      color: #333; font-size: 14px; font-weight: 500; line-height: 120%;
+      color: #333; font-size: 14px; font-weight: 500; line-height: 140%;
       &.gray {color: rgba(0, 0, 0, 0.3); text-align: center;}
     }
     .txt-warning {
@@ -2775,6 +2996,89 @@ border-radius: 5px;
         }
       }
     }
+  }
+}
+// 학생/교직원인증
+.StudentCertified.ty02{
+  height: 272px;
+  .popTit{border: 0;}
+  .stu-certi{padding-top: 9px}
+  .agr{
+    @include flexArCtr(0);
+    width: 295px;
+    height: 48px;
+    margin-top: 20px;
+    padding-left: 10px;
+    background: #F9FAFF;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 140%;
+    color: #2B2F44;
+    .agr_check{
+      position: relative;
+      padding: 0 24px 0 25px ;
+      &::before{
+        content: '';
+        @include bg('checkbox-wt');
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        top: 2px;
+        left: 0;
+      }
+    }
+    .agr_check.on{
+      &::before{
+        @include bg('checkbox-pu');
+      }
+    }
+  }
+  .google{
+    position: relative;
+    width: 295px;
+    height: 50px;
+    margin-top: 10px;
+    background: #F9FAFF;
+    border: 1px solid #E6E8F1;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 14px;
+    color: rgba(55, 60, 69, 0.6);
+    &::before{
+      content: '';
+      @include LtCon(10px,24px,0);
+      @include bg('google30');
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .google.off{opacity: 0.4;}
+  .LogIn-con {
+    @include flexCol(8px);
+    padding: 20px 10px 40px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 14px;
+    color: #0F182A;
+    button {
+      position: relative;
+      @include flexCtr(0);
+      width: 100%;
+      padding: 18px;
+      border: 1px solid #E6E8F1;
+      border-radius: 8px;
+    }
+    button::before{
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 24px;
+      width: 30px;
+      height: 30px;
+    }
+    
   }
 }
 
@@ -2912,6 +3216,7 @@ border-radius: 5px;
     }
   }
 }
+
 .SpaceSet{
   background: #222;
   .LtTopBar{
@@ -3067,6 +3372,7 @@ border-radius: 5px;
     }
   }
 }
+
 // 상담 참여 요청
 .RequestMsg_con{
   width: 340px;
@@ -3082,6 +3388,7 @@ input{
   width: 300px;
 }
 }
+
 // 스터디 윗 미 주변 유저 목록 (일반 유저)
 .UsersList {
   width: 375px;

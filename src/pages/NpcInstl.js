@@ -54,13 +54,20 @@ const NpcInstl = ({ popName, setPopName }) => {
                     <div className="write-con detail">
                         <textarea type="text" rows="1" placeholder="엔피씨 대화 내용을 입력해 주세요."/>
                     </div>
-                </div>
-                <div className="Lbtns">
-                    <button type="button" className="sec-btn off-02 tit-16Gy3" onClick={(e) => {setPopName();}}>취소</button>
-                    <button type="button" className="sec-btn on-02 tit-16Gy3" onClick={(e) => {setPopName('NpcInstlGuide');}}>확인</button>
+                    <div className="toggle_box">
+                        <p className="tit-15Gy1">인증된 사용자만 상호작용 가능</p>
+                        <label>
+                            <input type="checkbox"/>
+                            <i></i>
+                        </label>
+                        <button className="lecture-chromakey-pointer" style={{top: '10px', left: '10px'}}></button>
+                    </div>
                 </div>
             </div>
-            
+            <div className="Lbtns">
+                <button type="button" className="sec-btn off-02 tit-16Gy3" onClick={(e) => {setPopName();}}>취소</button>
+                <button type="button" className="sec-btn on-02 tit-16Gy3" onClick={(e) => {setPopName('NpcInstlGuide');}}>확인</button>
+            </div>
         </div>
     </>
     );

@@ -76,15 +76,18 @@ abbr{text-decoration: none;}
   &-13Gy2{@include txt700(13px,#222);}
   &-13Bk{@include txt700(13px,#000);}
   &-14Gy2{@include txt700(14px,#222);}
+  &-15Gy1{@include txt600(15px,#111);}
   &-15Gy3{@include txt700(15px,#333);}
   &-15Bk{@include txt600(15px,#000);}
   &-15Bk-02{@include txt700(15px,#000);}
-  &-16Gy3{@include txt700(16px,#333);}
+  &-16Gy3{@include txt700(16px,#333);} 
+  &-16Gy1{@include txt700(16px,#111);}
   &-16{font-weight: 700;font-size: 16px;line-height: 100%;color: #FFFFFF;}
   &-17Gy2{@include txt700(17px,#222);}
   &-17Gy3{@include txt700(17px,#333);}
   // &-18Bk2{@include txt700(18px,#222);}
   &-20Wt{@include txt700(20px,#fff);}
+  &-20Gy2{@include txt700(20px,#222);}
   &-20Gy3{@include txt700(20px,#333);}
   &-24Wt{@include txt700(24px,#fff);} 
   &-25Gy1{@include txt700(25px,#111);}
@@ -101,6 +104,7 @@ abbr{text-decoration: none;}
   &-10Bk6{@include txt400(10px,#666);}
   &-11Wt{@include txt500(11px,#fff);}
   &-11Gy112{@include txt300(11px, rgba(112, 112, 112, 0.4));}
+  &-11Gy1{@include txt500(11px,#111);}  
   &-11Gy2{@include txt400(11px,#222);}  
   &-11Gy3{@include txt400(11px,#333);}  
   &-11Gy17{@include txt500(11px,rgba(17, 17, 17, 0.5));}  
@@ -110,6 +114,7 @@ abbr{text-decoration: none;}
   &-12Bk{@include txt400(12px,#000);}
   &-12Gy5{@include txt400(12px,#555);}
   &-12Bk3{@include txt400(12px,rgba(0, 0, 0, 0.3));}
+  &-12Bk4{@include txt400(12px,rgba(0, 0, 0, 0.4));}
   &-12Gy3{@include txt500(12px,#333);}
   &-12Gy6{@include txt500(12px,#666);}
   &-13Wt{@include txt300(13px,#fff);}
@@ -126,6 +131,7 @@ abbr{text-decoration: none;}
   &-13GyD{@include txt500(13px,#ddd);}
   &-13Bk{@include txt500(13px,#000);}
   &-13Pu{@include txt500(13px,#8265F6);}
+  &-14BWt5{@include txt400(14px,rgba(255, 255, 255, 0.5))}
   &-14Bk3{@include txt500(14px,rgba(0, 0, 0, 0.3));}
   &-14Gy3{@include txt400(14px,#333);}
   &-14Gy3_02{@include txt500(14px,#333);}

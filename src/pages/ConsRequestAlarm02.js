@@ -11,7 +11,7 @@ const ConsRequestAlarm02 = ({setPopName }) => {
                 <dd className="txt-15Gy5 "><span className="txt-Pu">경찬 </span>님이 참여 요청하셨습니다</dd>
             </dl>
             <div className="RequestMsg_con">
-                <div className="">요청 메시지 :</div>
+                <div className="tit">요청 메시지 :</div>
                 <input type="text" placeholder="상담 입장 요청 메시지 공백 포함 27글자 입니다."/>
             </div>
             <div className="tit-32Pu pb30">57초</div>

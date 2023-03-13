@@ -10,8 +10,6 @@ const UnKnowBtn = ({ popName, setPopName }) => {
                 <button onClick={ e => { setPopName('ConsRequestAlarm02'); }}>0307추가팝업-상담대기실_추가기능패널</button>
                 <button onClick={ e => { setPopName('UsersList'); }}>0308추가팝업-스터디 윗 미 주변 유저 목록 (일반 유저)</button>
                 <button onClick={ e => { setPopName('Announcement02'); }}>0309추가팝업- 디자인변경 공지사항</button>
-                <button onClick={ e => { setPopName('SpaceSet'); }}>0309추가팝업- SpaceSet /스페이스 설정</button>
-
                 <button onClick={ e => { setPopName('More01'); }}>참여모드 팝업 창01</button>
                 <button onClick={ e => { setPopName('More02'); }} style={{background:'pink'}}>More02/ 도서관 스터디 공통UI 더보기</button>
                 <button onClick={ e => { setPopName('MicCamSet'); }} style={{background:'pink'}}>MicCamSet/ 도서관 마이크창</button>
@@ -34,8 +32,9 @@ const UnKnowBtn = ({ popName, setPopName }) => {
                 <button onClick={ e => { setPopName('More10'); }}  style={{background:'#ff2147'}}>More10/ 더보기 창-대강당02</button>
                 <button onClick={ e => { setPopName('Alarm02'); }} style={{background:'#ff2147'}}>Alarm02/ 대강당 - 알림 전체퇴장01</button>
                 <button onClick={ e => { setPopName('Alarm03'); }} style={{background:'#ff2147'}}>Alarm03/ 대강당 - 알림 전체퇴장01</button>
-                <button onClick={ e => { setPopName('More12'); }} style={{background:'#3db0e0'}}>More12/더보기 수정 팝업창</button>
+                <button onClick={ e => { setPopName('More12'); }} style={{background:'#3db0e0'}}>More12/더보기 수정 팝업창-공지사항</button>
                 <button onClick={ e => { setPopName('More13'); }}>More13/인솔자 모드 팝업창</button>
+                <button onClick={ e => { setPopName('More14'); }}>More14/모달팝업_공지사항 비활성화</button>
 
                 <button onClick={ e => { setPopName('Promotion01'); }} style={{background:'#e50028'}}>Promotion01/홍보물설정</button>
                 <button onClick={ e => { setPopName('Promotion02'); }} style={{background:'#e50028'}}>Promotion02/홍보물설정- 이미지 선택01</button>
@@ -54,9 +53,11 @@ const UnKnowBtn = ({ popName, setPopName }) => {
                 <button onClick={ e => { setPopName('Connect'); }} style={{}}>학생/교직원 인증</button>
                 <button onClick={ e => { setPopName('CheongjuConnect'); }} style={{}}>청주대 재학생/교직원 인증</button>
                 <button onClick={ e => { setPopName('Account'); }} style={{}}>계정연결</button>
+                <button onClick={ e => { setPopName('AccountAlarm'); }} style={{}}>AccountAlarm/ 0309추가팝업- 계정연결 인증된 계정</button>
                 <button onClick={ e => { setPopName('MemReg'); }} style={{}}>계정연결 - 알림 멤버등록</button>
                 <button onClick={ e => { setPopName('RegEmail'); }} style={{}}>계정연결 - 오류알림 이미 등록됙 이메일</button>
                 <button onClick={ e => { setPopName('StudentCertified'); }} style={{}}>계정연결 -학생인증</button>
+                <button onClick={ e => { setPopName('StudentCertified02'); }} style={{}}>계정연결 -학생/교직원인증</button>
 
                 <div style={{flex:'none', width: '100%', border: '1px solid #ddd'}}></div>
                 <button onClick={ e => { setPopName('LectureRoom00'); }} style={{background:'#f9ff7e', color:"#000", opacity:"0.7"}}>팝업가이드</button>
@@ -89,7 +90,7 @@ const UnKnowBtn = ({ popName, setPopName }) => {
                 <button onClick={ e => { setPopName('LectureRoom23'); }} style={{background:'#f9ff7e', color:"#000"}}>강의정보 4인</button>
                 {/*<button onClick={ e => { setPopName('LectureRoom24'); }} style={{background:'#f9ff7e', color:"#000", opacity:"0.7"}}>마이크/카메라설정</button>*/}
                 <button onClick={ e => { setPopName('LectureRoom25'); }} style={{background:'#f9ff7e', color:"#000"}}>발표자 화면공유</button>
-                <button onClick={ e => { setPopName('LectureRoom27'); }} style={{background:'#f9ff7e', color:"#000"}}>발표자</button>
+                <button onClick={ e => { setPopName('LectureRoom27'); }} style={{background:'#F9FF7E', color:"#000"}}>발표자</button>
             </div>
         </div>
         </>

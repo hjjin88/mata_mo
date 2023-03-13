@@ -63,7 +63,7 @@ import HostPass from "./HostPass";
 import Connect from "./Connect";
 import CheongjuConnect from "./CheongjuConnect";
 import UsersList from "./UsersList";
-import SpaceSet from "./SpaceSet";
+
 
 import Study_Screen from "./Study_Screen";
 import Study_Share from "./Study_Share";
@@ -74,8 +74,11 @@ import Closet from "./Closet";
 import Makeup from "./Makeup";
 import CampusSelect from "./CampusSelect";
 import StudentCertified from "./StudentCertified";
+import StudentCertified02 from "./StudentCertified02";
 import Account from "./Account";
+import AccountAlarm from "./AccountAlarm";
 import ConsRequestAlarm02 from "./ConsRequestAlarm02";
+
 
 
 import Promotion01 from "./Promotion/Promotion01";
@@ -87,6 +90,7 @@ import Promotion06 from "./Promotion/Promotion06";
 import Promotion07 from "./Promotion/Promotion07";
 import Promotion08 from "./Promotion/Promotion08";
 import Promotion09 from "./Promotion/Promotion09";
+
 
 
 import More01 from "./Morepop/More01";
@@ -102,7 +106,7 @@ import More10 from "./Morepop/More10";
 import More11 from "./Morepop/More11";
 import More12 from "./Morepop/More12";
 import More13 from "./Morepop/More13";
-// import More14 from "./Morepop/More14";
+import More14 from "./Morepop/More14";
 
 import LectureRoom00 from "./LectureRoom/LectureRoom00";
 import LectureRoom01 from "./LectureRoom/LectureRoom01";
@@ -135,9 +139,15 @@ import LectureRoom25 from "./LectureRoom/LectureRoom25";
 import LectureRoom26 from "./LectureRoom/LectureRoom26";
 import LectureRoom27 from "./LectureRoom/LectureRoom27";
 
+// 더본코리아
+
+
 const Popups = ({ popName, setPopName }) => {
     return (
         <>
+        {/* 더본코리아 */}
+
+
         {/* LtTopBar */}
         { popName === 'Menu' && (
           <Menu setPopName={setPopName} />
@@ -363,8 +373,14 @@ const Popups = ({ popName, setPopName }) => {
         { popName === 'StudentCertified' && (
           <StudentCertified setPopName={setPopName} />
         )}
+        { popName === 'StudentCertified02' && (
+          <StudentCertified02 setPopName={setPopName} />
+        )}
         { popName === 'Account' && (
           <Account setPopName={setPopName} />
+        )}
+        { popName === 'AccountAlarm' && (
+          <AccountAlarm setPopName={setPopName} />
         )}
         { popName === 'ConsRequestAlarm02' && (
           <ConsRequestAlarm02 setPopName={setPopName} />
@@ -372,10 +388,6 @@ const Popups = ({ popName, setPopName }) => {
         { popName === 'UsersList' && (
           <UsersList setPopName={setPopName} />
         )}
-        { popName === 'SpaceSet' && (
-          <SpaceSet setPopName={setPopName} />
-        )}
-
 
 
         { popName === 'Promotion01' && (
@@ -405,7 +417,6 @@ const Popups = ({ popName, setPopName }) => {
         { popName === 'Promotion09' && (
           <Promotion09 setPopName={setPopName} />
         )}
-
 
 
         {/* 더보기 창  */}
@@ -448,11 +459,11 @@ const Popups = ({ popName, setPopName }) => {
         { popName === 'More13' && (
           <More13 setPopName={setPopName} />
         )}
-        {/* { popName === 'More14' && (
+        { popName === 'More14' && (
           <More14 setPopName={setPopName} />
-        )} */}
-                { popName === 'LectureRoom00' && (
-            <LectureRoom00 setPopName={setPopName} />
+        )}
+        { popName === 'LectureRoom00' && (
+          <LectureRoom00 setPopName={setPopName} />
         )}
         { popName === 'LectureRoom01' && (
             <LectureRoom01 setPopName={setPopName} />
@@ -542,7 +553,7 @@ const Popups = ({ popName, setPopName }) => {
             <LectureRoom26 setPopName={setPopName} />
         )}
         { popName === 'LectureRoom27' && (
-            <LectureRoom27 setPopName={setPopName} />
+          <LectureRoom27 setPopName={setPopName} />
         )}
         </>
     )

@@ -117,9 +117,11 @@ $res_root: 'http://localhost:3000';
 .BtRtPop{@include popBtRt();}
 
 // 메인 중앙 팝업창
-@mixin CenterCon(){@include LtCon(50%, 50%, 10);transform: translate(-50%, -50%);width: 100%; max-height:100vh;overflow: hidden;background: #FFFFFF;border-radius: 0;}
-.CtPop{@include CenterCon();}
-
+// @mixin CenterCon(){@include LtCon(50%, 50%, 10);transform: translate(-50%, -50%);width: 100%; max-height:100vh;overflow: hidden;background: #FFFFFF;border-radius: 0;}
+// .CtPop{@include CenterCon();}
+// 메인 중앙 팝업창
+@mixin CenterCon2(){@include LtCon(50%, 50%, 10);transform: translate(-50%, -50%);width: 335px; max-height:100vh;overflow: hidden;background: #FFFFFF;border-radius: 10px;}
+.CtPop02{@include CenterCon2();}
 // 우측 중앙 팝업창
 @mixin popCenter(){@include RtCon(0, 0, 10); transform: translateY(0); border-radius: 0; width: 100%; max-height: 100vh;}
 .RtCtPop{@include popCenter();}
@@ -140,25 +142,25 @@ $res_root: 'http://localhost:3000';
 
 // *************************************************추가 공통
 
-.con-wrap {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 0;
-  overflow: hidden;
-  height: auto;
-  max-height: 679px;
-  padding: 20px 5px 20px 20px;
-  .con-inner-col {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    max-height: 589px;
-    padding: 0px 10px 0 0;
-}
-}
+// .con-wrap {
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+//   gap: 0;
+//   overflow: hidden;
+//   height: auto;
+//   max-height: 679px;
+//   padding: 20px 5px 20px 20px;
+//   .con-inner-col {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 15px;
+//     overflow-y: scroll;
+//     overflow-x: hidden;
+//     max-height: 589px;
+//     padding: 0px 10px 0 0;
+// }
+// }
 .write-con {
   color: #222;
   position: relative;
@@ -1139,6 +1141,24 @@ button[class*="-L"] {
     }
   }
 }
+// 나의 활동일지 달력 위치
+.MyActivity {
+  .form-control .datepicker-input{
+    font-size: 12px;
+  }
+  .board-option{
+    width: 335px;
+  }
+  .calendar_mo{
+    position: absolute;
+    top: 43px;
+    right: 0;
+    background-color: #fff;
+    width: 270px;
+    height: 240px;
+    z-index: 1;
+  }
+}
 }
 
 
@@ -1360,47 +1380,38 @@ button[class*="-L"] {
     }
   }
 
-  // // 메인 하단 더보기 버튼
-  // .More{
-  //   @include BtLtCon(0px, 50%, 10); transform: translateX(-50%); right: auto; padding: 45px 25px 30px; border-radius: 30px 30px 0px 0px;
-  // }
-
-  .ProfileDrawer{
-    .subclose {top: 22px;right: 24px;}
-    .layer-pop .layer-wrap {border-radius: 0;}
-    .login-wrap {width: 812px; height: 100vh; padding: 74px 70px 0; margin-bottom: 0;}
-    .login-wrap .form-join {padding-bottom: 30px;}
-    .login-wrap .form-join .form-label {margin-bottom: 24px;}
-    .login-wrap .form-join dl dd.avatar .form-control-group {align-items: center; gap: 44px;}
-    .login-wrap .form-join dl+dl .form-label {margin-bottom: 13px;}
+.ProfileDrawer{
+  .subclose {top: 22px;right: 24px;}
+  .layer-pop .layer-wrap {border-radius: 0;}
+  .login-wrap {width: 812px; height: 100vh; padding: 74px 70px 0; margin-bottom: 0;}
+  .login-wrap .form-join {padding-bottom: 30px;}
+  .login-wrap .form-join .form-label {margin-bottom: 24px;}
+  .login-wrap .form-join dl dd.avatar .form-control-group {align-items: center; gap: 44px;}
+  .login-wrap .form-join dl+dl .form-label {margin-bottom: 13px;}
+}
+.inp-wrap {gap: 15px;}
+.inp-wrap input {padding: 14px 16px;}
+.Connect{
+  width: 335px;
+  height: 308px;
+  .popCon{
+    max-height: 250px;
   }
-
-  .inp-wrap {gap: 15px;}
-  .inp-wrap input {padding: 14px 16px;}
-
-  .Connect{
-    width: 335px;
-    height: 308px;
-    .popCon{
-      max-height: 250px;
-    }
-    .sec-btns{
-      @include flexCtr(8px);
-      button{
-        padding: 18px 0;
-      }
+  .sec-btns{
+    @include flexCtr(8px);
+    button{
+      padding: 18px 0;
     }
   }
-
-  // 학생인증
-  .StudentCertified{
-    .layer-wrap {
-      .layer-cont {
-        overflow-x: hidden; max-height: 250px;margin:0 3px 0 0;
-      }
+}
+// 학생인증
+.StudentCertified{
+  .layer-wrap {
+    .layer-cont {
+      overflow-x: hidden; max-height: 250px;margin:0 3px 0 0;
     }
   }
-
+}
 // 맵
 .Map {
   @include LtCon(0, 0, 11);
@@ -1539,95 +1550,93 @@ button[class*="-L"] {
     }
   }
 }
-
 // 채팅
-  .Chat{
-    bottom:0;
-    background: #fff;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 130%;
-    color: #333;
-    .layer{z-index: 10;}
-    .subTit {
-      padding: 32px 0 18px;
-      border-bottom: 1px solid #eee;
-      border-radius: 30px;
-    }
-    .popMoBar{display: none;}
-    .ChatCon{
-      max-height: 191px;
-    }
-    .ChatMessage .MessageBox .MessageBoxBtn .downArrow{top: 20px;}
+.Chat{
+  bottom:0;
+  background: #fff;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 130%;
+  color: #333;
+  .layer{z-index: 10;}
+  .subTit {
+    padding: 32px 0 18px;
+    border-bottom: 1px solid #eee;
+    border-radius: 30px;
   }
-  .ChatMessage_con{
-    .layer{z-index: 10;}
-    .ChatMessage{
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 40px;
-      background: #fff;
-      border: 1px solid #eee;
-    }
-  .MessageBox {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 7px;
-    width: 663px;
-    height: 28px;
-    margin: 5px auto 7px;
-    padding: 6px 0 6px 20px;
-    position: relative;
+  .popMoBar{display: none;}
+  .ChatCon{
+    max-height: 191px;
+  }
+  .ChatMessage .MessageBox .MessageBoxBtn .downArrow{top: 20px;}
+}
+.ChatMessage_con{
+  .layer{z-index: 10;}
+  .ChatMessage{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background: #fff;
     border: 1px solid #eee;
-    border-radius: 29px;
+  }
+.MessageBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+  width: 663px;
+  height: 28px;
+  margin: 5px auto 7px;
+  padding: 6px 0 6px 20px;
+  position: relative;
+  border: 1px solid #eee;
+  border-radius: 29px;
 }
 .MessageBoxBtn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 7px;
-  height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 7px;
+height: 100%;
 }
 .downArrow {
-  top: 7px;
-  left: 51px;
+top: 7px;
+left: 51px;
 }
 .MessageBox .messageInput {
-  background: none;
-  border: none;
-  outline: none !important;
-  resize: none;
-  width: 82%;
-  height: 12px;
-  padding: 0 10px;
-  border-left: 1px solid rgba(221, 221, 221, 0.8);
+background: none;
+border: none;
+outline: none !important;
+resize: none;
+width: 82%;
+height: 12px;
+padding: 0 10px;
+border-left: 1px solid rgba(221, 221, 221, 0.8);
 }
 .Message-toggle{
-  @include BtLtCon(0, 0, 0);display: flex;flex-direction: column;align-items: flex-start;justify-content: center;gap: 21px;width: 94px;height: 89px;padding: 12px 16px;background: #FFFFFF;border: 1px solid #EEEEEE;box-shadow: 2px 2px 3px rgba(153, 153, 153, 0.15);border-radius: 12px;
-  button:hover {color: #62BD53;}
+@include BtLtCon(0, 0, 0);display: flex;flex-direction: column;align-items: flex-start;justify-content: center;gap: 21px;width: 94px;height: 89px;padding: 12px 16px;background: #FFFFFF;border: 1px solid #EEEEEE;box-shadow: 2px 2px 3px rgba(153, 153, 153, 0.15);border-radius: 12px;
+button:hover {color: #62BD53;}
 }
-  }
+}
 // 상담실-상담등록 -----   진희씨 css 중복작업 확인하기
-  .ConsProduce{
-    .subTit{border-bottom: 1px solid rgba(0, 0, 0, 0.1);}
-    .con-wrap{max-height: 295px;}
-    .write-con.detail.more{height: 157px;margin-bottom: 20px}
-    .ConsProduce-inner .txt-13Gy2{
-      // text-align: left;
-      line-height: 140%;
-    }
-    .write-con.detail{height: 157px;margin-bottom: 20px;}
-    .ConsProduce-inner .write-con.code{position: unset;padding: 15px 20px;}
-    .Copypop-bk{
-      top: auto;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+.ConsProduce{
+  .subTit{border-bottom: 1px solid rgba(0, 0, 0, 0.1);}
+  .con-wrap{max-height: 295px;}
+  .write-con.detail.more{height: 157px;margin-bottom: 20px}
+  .ConsProduce-inner .txt-13Gy2{
+    // text-align: left;
+    line-height: 140%;
   }
-
+  .write-con.detail{height: 157px;margin-bottom: 20px;}
+  .ConsProduce-inner .write-con.code{position: unset;padding: 15px 20px;}
+  .Copypop-bk{
+    top: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 // 마이룸 메인페이지 버튼
 .CampusGoing{bottom: 70px;}
 // 마이룸 옷장
@@ -1875,7 +1884,6 @@ button[class*="-L"] {
 .Tutorial.Announcement02{
   .swiper-button-prev:after, .swiper-button-next:after{font-size: 11px;}
 }
-
 // 스페이스 설정
 .SpaceSet{
   color: #000;
@@ -2034,6 +2042,21 @@ button[class*="-L"] {
     .con-inner-col {
       max-height: 237px;
     }
+  }
+}
+// 나의 활동일지 달력 위치
+.MyActivity {
+  .board-option{
+    width: 360px;
+  }
+  .calendar_mo{
+    position: absolute;
+    top: 43px;
+    left: 0;
+    background-color: #fff;
+    width: 270px;
+    height: 240px;
+    z-index: 1;
   }
 }
 }

@@ -11,7 +11,7 @@ const CheongjuConnect = ({setPopName }) => {
 
     return (
         <>
-        <div className="Connect">
+        <div className="Connect CtPop02">
             <button type="button" className="subclose close16" onClick={(e) => {setPopName();}} />
             <div className="popTit">청주대 재학생/교직원 인증</div>
             <div className="popCon">

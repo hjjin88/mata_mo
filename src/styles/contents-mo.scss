@@ -1,4 +1,4 @@
-$res_root: 'http://localhost:3002';
+$res_root: 'http://localhost:3000';
 
 // 백그라운드 
 @mixin bg($name, $path: $res_root +"/resources/img/", $format: "svg") {
@@ -584,10 +584,24 @@ $res_root: 'http://localhost:3002';
     // height: 390px;
     right: auto;
     left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
     max-height: none;
+    border-radius: 20px;
     .MyProfileCon{
       .MyProfileInner{padding: 30px 0;}
+    }
+    .ProfileView-btns {
+      padding-top: 40px;
+      width: 129px;
+      .LRBar::before {display: none;}
+    }
+  }
+  .Voters {
+    .ProfileView-btns {
+      padding-top: 30px;
+      width: 223px;
+      .LRBar::before {display: block;}
     }
   }
 
@@ -1027,13 +1041,14 @@ $res_root: 'http://localhost:3002';
       justify-content: unset;
       align-items: unset;
       box-sizing: border-box;
-      textarea{
+      .memo-txt {
         overflow-y: scroll;
         overflow-x: hidden;
-        padding-right: 8px;
+        padding-right: 20px;
         margin-right: 2px;
         width: 100%;
         height: 100%;
+        .txt-14Gy2 {line-height: 140%;}
       }
     }
   }
@@ -1104,7 +1119,7 @@ $res_root: 'http://localhost:3002';
       background: #F2F3F8;
       outline: none;
     }
-    .cam-con.ty04{
+    .cam-con.t00y04{
       flex-wrap: nowrap;
       flex-direction: column;
       justify-content: flex-start;
@@ -1145,10 +1160,10 @@ $res_root: 'http://localhost:3002';
   .PrivateScreen{
     width: 100%;
     margin: 0;
-    padding: 0 26px 15px 30px;
-    margin-right: 4px;
+    padding: 124px 0 127px 0;
     left: 50%;
     transform: translate(-50%, -50%);
+    height: 100%;
     [class*="cam-con"]{
       overflow: hidden;
       width: 100%;
@@ -1158,22 +1173,81 @@ $res_root: 'http://localhost:3002';
       flex-flow: row wrap;
       align-content: center;
     }
+    .cam-con.ty01 {
+      padding: 0 30px;
+    }
+    .cam-con.tyZoomOut {
+      padding: 0 30px;
+      align-content: flex-start;
+      .camScreen {height: 94%;}
+    }
     .cam-con.ty02{
-      flex-flow: unset;
-      .camScreen{width: 50%;height: 500px;}
+      padding: 0 30px;
+      flex-flow: row wrap;
+      .camScreen{width: 100%;height: 270px;}
     } 
-    .cam-con.ty03 .camScreen{
-      width: 710px;
-      height: 395px;
+    .cam-con.ty03 {
+      padding: 0 30px;
+      width: 100%;
+      align-content: flex-start;
+      overflow-y: auto;
+      .camScreen{
+        width: 100%;
+        height: 186px;
+      }
     }
     .cam-con.ty04{
-      align-content: center;
-      width: 1790px;
+      padding: 0 30px;
+      flex-flow: row wrap;
+      align-content: flex-start;
+      width: 100%;
       margin: 0 auto;
+      overflow-y: auto;
       .camScreen{
-        width: 430px;
-        height: 250px;
+        width: 100%;
+        height: 186px;
       }
+    }
+  }
+
+  .cam-con{
+    .cam-desc{
+      font-size: 13px;
+      padding: 8px 30px;
+    }
+    .zoomOut{
+      width: 180px;
+      height: 120px;
+      right: 0 !important;
+      bottom: -36px !important;
+      .cam-desc{
+        width: 119px;
+        padding: 8px 29px;
+      }
+    }
+    [class*="pfp"]{ 
+      width: 30px;
+      height: 30px;
+      background: #fff; 
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    [class*="topLt"]{
+      @include LtCon(10px, 10px, 0);
+    }
+    [class*="topRt"]{
+      @include RtCon(10px, 10px, 0);
+    }
+    [class*="btLt"]{
+      @include BtLtCon(10px, 10px, 0);
+    }
+    [class*="btRt"]{
+      @include BtRtCon(10px, 10px, 0);
+    }
+    .bottom-pfp{
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
     }
   }
 
@@ -1350,6 +1424,16 @@ $res_root: 'http://localhost:3002';
     input{
       width: 277px;
     }
+  }
+  
+  .ClientListAll{
+    .popCon.ty-01 {
+      max-height: calc(100vh - 158px);
+      padding: 20px 26px 20px 30px;
+      margin: 0 0 20px 0;
+    }
+    .center {margin-bottom: 24px !important;}
+    
   }
 
 }
@@ -1804,15 +1888,24 @@ $res_root: 'http://localhost:3002';
     transform: translate(-50%, -50%);
     max-height: 354px;
     border-radius: 20px;
-    .MyProfileCon{
-      
+    .MyProfileCon{      
       .MyProfileInner{padding: 9px 0 25px;}
     }
     .distance{
       @include RtCon(122px, 93px, 0);
     }
-    .ProfileView-btns{
+    .ProfileView-btns {
       padding-top: 30px;
+      width: 129px;
+      .LRBar::before {display: none;}
+    }
+  }
+
+  .Voters {
+    .ProfileView-btns {
+      padding-top: 30px;
+      width: 223px;
+      .LRBar::before {display: block;}
     }
   }
 
@@ -2260,13 +2353,14 @@ $res_root: 'http://localhost:3002';
       justify-content: unset;
       align-items: unset;
       box-sizing: border-box;
-      textarea{
+      .memo-txt {
         overflow-y: scroll;
         overflow-x: hidden;
-        padding-right: 8px;
+        padding-right: 20px;
         margin-right: 2px;
         width: 100%;
         height: 100%;
+        .txt-14Gy2 {line-height: 140%;}
       }
     }
   }
@@ -2388,10 +2482,10 @@ $res_root: 'http://localhost:3002';
   .PrivateScreen{
     width: 100%;
     margin: 0;
-    padding: 0 26px 15px 30px;
-    margin-right: 4px;
+    padding: 75px 0 80px 0;
     left: 50%;
     transform: translate(-50%, -50%);
+    height: 100%;
     [class*="cam-con"]{
       overflow: hidden;
       width: 100%;
@@ -2401,33 +2495,87 @@ $res_root: 'http://localhost:3002';
       flex-flow: row wrap;
       align-content: center;
     }
-    .cam-con.ty02{
-      flex-flow: unset;
-      .camScreen{width: 50%;height: 500px;}
-    } 
-    .cam-con.ty03 .camScreen{
-      width: 710px;
-      height: 395px;
-    }
-    .cam-con.ty04{
-      justify-content: flex-start;
+    .cam-con.tyZoomOut {
+      padding: 0 30px;
       align-content: flex-start;
+      justify-content: space-between;
+      .camScreen {width: 73%; height: 100%;}
+    }
+    .cam-con.ty01 {
+      padding: 0 60px;
+    }
+    .cam-con.ty02{
+      padding: 0 60px;
+      .camScreen{width: 50%;height: 220px;}
+    } 
+    .cam-con.ty03 {
+      padding: 0 60px;
       width: 100%;
-      padding-bottom: 10px;
-      margin: 0 auto;
-      max-height: 100%;
-      overflow-y: scroll;
+      flex-flow: row wrap;
+      align-content: flex-start;
+      justify-content: flex-start;
+      gap: 15px;
+      overflow-y: auto;
       .camScreen{
         width: 160px;
         height: 160px;
-        flex-shrink: 0;
-        border: 1px solid #EEEEEE;
-        border-radius: 10px;
-        box-sizing: border-box;
-        video {
-          border-radius: 10px;
-        }
       }
+    }
+    .cam-con.ty04{
+      padding: 0 60px;
+      width: 100%;
+      flex-flow: row wrap;
+      align-content: flex-start;
+      justify-content: flex-start;
+      margin: 0 auto;
+      gap: 15px;
+      overflow-y: auto;
+      .camScreen{
+        width: 160px;
+        height: 160px;
+      }
+    }
+  }
+
+  .cam-con{
+    .cam-desc{
+      width: 119px;
+      font-size: 13px;
+      padding: 8px 29px;
+    }
+    .zoomOut{
+      width: 180px;
+      height: 120px;
+      bottom: 0 !important;
+      right: -38% !important;
+      .cam-desc{
+        width: 119px;
+        padding: 8px 29px;
+      }
+    }
+    [class*="pfp"]{ 
+      width: 30px;
+      height: 30px;
+      background: #fff; 
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    [class*="topLt"]{
+      @include LtCon(10px, 10px, 0);
+    }
+    [class*="topRt"]{
+      @include RtCon(10px, 10px, 0);
+    }
+    [class*="btLt"]{
+      @include BtLtCon(10px, 10px, 0);
+    }
+    [class*="btRt"]{
+      @include BtRtCon(10px, 10px, 0);
+    }
+    .bottom-pfp{
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
     }
   }
 
@@ -2633,4 +2781,13 @@ $res_root: 'http://localhost:3002';
     }
   }
 
+  .ClientListAll{
+    .popCon.ty-01 {
+      max-height: calc(100vh - 155px);
+      padding: 20px 26px 20px 30px;
+      margin: 0 0 20px 0;
+    }
+    .popMoBar.bt {display: none;}
+  }
+  
 }

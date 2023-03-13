@@ -15,7 +15,7 @@ const PrivateScreen = ({setPopName }) => {
         <div className="layer01" />
         <div className="PrivateScreen">
             {/* 화면보기 1인 */}
-            <div className="cam-con ty01">
+            {/* <div className="cam-con ty01">
                 <div className="camScreen">
                     <video src="" />
                     <img className="topLt-pfp" src="/resources/img/bg.png" alt="화면 이미지" />
@@ -24,7 +24,7 @@ const PrivateScreen = ({setPopName }) => {
                         <p>Sophia</p>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* 화면보기 2인 */}
             {/* <div className="cam-con ty02">
@@ -37,7 +37,7 @@ const PrivateScreen = ({setPopName }) => {
                     </div>
                     <button type="button" className="topRt-pfp">
                         <img src="/resources/img/zoom20.svg" alt="화면 이미지" />
-                    </button>                    
+                    </button>
                     <button type="button" className="btRt-pfp" onClick={toggleHandler}>
                         <img src={`/resources/img/${isOn ? "mikeOff20" : "mikeOn20" }.svg`} alt="마이크 버튼 이미지" />
                     </button>   
@@ -59,7 +59,7 @@ const PrivateScreen = ({setPopName }) => {
             </div> */}
 
             {/* 화면보기 2인-축소 */} {/* 화면보기 2인-축소-카메라없음 */}
-            {/* <div className="cam-con ty01">
+            {/* <div className="cam-con ty01 tyZoomOut">
                 <div className="camScreen">
                     <video src="" />
                     <img className="topLt-pfp" src="/resources/img/bg.png" alt="화면 이미지" />
@@ -143,7 +143,7 @@ const PrivateScreen = ({setPopName }) => {
             </div> */}
 
             {/* 화면보기 8인 */}
-            {/* <div className="cam-con ty04">
+            <div className="cam-con ty04">
                 <div className="camScreen">
                     <video src="" />
                     <img className="topLt-pfp" src="/resources/img/bg.png" alt="화면 이미지" />
@@ -252,7 +252,7 @@ const PrivateScreen = ({setPopName }) => {
                         <img src={`/resources/img/${isOn ? "mikeOff20" : "mikeOn20" }.svg`} alt="마이크 버튼 이미지" />
                     </button>   
                 </div>
-            </div> */}
+            </div>
         </div>
 
 

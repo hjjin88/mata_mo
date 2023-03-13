@@ -34,16 +34,16 @@ const ProfileView = ({setPopName}) => {
                     <div className="ProfileView-btns txt-11Gy2">
                         <button type="button">
                             <img src="/resources/img/following24.svg" alt="유저 아이콘 이미지" />
-                            <p>팔로잉</p>                              
+                            <p>팔로우</p>                              
                         </button>
                         <button type="button" className="LRBar">
                             <img src="/resources/img/follow24.svg" alt="유저 아이콘 이미지" />
                             <p>따라가기</p>                        
                         </button>
-                        <button type="button">
+                        {/* <button type="button">
                             <img src="/resources/img/whisper24.svg" alt="유저 아이콘 이미지" />
-                            <p>귓속말</p>                          
-                        </button>
+                            <p>귓속말</p>
+                        </button> */}
                     </div>
                 </div>
             </div>

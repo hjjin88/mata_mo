@@ -6,8 +6,8 @@ const ClientList = ({popName, setPopName }) => {
     return (
         <>
         <div className="Around">
-            <button type="button" className="subclose close16" onClick={ e => { setPopName(); }} />
-            <div className="popTit">내담자목록</div>
+            <div className="popMoBar" />
+            {/* <button type="button" className="subclose close16" onClick={ e => { setPopName(); }} /> */}
                 <ul className="AroundCon txt-12Gy6">
                     <li className="Profile-set">
                         <button type="button" onClick={e => { setPopName('ClientListAll'); }}><div className="allBtn">ALL</div></button></li>

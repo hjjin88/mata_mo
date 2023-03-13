@@ -4,6 +4,7 @@ import './styles/contents.scss';
 import './styles/lectureRoom.scss';
 import './styles/contents-mo.scss';
 import './styles/contents-mo_02.scss';
+import './styles/lectureRoom-mo_02.scss';
 import MainPage from "./pages/MainPage";
 import MyRoom from "./pages/MyRoom";
 import CounselingwaitingRoom from "./pages/CounselingwaitingRoom";

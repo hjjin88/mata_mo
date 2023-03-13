@@ -9,6 +9,7 @@ const ClientListAll = ({popName, setPopName }) => {
     return (
         <>
         <div className="ClientListAll popCenter">
+            <div className="popMoBar bt" />
             <button type="button" className="subclose close16" onClick={ e => { setPopName(); }} />
             <div className="popTit">내담자 목록</div>
             <ul className="popCon ty-01">

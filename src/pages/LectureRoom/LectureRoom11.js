@@ -1,6 +1,7 @@
 import {useState} from "react";
+import PopFooter from "../PopFooter";
 
-const LectureRoom00 = ({setPopName }) => {
+const LectureRoom00 = ({popName, setPopName }) => {
     const [MikeToggle, setMikeToggle] = useState(false);
     const [MikeOn, setMikeOn] = useState(false);
     const [isOn, setisOn] = useState(false);
@@ -10,7 +11,7 @@ const LectureRoom00 = ({setPopName }) => {
     return (
         <>
             <div className="layer" />
-            <div className="lecture-room layer-right-top">
+            <div className="lecture-room layer-center">
                 <button type="button" className="subclose close16" onClick={(e) => {setPopName();}} />
                 <div className="layer-wrap">
                     <div className="layer-head">발표자</div>
@@ -88,6 +89,7 @@ const LectureRoom00 = ({setPopName }) => {
                         </div>
                     </div>
                 </div>
+                <PopFooter popName={popName} setPopName={setPopName} />
             </div>
         </>
     )

@@ -52,6 +52,19 @@ const LectureRoom00 = ({setPopName }) => {
                             </div>
                         </div>
                     </div>
+                    <div className="webcam">
+                        <video className="webcam-video" src="" />
+                        <p className="webcam-none-camera">카메라 없음</p>
+                        <div className="webcam-info">
+                            <div className="webcam-user">
+                                <span className="webcam-user-image"><img src="/resources/img/bg.png" alt=""/></span>
+                                <span className="webcam-user-name">name</span>
+                            </div>
+                            <div className="webcam-buttons">
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

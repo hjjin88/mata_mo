@@ -82,35 +82,14 @@ $res_root: 'http://localhost:3000';
   
     &-call {
       &-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        width: 484px;
-  
-        .webcam {
-          border: 1px solid #EEEEEE;
-        }
+        gap: 20px;
+        width: auto;
       }
   
       &-item {
-        position: relative;
-        flex: 0 1 calc(50% - 9px);
-        //aspect-ratio: 235 / 138; // 동영상의 비율이 16:9아닌 이유는?
-        aspect-ratio: 16 / 9;
-        overflow: hidden;
-        box-sizing: content-box;
-        min-width: 235px;
-  
-        &:is(button) {
-          color: #ccc;
-          font: {
-            size: 13px;
-            weight: 500;
-          };
-          border: 1px solid rgba(238, 238, 238, 0.5);
-          border-radius: 20px;
-          background-color: #fff;
-        }
+        flex: 1 1 auto;
+        // aspect-ratio: 16 / 9;
+        aspect-ratio: 318 / 158;
       }
   
       &-none-camera {
@@ -139,292 +118,41 @@ $res_root: 'http://localhost:3000';
           width: auto;
         }
         &-item {
-          flex: 0 1 100%;
-        }
-      }
-    }
-  
-    &-chromakey {
-      display: flex;
-      gap: 22px;
-  
-      &-color {
-        width: 302px;
-        aspect-ratio: 302 / 230;
-        padding: 9px;
-        border: 1px solid #EEEEEE;
-        border-radius: 20px;
-  
-        &-select {
-          position: relative;
-          width: 100%;
-          aspect-ratio: 282 / 93;
-          margin-bottom: 10px;
-          border: {
-            radius: 8px;
-          };
-          background-color: #F2F3F8;
-  
-          &-range {
-            position: absolute;
-            left: -1px;
-            bottom: -1px;
-            width: 100%;
-  
-            .color-range {
-              height: 25px;
-              border-radius: 0px 0px 8px 8px;
-  
-              &::after {
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                border-radius: 0px 0px 8px 8px;
-              }
-            }
-          }
-  
-        }
-  
-        &-info {
-          position: absolute;
-          left: 8px;
-          top: 8px;
-          color: #fff;
-          font-size: 8px;
-          line-height: 100%;
-          .hex {
-            margin-bottom: 6px;
-          }
-          .rgb {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-          }
-        }
-  
-        &-title {
-          font: {
-            size: 12px;
-            weight: 400;
-          };
-          margin-bottom: 10px;
-          color: #000;
-          line-height: 100%;
-        }
-  
-        &-range {
-          margin-bottom: 10px;
-        }
-  
-        &-list {
-          position: relative;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 8px;
-          padding-left: 63px;
-  
-          button:not(.lecture-chromakey-picker) {
-            width: 24px;
-            height: 24px;
-            border-radius: 8px;
-  
-            &:not([style]) {
-              border: 1px solid #EEEEEE;
-            }
-          }
-        }
-      }
-  
-      &-video {
-        order: 1;
-        position: relative;
-        overflow: hidden;
-        width: 302px;
-        aspect-ratio: 302 / 230;
-        background-color: #F2F3F8;
-        border: 1px solid #EEEEEE;
-        border-radius: 20px;
-  
-        label {
-          position: absolute;
-          right: 9px;
-          bottom: 9px;
-          display: flex;
-          align-items: center;
-  
-          span {
-            order: 0;
-            color: #fff;
-            font: {
-              size: 20px;
-              weight: 500;
-            };
-            margin-right: 10px;
-          }
-  
-          input {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-  
-            &:checked ~ i {
-              &::before {
-                background-color: #8265F6;
-              }
-  
-              &::after {
-                transform: translateX(100%);
-              }
-            }
-          }
-  
-          i {
-            position: relative;
-            display: block;
-            width: 50px;
-            height: 28px;
-  
-            &::before {
-              content: '';
-              position: absolute;
-              top: 0;
-              left: 0;
-              border-radius: 14px;
-              display: block;
-              width: 100%;
-              height: 100%;
-              background-color: #D0D0D0;
-              transition: background-color 0.3s;
-            }
-  
-            &::after {
-              content: '';
-              position: relative;
-              display: block;
-              width: 20px;
-              height: 20px;
-              margin: 4px;
-              border-radius: 10px;
-              background-color: #fff;
-              transition: transform 0.3s;
-            }
-          }
-        }
-  
-        .video {
-          width: 100%;
-          height: 100%;
-          background-color: #000;
-        }
-      }
-  
-      &-pointer {
-        cursor: grab;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 30px;
-        height: 29px;
-        background: {
-          image: url($res_root + '/resources/img/color-picker-pointer.svg');
-        };
-  
-        &:active {
-          cursor: grabbing;
-        }
-      }
-  
-      &-picker {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        display: block;
-        flex: none;
-        width: 50px;
-        height: 50px;
-        border-radius: 25px;
-        background: {
-          image: url($res_root + '/resources/img/color-picker.svg');
-        };
-        transform: translateY(-50%);
-        transition: background-color 0.3s;
-  
-        &.active {
-          background-color: rgba(130, 101, 246, 0.15);
-        }
-      }
-  
-      @media (max-width: 768px) {
-        flex-wrap: wrap;
-  
-        &-color {
-          width: 100%;
-        }
-  
-        &-video {
-          order: initial;
-          width: 100%;
+          flex: 1 1 auto;
         }
       }
     }
   
     &-viewer {
-      color: #000;
-      position: absolute;
-      z-index: 10;
-      top: 50%;
-      left: 50%;
-      display: flex;
-      gap: 40px;
-      width: 100%;
-      max-width: calc(100dvw - 104px);
-      max-height: calc(100dvh - 40px);
-      transform: translate(calc(-50% - 32px), -50%);
-  
+      position: relative;
+      padding: 82px 0;
+      left: 0;
+      top: 0;
+      height: 100%;
+      max-width: 100dvw;
+      max-height: 100dvh;
+      transform: translate(0, 0);
+      gap: 12px;
+      overflow-y: auto;
+
       &-announce {
-        display: flex;
-        align-items: center;
-        flex: 1;
-  
+        padding: 0 30px;
         .webcam {
-          width: 100%;
-          aspect-ratio: 1183 / 754;
+          width: 318px;
+          height: 300px;
+          aspect-ratio: 318 / 300;
         }
       }
   
       &-list {
-        display: flex;
+        padding: 0 30px;
+        gap: 20px;
         flex-direction: column;
-        gap: 40px;
-        overflow: auto;
-        max-width: 532px;
-        max-height: calc(100dvh - 40px);
+        max-width: none;
+        max-height: none;
   
         .webcam {
-          aspect-ratio: 532 / 357;
-        }
-      }
-  
-      @media (max-width: 992px) {
-        flex-direction: column;
-        height: calc(100dvh - 40px);
-  
-        &-announce {
-          justify-content: center;
-          .webcam {
-            width: auto;
-            max-width: 100%;
-            height: 100%;
-          }
-        }
-  
-        &-list {
-          justify-content: flex-start;
-          flex-direction: row;
-          max-width: none;
-          min-height: 20%;
+          aspect-ratio: 318 / 158;
         }
       }
     }
@@ -625,7 +353,8 @@ $res_root: 'http://localhost:3000';
     box-sizing: content-box;
     //border: 1px solid #EEEEEE;
     border-radius: 20px;
-    aspect-ratio: 16 / 9;
+    // aspect-ratio: 16 / 9;
+    aspect-ratio: 318 / 158;
   
     &-video {
       width: 100%;
@@ -754,7 +483,7 @@ $res_root: 'http://localhost:3000';
   }
   
   /*!
-   * layer 완료
+   * layer
    */
   .layer {
     @mixin layer($type: 'default') {
@@ -847,6 +576,50 @@ $res_root: 'http://localhost:3000';
       @include layer($type: 'center');
       width: 100%;
       height: 100%;
+    }
+
+    &-right-bottom {
+      bottom: 0;
+      right: auto;
+      left: 0;
+      transform: translate(0, 0);
+      border-radius: 20px 20px 0 0;
+      width: 100%;
+      height: 451px;
+      max-width: 375px;
+      max-height: none;
+      .subclose {
+        top: 34px;
+        right: 24px;
+      }
+      .layer {
+        &-head {
+          padding: 32px 0 18px;
+          font-size: 24px;          
+        }
+  
+        &-wrap {
+          max-height: calc(100dvh - 76px);
+          height: 100%;
+        }
+  
+        &-body {
+          height: 100%; 
+          max-height: 100dvh;
+          padding: 15px 25px 25px 15px;
+        }
+  
+        &-footer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+          button {
+            width: 100%;
+            max-width: 345px;
+          }
+        }
+      }
     }
 
     &-share {

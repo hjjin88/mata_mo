@@ -84,6 +84,7 @@ const UnKnowBtn = ({ popName, setPopName }) => {
                 <button onClick={ e => { setPopName('LectureRoom23'); }} style={{background:'#f9ff7e', color:"#000"}}>강의정보 4인</button>
                 {/*<button onClick={ e => { setPopName('LectureRoom24'); }} style={{background:'#f9ff7e', color:"#000", opacity:"0.7"}}>마이크/카메라설정</button>*/}
                 <button onClick={ e => { setPopName('LectureRoom25'); }} style={{background:'#f9ff7e', color:"#000"}}>발표자 화면공유</button>
+                <button onClick={ e => { setPopName('LectureRoom27'); }} style={{background:'#f9ff7e', color:"#000"}}>발표자</button>
             </div>
         </div>
         </>

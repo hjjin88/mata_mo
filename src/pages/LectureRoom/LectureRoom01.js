@@ -25,7 +25,7 @@ const LectureRoom00 = ({popName, setPopName}) => {
     return (
         <>
             <div className="layer" />
-            <div className="lecture-room MicCamSet layer-center ">
+            <div className="lecture-room MicCamSet layer-center LectureRoom01">
                 <button
                     type="button" className="subclose close16" onClick={(e) => {
                     setPopName();
@@ -116,6 +116,10 @@ const LectureRoom00 = ({popName, setPopName}) => {
                                                     유의사항 : 수업 시간 엄수"
                                                 ></textarea>
                                         </div>
+                                        <button type="button" 
+                                            className={`sec-btn-L ${View ? "on02" : "off02"} tit-20Gy3`}
+                                            onClick={() => {setView(!View)}} 
+                                            >등록</button>
                                     </div>
                                 </div>
                             </div>

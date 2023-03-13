@@ -19,8 +19,8 @@ const LectureRoom00 = ({popName, setPopName }) => {
                             <table className="table-list">
                             <thead>
                             <tr>
-                                <th><button type={"button"} className="question-list-button">질문목록</button></th>
-                                <th></th>
+                                <th width='75px'><button type={"button"} className="question-list-button">질문목록</button></th>
+                                <th width='50px'></th>
                                 <th></th>
                                 <th><button type={"button"} className="question-list-add">질문하기</button></th>
                             </tr>

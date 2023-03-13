@@ -1,13 +1,14 @@
 import {useState} from "react";
+import PopFooter from "../PopFooter";
 
-const LectureRoom15 = ({setPopName }) => {
+const LectureRoom15 = ({popName, setPopName }) => {
 
     const [View, setView] = useState(false); 
 
     return (
         <>
             <div className="layer" />
-            <div className="lecture-room layer-center app-color-wrap">
+            <div className="lecture-room layer-center app-color-wrap layer-none-height">
                 <button type="button" className="subclose close16" onClick={(e) => {setPopName();}} />
                 <div className="layer-wrap">
                     <div className="layer-head">크로마키</div>
@@ -57,74 +58,23 @@ const LectureRoom15 = ({setPopName }) => {
                                 <button type="button" style={{backgroundColor: '#FF5950'}}></button>
                                 <button type="button" style={{backgroundColor: '#FF4960'}}></button>
                                 <button type="button" style={{backgroundColor: '#FF3970'}}></button>
-                                <button type="button" style={{backgroundColor: '#FF2980'}}></button>
-                                <button type="button" style={{backgroundColor: '#FF1990'}}></button>
-                                <button type="button" style={{backgroundColor: '#FF9911'}}></button>
-                                <button type="button" style={{backgroundColor: '#FF9912'}}></button>
-                                <button type="button" style={{backgroundColor: '#FF9913'}}></button>
-                                <button type="button" style={{backgroundColor: '#FF9914'}}></button>
-                                <button type="button" style={{backgroundColor: '#FF9915'}}></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
-                                <button type="button"></button>
+                                <button type="button" style={{backgroundColor: '#FF2980'}}></button>     
                             </div>
                             </div>
                             <div className="app-color-range">
-                                <div>
+                                <div className="app-color-range01">
                                     <div className="lecture-chromakey-color-title">컷오프 (0.1234)</div>
                                     <div className="color-range" style={{background: `linear-gradient(90deg, #FFFFFF 20.65%, #1F1F1F 100%)`}}>
                                         <i style={{left: `5%`}}></i>
                                     </div>
                                 </div>
-                                <div>
+                                <div className="app-color-range02">
                                     <div className="lecture-chromakey-color-title">페더링 (0.1234)</div>
                                     <div className="color-range" style={{background: `linear-gradient(90deg, #FFFFFF 20.65%, #1F1F1F 100%)`}}>
                                         <i style={{left: `80%`}}></i>
                                     </div>
                                 </div>
-                                <div>
+                                <div className="app-color-range-btn">
                                     <label>
                                         <input type="checkbox"/>
                                         <span className="txt-11Gy1">크로마키 켜기</span>
@@ -132,6 +82,7 @@ const LectureRoom15 = ({setPopName }) => {
                                     </label>
                                     <button className="lecture-chromakey-pointer" style={{top: '10px', left: '10px'}}></button>
                                 </div>
+                                <button type="button" className={`sec-btn-L${View ? "on02" : "off02"} tit-20Gy3`} onClick={() => {setView(!View)}}>적용하기</button>
                             </div>
                         </div>
                     </div>
@@ -142,6 +93,7 @@ const LectureRoom15 = ({setPopName }) => {
                         >적용하기</button>
                     </div>
                 </div>
+                <PopFooter popName={popName} setPopName={setPopName} />
             </div>
         </>
     )

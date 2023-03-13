@@ -177,13 +177,31 @@ button[class*="-L"] {
   padding: 16px;
 }
 
+// 체크박스
+.form-check{
+  position: absolute;
+  bottom: 32px;
+  right: 40px;
+  z-index: 1;
+  label + input[type="checkbox"]:before { 
+    content: ' ';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    text-align: center; 
+    vertical-align: middle;
+    background: #fff;
+    border: 1px solid #E2E2E2;
+    border-radius : 3px;
+    margin-right: 6px;
+  }
+  label + input[type="checkbox"]:checked:before {  
+    content: '\2714';  
+    color: #8265F6;
+  }
+}
 
-
-
-
-
-
-
+// ****************컴온에 추가할 내용
 
 
 
@@ -500,128 +518,128 @@ button[class*="-L"] {
   
 
 // 맵
-    .Map {
-      @include LtCon(0, 0, 11);
-      display: unset;
+  .Map {
+    @include LtCon(0, 0, 11);
+    display: unset;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+
+    .MapCon {
+      @include bg('map_mo', $format: "png");
       width: 100%;
-      height: 100vh;
-      background: #fff;
-  
-      .MapCon {
-        @include bg('map_mo', $format: "png");
+      height: 714px;
+      padding: 0;
+    }
+    .MapSearch_ty02{display: none;}
+    .MapSearch {
+      @include flexCol(0);
+      padding-top: 20px;
+      border-bottom: 0;
+
+      .MapSearchBox {
+        &::before{
+          top: 23px;
+          left: 21px;
+        }
+        input {
+          width: 335px;
+          height: 54px;
+          padding: 0 49px 0 41px;
+        }
+
+        button {
+          @include RtCon(14px, 21px, 0)
+        }
+      }
+    }
+
+    .SearchList {
+      width: 335px;
+      padding-top: 10px;
+
+      li {
+        width: 160px;
+        background: #fff;
+      }
+    }
+
+    .locationBtnMap40 {
+      @include LtCon(266px, 217px, 0)
+    }
+
+    .currentLocBg {
+      @include bg('currentLoc');
+      @include LtCon(446px, 88px, 0);
+      width: 40px;
+      height: 64px;
+      margin-top: 24px;
+
+      img {
+        width: 32px;
+        height: 32px;
+        margin: 4px;
+        border-radius: 100px;
+      }
+    }
+
+    .mapCurrentLocation40_02 {
+      @include BtRtCon(160px, 20px, 0);
+    }
+
+    .MapLists_mo {
+      position: absolute;
+      bottom: 50px;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      .swiper{
         width: 100%;
-        height: 714px;
-        padding: 0;
+        height: 80px;
       }
-      .MapSearch_ty02{display: none;}
-      .MapSearch {
-        @include flexCol(0);
-        padding-top: 20px;
-        border-bottom: 0;
-  
-        .MapSearchBox {
-          &::before{
-            top: 23px;
-            left: 21px;
-          }
-          input {
-            width: 335px;
-            height: 54px;
-            padding: 0 49px 0 41px;
-          }
-  
-          button {
-            @include RtCon(14px, 21px, 0)
-          }
+      .swiper-slide, swiper-slide{
+        width: 280px !important;
+        margin-right: 20px;
+      }
+      .MapList {
+        width: 280px;
+        height: 80px;
+        background: #fff;
+        box-shadow: 0px 18px 40px rgba(112, 144, 176, 0.12);
+        border-radius: 99px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 9px;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 100%;
+        color: #707070;
+
+        .bldgImg {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
         }
-      }
-  
-      .SearchList {
-        width: 335px;
-        padding-top: 10px;
-  
-        li {
-          width: 160px;
-          background: #fff;
+
+        .titDesc {
+          width: 115px;
+          @include ellipsis(1);
+          padding: 6.6px 0 3px;
         }
-      }
-  
-      .locationBtnMap40 {
-        @include LtCon(266px, 217px, 0)
-      }
-  
-      .currentLocBg {
-        @include bg('currentLoc');
-        @include LtCon(446px, 88px, 0);
-        width: 40px;
-        height: 64px;
-        margin-top: 24px;
-  
-        img {
-          width: 32px;
-          height: 32px;
-          margin: 4px;
-          border-radius: 100px;
-        }
-      }
-  
-      .mapCurrentLocation40_02 {
-        @include BtRtCon(160px, 20px, 0);
-      }
-  
-      .MapLists_mo {
-        position: absolute;
-        bottom: 50px;
-        left: 0;
-        z-index: 0;
-        width: 100%;
-        .swiper{
-          width: 100%;
-          height: 80px;
-        }
-        .swiper-slide, swiper-slide{
-          width: 280px !important;
-          margin-right: 20px;
-        }
-        .MapList {
-          width: 280px;
-          height: 80px;
-          background: #fff;
-          box-shadow: 0px 18px 40px rgba(112, 144, 176, 0.12);
-          border-radius: 99px;
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          padding: 16px 9px;
-          font-weight: 400;
-          font-size: 13px;
-          line-height: 100%;
-          color: #707070;
-  
-          .bldgImg {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-          }
-  
-          .titDesc {
-            width: 115px;
+
+        .tit {
+          @include flexArCtr(8px);
+          width: 132px;
+
+          p {
             @include ellipsis(1);
-            padding: 6.6px 0 3px;
-          }
-  
-          .tit {
-            @include flexArCtr(8px);
-            width: 132px;
-  
-            p {
-              @include ellipsis(1);
-            }
           }
         }
       }
     }
-    // 메인 하단 채팅 버튼
+  }
+// 메인 하단 채팅 버튼
 .Chat.All {
   height: 100%;
   border-radius: 0;
@@ -756,11 +774,369 @@ button[class*="-L"] {
 }
 
 // 공지사항
-.Announcement{
-  width: 356.52px;
-  height: 322px;
-  .Announcement-con{
-    width: 325px;
+.Announcement {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 11;
+
+  .Announcement-con {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .con-wrap {
+      padding: 0;
+    }
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .con-inner-slide {
+      position: relative;
+      width: 315px;
+      height: 322px;
+      padding: 15px 15px 42px;
+      background: #FFFFFF;
+      border-radius: 5px;
+      border: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .con-box {
+      // width: 295px;
+      // height: 265px;
+      background: #F2F3F8;
+      border: 1px solid #E2E2E2;
+      border-radius: 5px;
+
+      .con-tit {
+        padding: 14px;
+      }
+
+      .con-txt {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 218px;
+        padding: 15px 14px;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 140%;
+        color: #000000;
+      }
+    }
+
+    .form-check {
+      bottom: 15px;
+      right: 14px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 100%;
+      text-align: right;
+      color: #111111;
+
+      label {
+        margin-right: 6px;
+      }
+    }
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 11.77px;
+    color: #fff;
+  }
+
+  .swiper-horizontal>.swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    text-align: left;
+    bottom: 16px;
+    left: 32px;
+    top: auto;
+    width: auto;
+  }
+
+  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 5.71px);
+    background: #8265F6;
+    width: 9.14px;
+    height: 9.14px;
+  }
+
+  .swiper-button-next,
+  .swiper-rtl .swiper-button-prev {
+    right: -5px;
+  }
+
+  .swiper-button-prev,
+  .swiper-rtl .swiper-button-next {
+    left: -5px;
+  }
+}
+.Announcement02{
+  @include flexArCtr(0);
+  .Tutorial-con{
+    width: 375px;
+    height: 383px;
+    // padding-top: 50px;
+    margin: 0 auto;
+    img{
+      width: 325px;
+      height: 280px;
+    }
+    p{
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 160%;
+      text-align: center;
+      color: #FFFFFF;
+      padding: 20px;
+      margin: 0;
+    }
+    .check{
+      @include RtCon(470px, 100px, 0);
+      input{
+        width: 12px;
+        height: 12px;
+        border: 1px solid #E2E2E2;
+        background: transparent;
+        margin-left: 6px;
+      }
+    }
+  }
+  .form-check {
+    position: absolute;
+    bottom: 27px;
+    right: 0;
+    width: 100%;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    color: #FFFFFF;
+    label{
+      margin-right: 6px;
+      opacity: 0.5;
+    }
+    label + input[type="checkbox"]:before{
+      background: transparent;
+      border: 1px solid #e2e2e282;
+
+    }
+    label + input[type="checkbox"]:checked:before{
+      color: #fff;
+      content: '';
+      @include bg('check4' );
+      border: 1px solid #e2e2e282;
+      opacity: 1;
+    }
+  }
+  .swiper{height: 430px;}
+  .swiper-button-next, .swiper-rtl .swiper-button-prev, .swiper-button-prev, .swiper-rtl .swiper-button-next{top: 45%;};
+  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{bottom: 181px;}
+}
+// 스페이스 설정
+.SpaceSet {
+  color: #000;
+
+  .con-wrap {
+    padding: 20px 5px 20px 20px;
+    max-height: calc(100% - 139px);
+
+    .con-inner-col {
+      max-height: calc(100% - 76px);
+
+      .tit {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 100%;
+        color: #111111;
+      }
+    }
+  }
+
+  .top_box {
+    width: 335px;
+    height: 207px;
+    overflow: hidden;
+  }
+
+  .SpaceSet_input {
+    .input_con {
+      position: relative;
+      width: 100%;
+      margin-bottom: 30px;
+
+      .input_box {
+        padding: 18px 0 13px 10px;
+        border: 0;
+        border-bottom: 1px solid #eee;
+        width: 100%;
+        text-align: left;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 100%;
+        color: #222222;
+      }
+
+      .Toggle {
+        position: absolute;
+        width: 100%;
+        background: #FFFFFF;
+        border: 1px solid #E6E8F1;
+        border-radius: 5px;
+
+        button {
+          width: 100%;
+          text-align: left;
+          padding: 15px 10px;
+          font-weight: 400;
+          font-size: 11px;
+          line-height: 100%;
+          color: #222222;
+          opacity: 0.8;
+
+          &:hover {
+            background: rgba(245, 245, 245, 0.9);
+          }
+        }
+      }
+
+      .copyGy17 {
+        position: absolute;
+        bottom: 15px;
+        right: 10px;
+      }
+
+      .downArrow {
+        top: auto;
+        // bottom: 15px;
+        right: 10px;
+      }
+    }
+  }
+
+  .SpaceSet_lists {
+    .top_tit {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 20px;
+
+      button {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 100%;
+        color: #ccc;
+
+        img {
+          margin-right: 4px;
+        }
+      }
+    }
+
+    table {
+      display: block;
+      border-collapse: collapse;
+      background: #FFFFFF;
+      border: 1px solid #E6E8F1;
+      border-radius: 5px;
+      width: 331px;
+      height: 207px;
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 100%;
+      color: #222222;
+      opacity: 0.8;
+      overflow: hidden;
+      text-align: left;
+
+      thead th {
+        padding: 14px 0;
+        background: rgba(245, 245, 245, 0.6);
+        border-radius: 0px 5px 5px 0px;
+        font-weight: 700;
+      }
+
+      tbody {
+        display: block;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 160px;
+
+        tr {
+          height: 42px;
+        }
+      }
+
+      th:nth-of-type(1),
+      td:nth-of-type(1) {
+        width: 108px;
+        padding-left: 20px;
+      }
+
+      th:nth-of-type(2),
+      td:nth-of-type(2) {
+        width: 80px;
+      }
+
+      th:nth-of-type(3),
+      td:nth-of-type(3) {
+        width: 100px;
+      }
+
+      th:last-child {
+        width: 40px;
+      }
+
+      .accept {
+        color: rgba(34, 34, 34, 0.4);
+      }
+    }
+  }
+
+  .SpaceSet_lists.Bk {
+    .table th:last-child {
+      width: 140px;
+    }
+  }
+
+  .ellipsis54 {
+    width: 54px;
+    @include ellipsis(1);
+  }
+
+  .ellipsis66 {
+    width: 66px;
+    @include ellipsis(1);
+  }
+
+  .ellipsis100 {
+    width: 100px;
+    @include ellipsis(1);
+  }
+}
+// 홍보물 확인
+.Promotion09 {
+  width: 345px;
+  height: 571px;
+  background: #FFFFFF;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  .con-wrap {
+    max-height: 512px;
+    .con-inner-col {
+      max-height: 493px;
+    }
   }
 }
 }
@@ -1239,7 +1615,7 @@ button[class*="-L"] {
     .con-wrap{max-height: 295px;}
     .write-con.detail.more{height: 157px;margin-bottom: 20px}
     .ConsProduce-inner .txt-13Gy2{
-      text-align: left;
+      // text-align: left;
       line-height: 140%;
     }
     .write-con.detail{height: 157px;margin-bottom: 20px;}
@@ -1325,6 +1701,339 @@ button[class*="-L"] {
   }
   .btn-selectcampus{
     width: 241px;
+  }
+}
+// 공지사항
+.Announcement {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 11;
+
+  .Announcement-con {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .con-wrap {
+      padding: 0;
+    }
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .con-inner-slide {
+      position: relative;
+      width: 391px;
+      height: 239px;
+      padding: 10px 9px;
+      background: #FFFFFF;
+      border-radius: 5px;
+      border: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .con-box {
+      width: 374px;
+      height: 197px;
+      background: #F2F3F8;
+      border: 1px solid #E2E2E2;
+      border-radius: 5px;
+
+      .con-tit {
+        padding: 15px 11px;
+      }
+
+      .con-txt {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 149px;
+        padding: 15px 14px;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 140%;
+        color: #000000;
+      }
+    }
+
+    .form-check {
+      bottom: 15px;
+      right: 14px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 100%;
+      text-align: right;
+      color: #111111;
+
+      label {
+        margin-right: 6px;
+      }
+    }
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 11.77px;
+    color: #fff;
+  }
+
+  .swiper-horizontal>.swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    // text-align: left;
+    bottom: 16px;
+    left: 32px;
+    top: auto;
+    width: auto;
+  }
+
+  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 5.71px);
+    background: #8265F6;
+    width: 9.14px;
+    height: 9.14px;
+  }
+
+  .swiper-button-next,
+  .swiper-rtl .swiper-button-prev {
+    right: -5px;
+  }
+
+  .swiper-button-prev,
+  .swiper-rtl .swiper-button-next {
+    left: -5px;
+  }
+}
+.Announcement02{
+  @include flexArCtr(0);
+  .con-inner-col{
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    img{
+      width: 391px;
+      height: 177px;
+    }
+    p{
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 160%;
+      text-align: center;
+      color: #FFFFFF;
+      padding: 14px;
+      margin: 0;
+    }
+    .check{
+      @include RtCon(470px, 100px, 0);
+      input{
+        width: 12px;
+        height: 12px;
+        border: 1px solid #E2E2E2;
+        background: transparent;
+        margin-left: 6px;
+      }
+    }
+  }
+  .form-check {
+    position: absolute;
+    bottom: 45px;
+    right: -4px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    color: #FFFFFF;
+    label{
+      margin-right: 6px;
+      opacity: 0.5;
+    }
+    label + input[type="checkbox"]:before{
+      background: transparent;
+      border: 1px solid #e2e2e282;
+
+    }
+    label + input[type="checkbox"]:checked:before{
+      color: #fff;
+      content: '';
+      @include bg('check4' );
+      border: 1px solid #e2e2e282;
+      opacity: 1;
+    }
+  }
+  .swiper-slide{margin-top: 15px;}
+  .Tutorial .Tutorial-con .swiper-button-next, .Tutorial .Tutorial-con .swiper-button-prev{top:42%;margin: 0 5%;}
+  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{bottom: 20px;}
+}
+.Tutorial.Announcement02{
+  .swiper-button-prev:after, .swiper-button-next:after{font-size: 11px;}
+}
+
+// 스페이스 설정
+.SpaceSet{
+  color: #000;
+  .con-wrap{
+    padding: 20px 5px 20px 20px;    
+    max-height: 100vh;
+    margin-left: 108px;
+    .con-inner-col{
+      max-height: 100vh;
+      .tit{
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 100%;
+        color: #111111;
+      }
+    }
+  }
+  .top_box{
+    width: 100%;
+    height: 207px;
+    overflow: hidden;
+  }
+  .SpaceSet_input{
+    width: 645px;
+    display: flex;
+    gap: 50px;
+    .input_con{
+      position: relative;
+      width: 100%;
+      margin-bottom: 20px;
+      .input_box{
+        padding: 18px 0 13px 10px;
+        border: 0;
+        border-bottom: 1px solid #eee;
+        width: 100%;
+        text-align: left;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 100%;
+        color: #222222;
+      }
+      .Toggle{
+        position: absolute;
+        z-index: 1;
+        margin-top: 6px;
+        width: 100%;
+        background: #FFFFFF;
+        border: 1px solid #E6E8F1;
+        border-radius: 5px;
+        button{
+          width: 100%;
+          text-align: left;
+          padding: 15px 10px;
+          font-weight: 400;
+          font-size: 11px;
+          line-height: 100%;
+          color: #222222;
+          opacity: 0.8;
+          &:hover{
+            background: rgba(245, 245, 245, 0.9);
+          }
+        }
+      }
+      .copyGy17{
+        position: absolute;
+        bottom: 15px;
+        right: 10px;
+      }
+      .downArrow{
+        top: auto;
+        // bottom: 15px;
+        right: 10px;
+      }
+    }
+  }
+  .SpaceSet_lists{
+    .top_tit{
+      width: 645px;
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      button{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 100%;
+        color: #ccc;
+        img{
+          margin-right: 4px;
+        }
+      } 
+    }
+    table{
+      display: block;
+      border-collapse: collapse;
+      background: #FFFFFF;
+      border: 1px solid #E6E8F1;
+      border-radius: 5px;
+      width: 645px;
+      height: 207px;
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 100%;
+      color: #222222;
+      opacity: 0.8;
+      overflow: hidden;
+      text-align: left;
+      thead th{
+        padding: 14px 0;
+        background: rgba(245, 245, 245, 0.6);
+        font-weight: 700;
+      }
+      tbody {
+        display: block;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 160px;
+        tr{
+          height: 42px;
+        }
+      }
+      th:nth-of-type(1), td:nth-of-type(1) { width: 160px; padding-left: 20px;}
+      th:nth-of-type(2), td:nth-of-type(2) { width: 210px;}
+      th:nth-of-type(3), td:nth-of-type(3) { width: 210px;}
+      th:last-child {width: 63px;}
+      .accept{
+        color: rgba(34, 34, 34, 0.4);
+      }
+    }
+  }
+  .SpaceSet_lists.Bk{
+    padding-bottom: 70px;
+    .table th:last-child {width: 273px;}
+  }
+  .ellipsis54{
+    width: 160px;
+    @include ellipsis(1);
+  }
+  .ellipsis66{
+    width: 160px;
+    @include ellipsis(1);
+  }
+  .ellipsis100{
+    width: 230px;
+    @include ellipsis(1);
+  }
+}
+// 홍보물 확인
+.Promotion09 {
+  width: 335px;
+  height: 335px;
+  background: #FFFFFF;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  .con-wrap {
+    max-height: 277px;
+    .con-inner-col {
+      max-height: 237px;
+    }
   }
 }
 }

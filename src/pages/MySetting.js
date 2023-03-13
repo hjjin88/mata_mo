@@ -21,7 +21,7 @@ const MySetting = ({ popName, setPopName }) => {
                             <div className="cam-view">
                                 <p className="cam-notice">
                                     마이크/카메라 연결 확인
-                                    <span>(설정 &gt; 개인정보 및 보안 &gt; 권한에서 카메라와 마이크 권한 허용이 <br />되어있는지 확인하세요.</span>
+                                    <span>&#40;설정 &gt; 개인정보 및 보안 &gt; 권한에서 카메라와 마이크 권한 허용이 <br />되어있는지 확인하세요.&#41;</span>
                                 </p>
                                 <div className="cam-box">
                                     <video className="video" src="" />

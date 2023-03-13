@@ -23,6 +23,7 @@ import Copypop from "./Copypop";
 // import Copypop02 from "./Copypop02";
 import Tutorial from "./Tutorial";
 import Announcement from "./Announcement";
+import Announcement02 from "./Announcement02";
 import Tour from "./Tour";
 import Voters from "./Voters";
 import VotersProfileView from "./VotersProfileView";
@@ -61,6 +62,8 @@ import CamView from "./CamView";
 import HostPass from "./HostPass";
 import Connect from "./Connect";
 import CheongjuConnect from "./CheongjuConnect";
+import UsersList from "./UsersList";
+import SpaceSet from "./SpaceSet";
 
 import Study_Screen from "./Study_Screen";
 import Study_Share from "./Study_Share";
@@ -83,7 +86,7 @@ import Promotion05 from "./Promotion/Promotion05";
 import Promotion06 from "./Promotion/Promotion06";
 import Promotion07 from "./Promotion/Promotion07";
 import Promotion08 from "./Promotion/Promotion08";
-
+import Promotion09 from "./Promotion/Promotion09";
 
 
 import More01 from "./Morepop/More01";
@@ -215,6 +218,9 @@ const Popups = ({ popName, setPopName }) => {
         )}
         { popName === 'Announcement' && (
           <Announcement setPopName={setPopName} />
+        )}
+        { popName === 'Announcement02' && (
+          <Announcement02 setPopName={setPopName} />
         )}
         { popName === 'Tour' && (
           <Tour setPopName={setPopName} />
@@ -362,7 +368,12 @@ const Popups = ({ popName, setPopName }) => {
         { popName === 'ConsRequestAlarm02' && (
           <ConsRequestAlarm02 setPopName={setPopName} />
         )}
-
+        { popName === 'UsersList' && (
+          <UsersList setPopName={setPopName} />
+        )}
+        { popName === 'SpaceSet' && (
+          <SpaceSet setPopName={setPopName} />
+        )}
 
 
 
@@ -389,6 +400,9 @@ const Popups = ({ popName, setPopName }) => {
         )}
         { popName === 'Promotion08' && (
           <Promotion08 setPopName={setPopName} />
+        )}
+        { popName === 'Promotion09' && (
+          <Promotion09 setPopName={setPopName} />
         )}
 
 

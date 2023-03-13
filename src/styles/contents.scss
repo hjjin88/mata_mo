@@ -86,6 +86,10 @@ html {
 .Enteron32{@include bg('Enteron32');width: 32px;height: 32px;}
 .EnterOff20{@include bg('EnterOff20');width: 32px;height: 32px;}
 .EnterOn20{@include bg('EnterOn20');width: 32px;height: 32px;}
+.copyWt17{@include bg('copyWt17');width: 17px;height: 17px;}
+.copyGy17{@include bg('copyGy17');width: 17px;height: 17px;}
+.manageGy16{@include bg('manageGy16');width: 16px;height: 16px;}
+
 
 // absolute
 @mixin RtCon($top, $Rt, $zIndex){
@@ -383,6 +387,7 @@ button[class*="off04"]{background: #eee;color: #373C45;opacity: 0.4;border: 1px 
     }
   }
 }
+// 체크박스 공통
 .form-check{
   position: absolute;
   bottom: 32px;
@@ -3076,4 +3081,117 @@ input{
   padding-top: 13px;
   width: 300px;
 }
+}
+// 스터디 윗 미 주변 유저 목록 (일반 유저)
+.UsersList {
+  width: 375px;
+  margin-top: 17px;
+  background: #fff;
+  border-radius: 20px;
+
+  .con-wrap {
+    padding: 10px 15px 15px;
+  }
+
+  .guide_con {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    padding: 15px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    color: #333;
+
+    .guide_img {}
+
+    .guide_msg {
+      position: relative;
+      width: 281px;
+      background: #E1DAFF;
+      border-radius: 12px;
+      padding: 12px 15px;
+
+      &::before {
+        content: '';
+        @include bg('guide_msg');
+        @include LtCon(0, -10px, 0);
+        width: 21px;
+        height: 12px;
+      }
+    }
+  }
+
+  .guide_lists {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 150px;
+    padding: 0 15px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    color: #222;
+    opacity: 0.8;
+    background: #fff;
+    border: 1px solid #E2E2E2;
+    border-radius: 12px;
+
+    button {
+      position: relative;
+      text-align: left;
+      width: 100%;
+      padding: 15px 0 15px 25px;
+      border-bottom: 1px solid #F1F1F1;
+      &::before {
+        content: '';
+        @include bg('guideoff24');
+        position: absolute;
+        top: 17px;
+        left: 5px;
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    button.on {
+      color: #8265F6;
+      &::before {
+        @include bg('guideon24');
+      }
+    }
+  }
+}
+
+// 0309추가팝업- 계정연결 인증된 계정
+.AccountAlarm{
+  width: 467px;
+  dt{padding-bottom:40px}
+  .name{
+    font-weight: 700;
+    padding: 7px 0;
+  }
+  .Btns{
+    display: flex;
+    button:nth-child(2){
+      position: relative;
+      &::before{
+        content: '';
+        width: 1px;
+        height: 20px;
+        background: #ddd;
+        position: absolute;
+        top: 16px;
+        left: 0;
+      }
+      &::after{
+        content: '';
+        width: 1px;
+        height: 20px;
+        background: #ddd;
+        position: absolute;
+        top: 16px;
+        right: 0;
+      }
+    }
+  }
 }

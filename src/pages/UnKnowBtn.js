@@ -8,6 +8,10 @@ const UnKnowBtn = ({ popName, setPopName }) => {
         <div className="UnKnowBtn">
             <div className="Btns">
                 <button onClick={ e => { setPopName('ConsRequestAlarm02'); }}>0307추가팝업-상담대기실_추가기능패널</button>
+                <button onClick={ e => { setPopName('UsersList'); }}>0308추가팝업-스터디 윗 미 주변 유저 목록 (일반 유저)</button>
+                <button onClick={ e => { setPopName('Announcement02'); }}>0309추가팝업- 디자인변경 공지사항</button>
+                <button onClick={ e => { setPopName('SpaceSet'); }}>0309추가팝업- SpaceSet /스페이스 설정</button>
+
                 <button onClick={ e => { setPopName('More01'); }}>참여모드 팝업 창01</button>
                 <button onClick={ e => { setPopName('More02'); }} style={{background:'pink'}}>More02/ 도서관 스터디 공통UI 더보기</button>
                 <button onClick={ e => { setPopName('MicCamSet'); }} style={{background:'pink'}}>MicCamSet/ 도서관 마이크창</button>
@@ -40,6 +44,7 @@ const UnKnowBtn = ({ popName, setPopName }) => {
                 <button onClick={ e => { setPopName('Promotion06'); }} style={{background:'#e50028'}}>Promotion06/게시판설정02</button>
                 <button onClick={ e => { setPopName('Promotion07'); }} style={{background:'#e50028'}}>Promotion07/동영상설정01</button>
                 <button onClick={ e => { setPopName('Promotion08'); }} style={{background:'#e50028'}}>Promotion08/동영상설정02</button>
+                <button onClick={ e => { setPopName('Promotion09'); }} style={{background:'#e50028'}}>Promotion09/0309추가팝업 - 홍보물 확인</button>
 
                 <button onClick={ e => { setPopName('Alarm01'); }}>알림-마이룸으로 이동</button>
 

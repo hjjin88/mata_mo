@@ -128,6 +128,10 @@ $res_root: 'http://localhost:3000';
 // 우측 중앙 팝업창
 @mixin popCenter(){@include RtCon(0, 0, 10); transform: translateY(0); border-radius: 0; width: 100%; max-height: 100vh;}
 
+// 우측 하단 팝업창
+@mixin popBtRt(){overflow: hidden;@include BtRtCon(0, 84px, 10);width: 375px;height: auto;max-height: 860px;color: #707070;background:#fff;border-radius: 20px 20px 0 0;}
+.BtRtPop{@include popBtRt();}
+
 @mixin guidepop-01(){
   @include LtCon(50%, 50%, 10);
   transform: translate(-50%, -50%);
@@ -140,7 +144,6 @@ $res_root: 'http://localhost:3000';
 }
 @mixin guidepop-02(){
   position: absolute;
-  // overflow: hidden;
   background: rgba(255, 255, 255, 0.9);
   border: 2px solid rgba(255, 255, 255, 0.7);
   border-radius: 50px;
@@ -160,6 +163,49 @@ $res_root: 'http://localhost:3000';
     .handler {width: 24px; height: 17px; @include bg('img_tri_handler');}
   }
 }
+// 공통영역 
+.write-con {
+  color: #222;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+  padding: 18px 20px;
+  border-radius: 20px;
+  border: 1px solid #E2E2E2;
+}
+
+button[class*="-L"] {
+  width: 335px;
+  padding: 16px;
+}
+
+// 체크박스
+.form-check{
+  position: absolute;
+  bottom: 32px;
+  right: 40px;
+  z-index: 1;
+  label + input[type="checkbox"]:before { 
+    content: ' ';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    text-align: center; 
+    vertical-align: middle;
+    background: #fff;
+    border: 1px solid #E2E2E2;
+    border-radius : 3px;
+    margin-right: 6px;
+  }
+  label + input[type="checkbox"]:checked:before {  
+    content: '\2714';  
+    color: #8265F6;
+  }
+}
+
 
 //********* portrait
 @media all and (orientation: portrait) {
@@ -176,6 +222,8 @@ $res_root: 'http://localhost:3000';
   // 메시지 숫자 표기
   .-No{@include LtCon(-3px, 12px, 0);}
   // 팝업창 타이틀
+  // css 확인필요
+  // .popTit{@include flexCtr(0);width: 100%;padding: 20px 0;font-size: 17px;}  
   .popTit{@include flexCtr(0);width: 100%;padding: 20px 0;font-size: 24px;}  
   .subTit{
     font-weight: 700;
@@ -196,6 +244,8 @@ $res_root: 'http://localhost:3000';
 
   // 우측 하단 팝업창
   @mixin popBtRt(){@include BtRtCon(0, 0, 10);width: 375px;}
+  // css 확인필요
+  // @mixin popBtRt(){@include BtRtCon(0, 50%, 10);transform: translateX(50%);width: 100%;}
   .popCenter, .Chat, .Voters{@include popCenter();}
   .Around, .Emoji {@include popBtRt(); border-radius: 30px 30px 0 0;}
   .AroundAll {@include BtRtCon(0 , 0, 10); top: 0; max-height: 100vh; border-radius: 0;}
@@ -386,12 +436,6 @@ $res_root: 'http://localhost:3000';
     }
   }
 
-  // 메인 하단 채팅 버튼
-  .Chat{
-    .ChatCon{
-      max-height: 662px;
-    }
-  }
 
   // 메인 하단 주변 버튼
   .Around{
@@ -412,7 +456,7 @@ $res_root: 'http://localhost:3000';
     .login-wrap .form-join {padding-bottom: 30px;}
     .login-wrap .form-join .form-label {margin-bottom: 24px;}
     .login-wrap .form-join dl dd.avatar .form-control-group {align-items: center; gap: 24px;}
-    .login-wrap .form-join dl+dl .form-label {margin-bottom: 10pxc;}
+    .login-wrap .form-join dl+dl .form-label {margin-bottom: 10px;}
   }
 
   .inp-wrap {gap: 10px;}
@@ -841,6 +885,21 @@ $res_root: 'http://localhost:3000';
       top: auto;
       right: auto;
       display: block;
+    }
+    .form-control .datepicker-input{
+      font-size: 12px;
+    }
+    .board-option{
+      width: 335px;
+    }
+    .calendar_mo{
+      position: absolute;
+      top: 43px;
+      right: 0;
+      background-color: #fff;
+      width: 270px;
+      height: 240px;
+      z-index: 1;
     }
   }
 
@@ -1435,1359 +1494,606 @@ $res_root: 'http://localhost:3000';
     .center {margin-bottom: 24px !important;}
     
   }
+// 맵
+.Map {
+  @include LtCon(0, 0, 11);
+  display: unset;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
 
-}
-
-//********** landscape
-@media all and (orientation: landscape) {
-
-  // 공통영역
-  html {
-    background:  url($res_root + '/resources/img/bg_mo2.jpg') center no-repeat;
-  }
-
-  .menuclose{@include close(20px, 24px, 1);}
-  .mapclose{@include close(0, -20px, 10);width: 50px;height: 50px;background: #fff;}
-  .subclose{@include close(21px, 20px, 1);}
-  .entireclose{@include close(20px, 24px, 2);}
-
-  // 메시지 숫자 표기
-  .-No{@include LtCon(-3px, 12px, 0);}
-
-  // 팝업창 타이틀
-  .popTit{padding: 20px 0;font-size: 24px;}
-
-  // 우측 하단 팝업창 컨테이너
-  .popCon{
-    overflow-y: scroll;max-height: 844px;margin: 30px 10px 30px 0;padding: 0 15px 0 30px;
-  }
-  .popCon.ty-01{
-    max-height: 310px;
-    padding-bottom: 50px;
-  }
-  .CtPop{@include CenterCon();}
-  .Invite, .Connect, .StudentCertified {@include CenterCon2();}  
-  .ConsProduce, .ConsEntrance, .NpcInstlReg, .Npc-instl, .Npc-guide, .Announcement, .MyProfile, .MyFriend, .Follow, .Message, .MessageInner, .MyActivity, .MySetting{@include CenterCon();}
-
-  // 우측 중앙 팝업창
-  @mixin popBtRt(){@include BtLtCon(0, 50%, 10);width: 375px;transform: translateX(-50%);}
-
-  // 알수없는 버튼 모음 박스
-  .UnKnowBtn{
-    height: 300px;
-  }
-
-  // 메인 중앙 팝업창 하단 공통 영역
-  .PopFooter{
-    position: absolute; left: 0; top: 0; z-index: 8;
-    @include flexCol03(0); justify-content: space-between; width: 108px; height: 100vh; padding: 26px 17px 27px 56px;
-    button{
-      position: relative;@include flexCol(6px);
-      .markRd{top: 0.5px;left: 19.7px;width: 5.16px;height: 5.16px;}
-    }
-  }
-
-  // 모바일 팝업 상/하단 바
-  .popMoBar {@include LtCon(9px, 50%, 1); width: 80px; height: 6px; border-radius: 5px; background: #ddd; transform: translateX(-50%); }
-  .popMoBar.bt {@include BtLtCon(8px, 50%, 1); top: auto; width: 134px; height: 5px; border-radius: 5px; background: #ddd; transform: translateX(-50%); }
-
-  // 우측 중앙 팝업창
-  @mixin popCenter(){@include RtCon(0, 0, 10); transform: translateY(0); border-radius: 0; width: 462px; max-height: 100vh;}
-  .popCenter, .Chat, .ProfileView, .Voters{@include popCenter();}
-
-  // 우측 하단 팝업창
-  @mixin popBtRt(){@include BtRtCon(0, 50px, 10);width: 391px;}
-  .popCenter, .Chat, .Voters, .AroundAll{@include popCenter();}
-  .Around, .Emoji {@include popBtRt(); border-radius: 30px 30px 0 0;}
-
-  // 메인 우측바
-  .RtBar{
-    overflow-y: hidden; @include RtCon(50%, 15px, 1); @include flexCol(0); justify-content: space-between; width: 54px; height: 214px; padding: 20px 15px 21px 16px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.3); border-radius: 50px;
-    div{@include flexCol(30px);}
-      button {position: relative;@include flexCol(10px);}
-      .pfp{width: 22px;}
-  }
-
-  // 메인 좌측상단 박스
-  .LtTopBar{
-    @include LtCon(0, 0, 5); @include flexSb(28px); padding: 21px 45px 20px 40px;
-    .LtTop {
-      @include flexArCtr (28px);
-    }
-    .RtTop {
-      @include flexArCtr (20px);
-    }
-    .loc{
-      @include flexArCtr(7px);
-      padding-top: 4px;
-      div {
-        max-width: 92px;
-        @include ellipsis(1);
-      }
-    }
-    &::before{display: none;}
-  }
-
-  // 참여모드 메인 좌측상단 박스
-  .RtTopBar{
-    @include LtCon(7px, 50%, 5); right: auto; transform: translateX(-50%);
-    .RtTopBarCon{width: 335px; padding: 19px 22px;
-      .playSubject{
-        button img{@include flexCtr(0); width: 12px; height: 12px;}
-        .playTime{padding: 0 16px 0 16px;}
-        .subjectName{padding: 0 20px 0 15px;
-        }
-      }
-    }
-
-    .SubjectLists.ty-01{
-      height: 54px;
-      .subjectName input{margin-top: 0px;}
-    }
-    .SubjectLists{
-      width: 335px; padding: 16px 21px 16px 16px;
-      .SubjectList{
-        .subjectName{ width: 137px; flex-shrink: 0;
-          input{width: 137px;
-          }
-        }
-        .playTime{
-          position: relative; padding: 0 10px 0 8px; margin-left: 9px;
-        }
-      }
-      .closeWt12{width: 12px; height: 12px; flex-shrink: 0;}
-      .stop12, .play12{width: 12px;height: 14px; flex-shrink: 0;}
-    }
-  }
-
-  // 메인 하단 바
-  .BtBar{
-    @include BtLtCon(22px, 50%, 6); @include flexCol(0); width: 100%;
-    &::before{display: none;}
-    .sayBox{width: 210px; margin-bottom: 5.42px;}
-    .sayBoxCon{
-      padding: 15px 19px 22px; @include bg('sayBox_mo');
-      .sayIcon{width: 17px;height: 17px;border-radius: 5px;}
-      .say{@include ellipsis(1);}
-    }
-    .BtBarCon{
-      @include flexCtr(27px);
-    }
-  }
-
-  // 좌측상단 메뉴 버튼
-  .Menu{
-    @include flexCol03(36px); width: 437px; padding: 35px 60px 0 70px; 
-    .MenuCon{
-      @include flexCol(18px);
-      img{width: 84px;height: 84px;}
-      .Point{@include LtCon(68px, 50%, 0);}
-    }
-    .MenuList{
-      @include flexCol03(26px);
-      .btn{font-weight: 500;font-size: 16px;color: #222;
-        &::after{width: 6px;height:12px;}
-      }
-      .Top-line {
-        display: none;
-      }
-    }
-  }
-
-  @mixin MsgCon(){
-    width: 465px;
-    height: 143px;
-  }
-  .MsgCon{
-    @include MsgCon();
-    .sec-btns{
-      padding-top: 28px;
-    }
-  }
-
-  .con-wrap{
-    @include flexCol02(0);overflow: hidden;height: auto;max-height: 100vh; padding: 20px;
-    .con-inner{overflow-y: scroll;overflow-x: hidden;display: flex;gap: 40px;max-height: 100vh; padding: 0;}
-    .con-inner-col{
-      @include flexCol03(15px);overflow-y: scroll;overflow-x: hidden;max-height: 100vh; 
-      padding: 0 24px 0 0; margin-right: 6px;
-      li{@include flexArCtr(0);transition: all ease .3s 0s;}
-    }
-    // 프로필 이미지/아이디 세트 공통영역
-    .Profile-box{
-      @include flexArCtr(12px);margin-right: 150px;transition: all ease .3s 0s;
-      
-      .Profile-set::before{display: none;}
-      .Profile-set{
-        position: relative;display: flex;flex-wrap: wrap;gap: 2px;width: 60px;height: 60px;border-radius: 20px; flex-shrink: 0;
-        img{width: 60px;height: 60px;}
-        .Profile-check-bg{@include BtRtCon(-3px , -5px , 1);width: 22px;height: 22px;background: #fff;border: 1px solid #fff;border-radius: 50px;}
-        [class*="mark"]{width: 10px;height: 10px;top: 47px;left: 49px;z-index: 1;}
-      }
-      .Profile-set.img-set4 img{width: 28px;height: 28px;border-radius: 10px;}
-      .Profile-set.img-set2{
-        img{width: 38px;height: 38px;border-radius: 14px;}
-        img:last-child{@include LtCon(20px, 22px,0);border: 2px solid #fff;}
-      }
-      .IDBox{
-        @include flexCol02(7px);
-        .message-txt{width: 100%;@include ellipsis(2);}
-      }
-    }
-  }
-
-  // 로그인
-  .Alarm.LogIn {
-    width: 335px;
-    height: 336px;
-    .LogIn-con {
-      justify-content: flex-start;
-      overflow-y: auto;
-      max-height: 305px;
-    }
-  }
-  // 이메일로 로그인 
-  .Alarm.ELogin{
-    width: 335px;
-    height: 354px;
-    .ELogin-con{
-      padding: 0 15px 20px;
-    }
-  }
-  // 비밀번호 재설정
-  .Alarm.PwReset{
-    .PwReset-con{
-      max-height: 220px;
-      overflow-y: auto;
-    }
-    .er{line-height: 120%;}
-    .inp-wrap input{
-      padding: 14px 19px;
-    }
-  }
-
-  // 메인 하단 채팅 버튼
-  .Chat{
-    .recentTxt{left: 50%; bottom: 95px; transform: translateX(-50%);}
-    .ChatCon{
-      max-height: 225px;        
-    }
-  }
-
-  // 메인 하단 주변 버튼
-  .Around{
-    .AroundCon{
-      margin: 35px 20px 8px; padding-bottom: 6px;
-    }
-  }
-
-  // 메인 하단 더보기 버튼
-  .More{
-    @include BtLtCon(0px, 50%, 10); transform: translateX(-50%); right: auto; padding: 45px 25px 30px; border-radius: 30px 30px 0px 0px;
-  }
-
-  .ProfileDrawer{
-    .subclose {top: 22px;right: 24px;}
-    .layer-pop .layer-wrap {border-radius: 0;}
-    .login-wrap {width: 812px; height: 100vh; padding: 74px 70px 0; margin-bottom: 0;}
-    .login-wrap .form-join {padding-bottom: 30px;}
-    .login-wrap .form-join .form-label {margin-bottom: 24px;}
-    .login-wrap .form-join dl dd.avatar .form-control-group {align-items: center; gap: 44px;}
-    .login-wrap .form-join dl+dl .form-label {margin-bottom: 13px;}
-  }
-
-  .inp-wrap {gap: 15px;}
-  .inp-wrap input {padding: 14px 16px;}
-
-  .Connect{
-    width: 335px;
-    height: 308px;
-    .popCon{
-      max-height: calc(100% - 63px);
-    }
-    .sec-btns{
-      @include flexCtr(8px);
-      button{
-        padding: 18px 0;
-      }
-    }
-  }
-
-  // 학생인증
-  .StudentCertified{
-    .layer-wrap {
-      height: auto;
-      .layer-cont {
-        overflow-y: scroll;
-        max-height: calc(100vh - 100px);
-        height: 100%;
-        overflow-x: hidden;
-        margin:0 3px 0 0;
-      }
-    }
-    .inp-wrap {
-      margin-top: 28px;
-    }
-    .sec-btns{
-      @include flexCtr(7px);
-      padding: 30px 0 0;
-      font-weight: 700;
-      font-size: 15px;
-      line-height: 14px;
-      letter-spacing: -0.01em;
-      color: #333;
-      button{
-        width: 144px;
-        padding: 19px 0 18px;
-      }
-    }
-  }
-
-  // 튜토리얼
-  .Tutorial{
-    .Tutorial-con{
-      @include flexCtr(0);
-      height: 100vh;
-      text-align: center;
-      .swiper {width: 100%; height: 100%;}
-      .swiper-slide {@include flexCol(0);}
-      p{
-        margin: 0;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 160%;
-        color: #fff;
-      }
-      .sec-btn.on-02{
-        padding: 17px;
-        margin-top: 30px;
-        position: relative;
-        bottom: 0;
-        margin-left: 0;
-      }
-      .swiper-button-next, .swiper-button-prev {
-        width: 8px;
-        height: 13px;
-        margin-top: 0;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-      .swiper-button-next:after, .swiper-button-prev:after{
-        width: 8px;
-        height: 13px;
-        color: #fff;
-        font-size: 0;        
-      }
-      .swiper-button-prev:after {
-        @include bg('icon_swiper_prev_01');
-      }
-      .swiper-button-next:after {
-        @include bg('icon_swiper_next_01');
-      }
-      .swiper-pagination {
-        z-index: 0;
-        bottom: 20px;
-      }
-      .swiper-pagination-bullet{
-        width: 9.14px; height: 9.14px;
-        background: rgba(255, 255, 255, 0.2);opacity:1;
-      }
-      .swiper-pagination-bullet-active{
-        background:#fff;
-      }
-      .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
-        margin:0 5px;
-      }
-
-      .pad-guide {
-        position: absolute;
-        .guide-tit {margin-bottom: 5px; color: #fff; font-size: 22px; line-height: 22px; font-weight: 700; text-align: center;}
-        &.left {
-          left: 6%; bottom: 11%;
-          .guide-tit {padding-left: 35px; margin-bottom: 33px; text-align: right;}
-          .moving-pad {
-            position: relative; left: 10px; bottom: 10px;
-            &::before {
-              content: ''; position: absolute; left: -10px; top: -10px; width: 93px; height: 93px; border: 2px solid #fff; border-radius: 50%;
-            }
-          }
-        }
-        &.right {
-          right: 8%; bottom: 3%;
-          img {width: 189.5px; height: 130.5px;}
-        }
-      }
-    }
-  }
-  .entire-tit{
-    @include LtCon(20px, 50%, 0); transform: translateX(-50%);
-    width: auto;  
+  .MapCon {
+    @include bg('map_mo', $format: "png");
+    width: 100%;
+    height: 714px;
     padding: 0;
-    font-size: 24px;
-    font-weight: 700;
   }
+  .MapSearch_ty02{display: none;}
+  .MapSearch {
+    @include flexCol(0);
+    padding-top: 20px;
+    border-bottom: 0;
 
-  // 초대하기
-  .Invite{
-    .popTit {
-      padding: 30px 0 33px;
-      border-bottom: 0;
-    }
-    .subclose {top: 15px;}
-    .Invite-guide{
-      padding: 0 0 30px;
-    }
-    .con-wrap {
-      padding: 0 12px 12px 12px;
-      .con-inner-col { 
-        padding: 0;
-        gap: 0;
+    .MapSearchBox {
+      &::before{
+        top: 23px;
+        left: 21px;
+      }
+      input {
+        width: 335px;
+        height: 54px;
+        padding: 0 49px 0 41px;
+      }
+
+      button {
+        @include RtCon(14px, 21px, 0)
       }
     }
   }
 
-  // 유버스의 안내 NPC 시작-종료
-  .Npc-guide{
-    overflow: unset;
-    top: auto;
-    bottom: 0;
-    transform: translate(-50%, 0);
-    width: 651px;
-    height: 130px;
-    border-radius: 20px 20px 0 0;
-    .popTit{
-      justify-content:unset;
-      padding-left: 98px;
-    }
-    .Npc-img{
-      width: 130px;
-      bottom: -20px;
-      left: -43px;
-    }
-    .con-wrap{
-      padding: 10px 0 37px 98px;
-      justify-content: unset;
-      min-height: 130px;
-      max-height: 130px;
-      .con-inner-col{
-        margin-right: 4px;
-        padding-right: 55px;
-        @include scroll(47px);
-      }
-    }
-  }
+  .SearchList {
+    width: 335px;
+    padding-top: 10px;
 
-  .ProfileView.My{
-    .MyProfileInner{padding: 30px 0 30px;}
-  }
-  .ProfileView{
-    width: 323px;
-    top: 50%;
-    right: auto;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-height: 354px;
-    border-radius: 20px;
-    .MyProfileCon{      
-      .MyProfileInner{padding: 9px 0 25px;}
-    }
-    .distance{
-      @include RtCon(122px, 93px, 0);
-    }
-    .ProfileView-btns {
-      padding-top: 30px;
-      width: 129px;
-      .LRBar::before {display: none;}
-    }
-  }
-
-  .Voters {
-    .ProfileView-btns {
-      padding-top: 30px;
-      width: 223px;
-      .LRBar::before {display: block;}
-    }
-  }
-
-  // 메인 우측 마이 프로필 버튼
-  .MyProfile{
-    .MyProfileList{
-      width: 100%;
-      padding: 50px 24px 0;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      justify-content: flex-start;
-      padding: 28px 29px 32px 28px;
-      max-height: 247px;
-      overflow-y: auto;
-      .form-list {gap: 14px;}
-    }
-    .MyProfileCon{
-      gap: 50px;
-      width: 100%;
-      overflow-y: scroll;
-      padding: 30px 60px 30px 163px;
-      .MyProfileInner{
-        padding-top: 0;
-        font-size: 18px;
-        line-height: 18px;
-        font-weight: 700;
-        color: #222;
-      }
-      .MyProfileInner .MyProfileImg{margin-bottom: 15px;}
-      .changeBtn{
-        width: 32px;
-        height: 32px;
-        @include RtCon(130px, 28px, 0);
-      }
-      .copy17{
-        margin-top: 0;
-      }
-    }
-    .online{
-      width: 102px;
-      margin-bottom: 10px;
-    }
-    .ProfileFooter{
-      margin: 20px auto 0;
-    }
-
-  }
-
-  // 투어하기
-  .Tour {
-    @include guidepop-02();
-    top:21px;
-    right:254px;
-    padding: 8px 35px;
-    .close12, .closeWt12{
-      margin-left: 14px;
-    }
-    font: {
-      size: 18px;
-      weight: 700;
-    };
-    line-height: 18px;
-    color: #111;
-    .toggle {
-      position: absolute;
-      top: 45px;
-      left: 21px;
-      padding: 20px 50px;
+    li {
+      width: 160px;
       background: #fff;
-      border-radius: 50px;
     }
   }
-  .Tour.del {
-    right: 296px;
-    font-size: 25px;
-    line-height: 25px;
-    background: #FF5358;
-    color: #fff;
+
+  .locationBtnMap40 {
+    @include LtCon(266px, 217px, 0)
   }
-  .Tour.on-02 {
-    background: #4EEA27;
-    color: #111;
+
+  .currentLocBg {
+    @include bg('currentLoc');
+    @include LtCon(446px, 88px, 0);
+    width: 40px;
+    height: 64px;
+    margin-top: 24px;
+
+    img {
+      width: 32px;
+      height: 32px;
+      margin: 4px;
+      border-radius: 100px;
+    }
   }
-  
-  // npc 설치
-  .Npc-instl {
+
+  .mapCurrentLocation40_02 {
+    @include BtRtCon(160px, 20px, 0);
+  }
+
+  .MapLists_mo {
+    position: absolute;
+    bottom: 50px;
     left: 0;
-    top: 0;
-    transform: translate(0,0);
-    justify-content: flex-start;
-    height: 100%;
-    padding-bottom: 0;
-    .subclose {top: 24px; right: 25px;}
-    .con-wrap {
-      justify-content: flex-start;
+    z-index: 0;
+    width: 100%;
+    .swiper{
       width: 100%;
-      max-height: 100vh;
-      overflow-y: auto;
-      padding: 20px 5px 20px 0;
-      .con-inner-col {
-        max-height: none;
-        width: 579px;
-        margin: 0 auto;
-        padding-right: 0;
-      }
+      height: 80px;
     }
-    .npc-box {
-      width: 579px;
-      margin: 0 auto 30px;
-      max-height: 243px;
-      padding: 20px 10px 20px 9px;
-      .npc-box-inner {
-        padding: 0 44px;
-        gap: 15px;
-        @include scroll(203px);
-        .npc {
-          width: 81px;
-          height: 81px;
-        }
-        .npc.check {
-          font-weight: 800;
-        }
-      }
+    .swiper-slide, swiper-slide{
+      width: 280px !important;
+      margin-right: 20px;
     }
-    .write-con {
-      width: 579px;
-      margin: 0 auto;
-    }
-    .write-con.name {
-      width: 579px;
-      margin: 15px auto 10px;
-    }
-    .write-con.detail{
-      height: 201px;
-      max-height: 201px;
-    }
-    .Lbtns {
-      margin: 30px auto;
-    }
-  }
-
-  // 메인 좌측 하단 마이 팝업 - 하단 친구 버튼
-  .MyFriend, .Follow{
-    .subclose {top: 23px;}
-    .con-wrap{
-      max-height: none;
-      padding: 10px 0 0 138px;
-      justify-content: flex-start;
-    }
-    .con-inner-col {
-      max-height: 225px;
-      padding:0 14px 20px 0;
-      margin-right: 6px;
-    }
-    .con-inner-col li{justify-content: space-between;}
-    .con-wrap .Profile-box {margin-right: 0;}
-    .followBtns {
-      gap: 5px;
-    }
-    .followBtns button{
-      width: auto;
-      min-width: 76px;
-      max-width: 76px;
-      padding: 11px 0;
-      @include flexCtr(3px);
-    }
-    .backBtn{@include LtCon(23px, 138px, 0);}
-    .heartBtn{
-      @include LtCon(23px, 138px, 0);
-      .markRd{top : 0.5px;left: 17px;width: 8px;height: 8px;}
-    }
-    .MyFriendToggle{
-      @include flexCtr(0);width: 644px;height: 50px; padding: 5px;
-      .toggle-btn{width: 318px;height: 40px;}
-    }
-  }
-
-  .Message{
-    .con-wrap{
-      height: 100%;
-      max-height: none;
-      width: 100%;
-      padding: 0 0 0 108px;
-      justify-content: flex-start;
-    }
-    .con-wrap .con-inner-col {
-      padding: 0 20px 40px;
-      gap: 0;
-      flex-shrink: 0;
-      height: 100%;
-      max-height: 95%;
-    }
-    .con-wrap .con-inner-col li{position: relative; width: 100%; height: 80px; justify-content: space-between; padding-left: 0; margin-right: 40px; padding: 10px 0;}
-    .con-wrap .Profile-box{@include flexArCtr(12px);margin-right: 0;transition: all ease .3s 0s;}
-    .message-desc{
-      height: 24px;text-align: right;
-      .message-time{width: 58px;}
-      .-No{@include flexCtr(0);position: relative;top: 0;left: 0;width: auto;max-width: 29px;margin-top: 7px;padding: 2.5px 5px;float: right;border-radius: 30px;}
-      .-No.none{background: #fff;}
-    }
-    .message-check{
-      margin-left: -180px;transition: all ease .3s 0s;
-    }
-    .message-btn{
-      position: absolute; top: 0; right: -200px; margin-left: 0;
-    }
-  }
-
-  .MessageInner {
-    .backBtn{display: none;}
-    .con-wrap{position: relative; max-height: calc(100vh - 58px);}
-    .con-inner-col {
-      max-height: calc(100% - 58px);
-      padding: 0;
-    }
-    .ChatCon{
-      padding: 20px;
-      max-height: 100%;
-    }
-    .ChatMessage {
-      justify-content: center;
-      background: #fff; width: 100%; padding: 5px 0 7px;
-      .MessageBox {
-        width: 80%;
-        height: 40px; 
-        & .messageInput {
-          height: 28px;
-          padding: 8px 10px;
-        }
-      }
-    }
-  }
-
-  .MyActivity {
-    .con-wrap {
-      width: 100%;
-      padding: 10px 0 0 138px;
-      max-height: calc(100vh - 68px);
-      .con-inner-col {
-        max-height: calc(100vh - 68px);
-        padding: 0 24px 0 0;
-        margin-right: 6px;
-      }
-    }
-    .ui-dropdown {width: 50%; flex-shrink: 0;}
-    .form-control {width: 50%;}
-    .form-control .datepicker-input {width: 100%;}
-    .board-area .board-list td .downArrow {
-      position: relative;
-      top: auto;
-      right: auto;
-      display: block;
-    }
-  }
-
-  .MicCamSet{
-    br {display: none;}
-    .con-wrap {padding: 30px 20px 20px 20px;}
-    .con-inner-col{
-      width: 356px;
-      gap: 20px;
-      padding: 0;
-      margin: 0 auto;
+    .MapList {
+      width: 280px;
+      height: 80px;
+      background: #fff;
+      box-shadow: 0px 18px 40px rgba(112, 144, 176, 0.12);
+      border-radius: 99px;
+      display: flex;
       align-items: center;
-      .txt-10Bk6 {line-height: 140%;}
-    }
-    .cam-box{
-      width: 100%;
-      height: calc(100vh - 220px);
-    }
-  }
+      gap: 12px;
+      padding: 16px 9px;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 100%;
+      color: #707070;
 
-  .MySetting{
-    .cam-view .cam-box {
-      position: relative; width: 315px; height: 186px;
-    }
-    .con-wrap{padding:30px 26px 30px 138px; margin-right: 6px; height: 100%;}
-    .con-wrap .con-inner {gap: 30px; height: 100%; justify-content: space-between;}
-    .con-right{
-      width: 100%;
-      padding-top: 0;
-      .ui-dropdown{
-        width: 100%; 
-        height: 26px; 
-        padding: 0 30px 12px 10px;
+      .bldgImg {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
       }
-      .cam-notice {font-size: 13px; font-weight: 400; color: #666; }
-      .cam-notice>span {display: block; margin-top: 10px; font-size: 10px; font-weight: 400; color: #666; line-height: 1.4;}
-    }
-    .ct-title {font-size: 16px;}
-    .ct-title-sm {margin-bottom: 19px;}
-    .cam-view .cam-box p {
-      @include LtCon(50%, 50%, 0);
-      transform: translate(-50%, -50%);
-      width: auto;
-      padding: 8px 30px; 
-      backdrop-filter: none;
-    }
-    .cam-view .cam-notice { display: none;}
-  }
 
-  .Account {
-    .Account-con {
-      width: 100%;
-      margin: 0 auto;
-      height: 100%;
-      max-height: calc(100% - 58px);
-      overflow-y: auto;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      padding: 20px;
-      .con-left {
-        width: 335px;
+      .titDesc {
+        width: 115px;
+        @include ellipsis(1);
+        padding: 6.6px 0 3px;
       }
-      .con-right.off{opacity: .4;}
-      .con-right {
-        padding-top: 0;
-        width: 335px;
+
+      .tit {
+        @include flexArCtr(8px);
+        width: 132px;
+
+        p {
+          @include ellipsis(1);
+        }
       }
     }
   }
-
-  .StudyStatus{
-    .con-wrap{
-      height: auto;
-      justify-content: unset;
-      .con-inner{
-        align-items: center;
-        flex-direction: column;
-        gap:50px; padding: 28px 20px 20px 138px;
-        overflow-y: auto;
-        max-height: calc(100vh - 40px);
+}
+// 마이룸 메인페이지 버튼
+.CampusGoing{bottom: 100px;}
+// 마이룸 옷장
+.Closet{
+  display: block;
+  @include flexCol(24px);
+  padding-top: 37px;
+  top: auto;
+  bottom: 0;
+  transform: translatex(-50%);
+  .Closet_character{
+    width: 101.27px;
+    height: 299px;
+  }
+  .Closet_con{
+    width: 375px;
+    height: 452px;
+    border-radius: 10px 10px 0 0;
+    .popCon{
+      padding: 0 15px;
+      margin: 30px 0 15px;
+      max-height: unset;
+      overflow: hidden;
+    }
+    .con-left .nav-tabs{
+      padding-left: 14px;
+      gap: 29px;
+      button{gap: 2px;}
+    }
+    .myroom-itemboxs{
+      height: 334px;
+      padding: 20px 5px 20px 19px;
+      .itembox{
+        .nav-item{
+          width: 69px;
+          height: 69px;
+          .item{
+            width: 59.39px;
+            height: 50.9px;
+          }
+        }
+        .nav-item.on::after{
+          bottom: 3px;
+        }
       }
     }
-    .con-left{
-      width: 520px;
-      justify-content: unset;
-      align-items: unset;
+    .sec-btns{
       padding: 0;
-      border-right: none;
-      .write-wrap + .write-wrap {padding-top: 40px;}
-      .graph-wrap{
-        padding-top: 40px;
-        dd{
-          @include flexCtr(55px);
-          flex-direction: row;
-          .graph-con{
-            position: relative;
-            margin-bottom: 0;
-          }
-          .txt-15Gy2{
-            line-height: 130%;
-          }
-          .sec-btn-on01 {width: 81px; margin: 0 auto;}
-        }
-      }
-    }
-    .con-right{
-      width: 520px;
-      img {width: 100%; height: 100%;}
-      .weekly-con{
-        display: flex;
-        justify-content: space-between;
-        padding-top: 20px;        
-      }
-      .weekly-graph{
-        width: 100%;
-      }
-      .calendar{
-        width: 100%;
-        margin-bottom: 45px;
-      }
-    }
-    .write-wrap{      
-      .write-con{
-        width:100%;
-      }
-    }
-    .layer {
-      overflow-x: auto;
-      height: auto;
+      @include BtLtCon(20px,50%,0);
+      transform: translatex(-50%);
     }
   }
-
-  .StudyRanking{
-    .realTimeStudy-layer, 
-    .memo-layer{
-      position: fixed; 
-      top: 0; 
-      right: 0; 
-      bottom: 0; 
-      left: 0; 
-      z-index: 100; 
-      display: flex; 
-      justify-content:center; 
-      background-color: rgba(0, 0, 0, .2);
-    }
-    .realTimeStudy-layer-box, 
-    .memo-layer-box{
-      position:absolute; 
-      top:20px; 
-      width:375px; 
-      height:330px; 
-      background:#fff; 
-      border-radius:20px;
-    }
-    .realTimeStudy-container{
-      position: relative;
-      height:100%;
-      overflow-y: auto;
-      max-height: calc(100vh - 58px);
-      padding: 10px 50px 20px 158px;
-      .realTimeStudy-tab {
-        position: absolute;
-        left: 158px;
-        top: 10px;
-      }
-      .realTimeStudy-container-box {
-        display: flex;
-        gap: 30px;
-        padding-top: 0;
-      }
-      .realTimeStudy-ranking {
-        padding: 85px 0 0;
-        width: 100%;
-        max-width: 288px;
-      }
-    }
-    
-    .realTimeStudy-container {
-      .board-area {
-        padding: 0;
-        width: 100%;
-      }
-    }
+}
+// 마이룸 화장대
+.Closet.Makeup{
+  .Closet_character{
+    width: 264.24px;
+    height: 780.14px;
+    @include LtCon(28%,50%, -1);
+    transform: translate(-50%, -50%);
   }
-
-  .Memo{    
-    .write-con.memo{
-      width: 84%;
-      height: calc(100vh - 78px);
-      margin: 10px 10px 10px 118px;
-      padding: 20px 0 20px 24px;      
-      justify-content: unset;
-      align-items: unset;
-      box-sizing: border-box;
-      .memo-txt {
-        overflow-y: scroll;
-        overflow-x: hidden;
-        padding-right: 20px;
-        margin-right: 2px;
-        width: 100%;
-        height: 100%;
-        .txt-14Gy2 {line-height: 140%;}
-      }
-    }
+}
+// 마이룸 캠퍼스 선택
+.CampusSelect{
+  .subTit{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
-
-  .BGM{
+  .wrap-btn-selectcampus{
+    padding: 20px 40px;
+    gap: 20px;
+  }
+  .btn-selectcampus{
     width: 100%;
-    .bgm-container {
-      padding: 10px 46px 10px 158px;
-      margin-right: 4px;
-      max-height: calc(100vh - 58px);
-      overflow-y: auto;
-    }
-    .popCon {
-      width: 100%;
-      max-height: 100%;
-      overflow-y: visible;
-      padding: 0 0 0 15px;
-      margin: 0;
-      display: table;
-      tbody {width: 100%;}
-    }
-    .board-list {gap: 0;}
-    .board-list thead {
-      width: 100%;
-      display: inline-table;
-    }
-    .board-list th:first-child {
-      width:10%;
-    }
-    .board-list th:last-child{
-      width:90%;
-    }
-    .num{padding: 0px 34px 0 34px;}
-    .bgm-play-tit{
-      max-width: 462px;
-    }
-    .bgm-play-btn {
-      padding-right: 20px;
-    }
   }
+}
+// 공지사항
+.Announcement {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 11;
 
-  .PrivateScreen.Study_Screen{
-    padding: 0;
-    margin: 0;
-    left: 0;
-    top: 0;
-    transform: translate(0, 0);
-    z-index: 4;
+  .Announcement-con {
     width: 100%;
-    height: 100%;
-    border-radius: 0;
-    [class*="pfp"]{
-      display: none;
-    }
-    .cam-con.ty01 {
-      border-radius: 0;
-      .camScreen {
-        width: 100%; height: 100%;
-        video {
-          background: #222;
-          border-radius: 0;
-        }
-        .btLt {
-          display: none;
-        }
-      }
-      .cam-desc{
-        background: rgba(255, 255, 255, 0.5);
-        box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(5px);
-        padding: 8px 30px;
-      }
-    }
-  }
-  
-  .PrivateScreen.Library_Screen{
-    height: 57%;
-    top: 81px;
-    left: 0;
-    transform: translate(0,0);
-    width: 100%;
-    padding: 0 4px 0 40px;
-    border-radius: 0;
-    border-bottom: 1px solid #fff;
-    background: #222;
-    [class*="pfp"]{
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: 10px;
-    }
-    .topLt-pfp {display: none;}
-    .topRt {
-      right: 10px; top: 10px;
-      .time {
-        font-size: 12px; font-weight: 700; color: #fff; line-height: 12px; text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.7);
-      }
-    }
-    .no-cam{
-      background: #F2F3F8;
-      outline: none;
-    }
-    .cam-desc{
-      min-width: 120px;
-      border-radius: 16px;
-    }
-    .cam-con.ty04 {
-      gap: 10px;
-      border-radius: 0;
-    }
-    .cam-con [class*="btLt"] {
-      left: 5px;
-      bottom: 5px;
-    }
-    .btRt-pfp {
-      right: 5px;
-      bottom: 5px;
-    }
-  }
-
-  .PrivateScreen{
-    width: 100%;
-    margin: 0;
-    padding: 75px 0 80px 0;
+    position: absolute;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 100%;
-    [class*="cam-con"]{
-      overflow: hidden;
-      width: 100%;
-      height: 100%;
-      border-radius: 20px;
-      @include flexCtr(20px);
-      flex-flow: row wrap;
-      align-content: center;
-    }
-    .cam-con.tyZoomOut {
-      padding: 0 30px;
-      align-content: flex-start;
-      justify-content: space-between;
-      .camScreen {width: 73%; height: 100%;}
-    }
-    .cam-con.ty01 {
-      padding: 0 60px;
-    }
-    .cam-con.ty02{
-      padding: 0 60px;
-      .camScreen{width: 50%;height: 220px;}
-    } 
-    .cam-con.ty03 {
-      padding: 0 60px;
-      width: 100%;
-      flex-flow: row wrap;
-      align-content: flex-start;
-      justify-content: flex-start;
-      gap: 15px;
-      overflow-y: auto;
-      .camScreen{
-        width: 160px;
-        height: 160px;
-      }
-    }
-    .cam-con.ty04{
-      padding: 0 60px;
-      width: 100%;
-      flex-flow: row wrap;
-      align-content: flex-start;
-      justify-content: flex-start;
-      margin: 0 auto;
-      gap: 15px;
-      overflow-y: auto;
-      .camScreen{
-        width: 160px;
-        height: 160px;
-      }
-    }
-  }
 
-  .cam-con{
-    .cam-desc{
-      width: 119px;
-      font-size: 13px;
-      padding: 8px 29px;
+    .con-wrap {
+      padding: 0;
     }
-    .zoomOut{
-      width: 180px;
-      height: 120px;
-      bottom: 0 !important;
-      right: -38% !important;
-      .cam-desc{
-        width: 119px;
-        padding: 8px 29px;
-      }
-    }
-    [class*="pfp"]{ 
-      width: 30px;
-      height: 30px;
-      background: #fff; 
-      border-radius: 100%;
+
+    .swiper-slide {
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    [class*="topLt"]{
-      @include LtCon(10px, 10px, 0);
-    }
-    [class*="topRt"]{
-      @include RtCon(10px, 10px, 0);
-    }
-    [class*="btLt"]{
-      @include BtLtCon(10px, 10px, 0);
-    }
-    [class*="btRt"]{
-      @include BtRtCon(10px, 10px, 0);
-    }
-    .bottom-pfp{
-      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
-    }
-  }
 
-  .HostPass {
-    .popMoBar {display: none;}
-    .popCon.ty-01{
-      max-height: calc(100vh - 58px);
-      margin: 10px 10px 0 0;
-      padding-bottom: 90px;
-    }
-    .center {
-      position: absolute;
-      left: 50%;
-      bottom: 10px;
-      transform: translateX(-50%);
-      margin-bottom: 0 !important;
-      z-index: 3;
-    }
-  }
-
-  .Promotion {
-    .con-wrap {
-      padding: 0;
-      .con-inner-col {
-        padding: 30px 64px 30px 70px;
-        max-height: calc(100vh - 30px);
-      }      
-      .center {margin-bottom: 20px !important;}
-    }
-    .modal-body {
-      min-height: 522px;
-    }
-    .box-gray .txt {line-height: 140%;}
-    .PopFooter {display: none;}
-  }
-
-  .Promotion02 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    height: 90%;
-    border-radius: 20px;
-    .con-wrap {
-      padding: 0;
-      max-height: calc(100% - 115px);
-      .con-inner-col {
-        max-height: 100%;
-        padding: 20px 30px;
-      }
-    }
-    .thumblist {
-      width: 100%;
-      padding-bottom: 10px;
-    }
-    .checkbox-label {
-      margin-right: 0;
-      img {
-        width: 84px; height: 86px;
-      }
-    }
-    .center {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      margin-bottom: 0 !important;
-      width: 100%;
-      button {
-        width: 100%;
-        border-radius: 0px 0px 20px 20px;
-      }
-    }
-  }
-
-  // 상담 입장
-  .ConsEntrance{
-    .con-wrap {
-      width: 100%;
-      height: 100vh;
-      max-height: none;
-      padding: 0;
-      .con-inner-col{
-        padding: 0 0 80px 0;
-        margin-right: 0;
-      }
-    }
-  }
-
-  .ConsEntrance.ty-01{
-    width: 100%;
-    .con-wrap{padding-left: 0; justify-content: flex-start; padding-bottom: 20px;}
-  }
-  .ConsEntrance.ty-01 .con-inner-col{
-    padding: 0;
-    text-align: unset;
-    gap: 0;
-    padding: 30px 66px 30px 70px;
-    margin-right: 4px;
-    .set-guide {
-      br {display: none;}
-    }
-    .cam-box {
-      width: 335px;
-      height: 188px;
-      margin-top: 10px;
-      margin-bottom: 43px;      
-      p {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-    }
-    .requesting {
-      justify-content: center; 
-      text-align: center;
-      .txt-13Gy5 {
-        line-height: 140%;
-        br {display: block;}      
-      }
-    }
-    .followBtns {
-      margin: 30px 0;
-    }
-    .txt-13Gy5 {
-      br {display: none;}
-    }
-    .flex-box {
-      @include flexSb(43px); align-items: center;
-      .cam-box {flex-shrink: 0;}
-      .requesting, div {width: 50%; padding-bottom: 0;}
-    }
-    .flex-box.flexStart {
-      align-items: flex-start;
-    }
-    .requestMessage {
-      dd {
-        background: #FFFFFF;
-        border: 1px solid #E2E2E2;
-        border-radius: 20px;
-        padding: 18px 26px 22px 20px;
-      }      
-    }
-    .write-con.msg{
-      width: 100%;
-    }
-  }
-
-  // 상담 등록
-  .ConsProduce{
-    .con-wrap{
-      padding: 0;
-    }
-    .con-wrap .con-inner-col{
-      padding: 20px 64px 20px 70px; margin-right: 4px;
-      max-height: calc(100vh - 53px);
-    }
-    .write-con.detail{
-      width: 100%;
-      height: 157px;
-      margin-bottom:20px;
-    }
-    .write-con.detail.more{
-      height: 157px;
-    }
-    .Lbtns{
-      .sec-btn-L{
-        width: 335px;padding: 18px 0 17px;
-      }
-      .btn-hover:hover{
-        color: #fff;border: 1px solid #8265F6;background:#8265F6;
-      }
-    }
-    .write-con.consCode{
-      margin: 24px 0 20px;
-      padding: 0 20px 18px;
+    .con-inner-slide {
+      position: relative;
+      width: 315px;
+      height: 322px;
+      padding: 15px 15px 42px;
+      background: #FFFFFF;
+      border-radius: 5px;
       border: 0;
-      border-bottom: 1px solid rgba(238, 238, 238, 0.6);
-      border-radius: 6px;
-      textarea::placeholder{font-weight: 400;color: rgba(0, 0, 0, 0.15);}
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .con-box {
+      // width: 295px;
+      // height: 265px;
+      background: #F2F3F8;
+      border: 1px solid #E2E2E2;
+      border-radius: 5px;
+
+      .con-tit {
+        padding: 14px;
+      }
+
+      .con-txt {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 218px;
+        padding: 15px 14px;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 140%;
+        color: #000000;
+      }
+    }
+
+    .form-check {
+      bottom: 15px;
+      right: 14px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 100%;
+      text-align: right;
+      color: #111111;
+
+      label {
+        margin-right: 6px;
+      }
     }
   }
 
-  .Alarm.ty-02{
-    width: 400px;
-    max-height: 320px;
-    dl{padding-bottom: 18px;}
-    dt{margin-bottom:0;}
-    dd:nth-of-type(2){padding: 20px 0 11px;}
-    dd:nth-of-type(3){width: 330px;margin: 0 auto;}
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 11.77px;
+    color: #fff;
   }
 
-  // 상담 참여 요청
-  .RequestMsg_con{
-    width: 311px;
-    margin: 0 auto 23px;
-    padding: 20px 14px 20px 20px;
-    border: 1px solid #E2E2E2;
-    border-radius: 20px;
+  .swiper-horizontal>.swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
     text-align: left;
-    color: rgba(0, 0, 0, .3);
-    input{
-      width: 277px;
+    bottom: 16px;
+    left: 32px;
+    top: auto;
+    width: auto;
+  }
+
+  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 5.71px);
+    background: #8265F6;
+    width: 9.14px;
+    height: 9.14px;
+  }
+
+  .swiper-button-next,
+  .swiper-rtl .swiper-button-prev {
+    right: -5px;
+  }
+
+  .swiper-button-prev,
+  .swiper-rtl .swiper-button-next {
+    left: -5px;
+  }
+}
+.Announcement02{
+  @include flexArCtr(0);
+  .Tutorial-con{
+    width: 375px;
+    height: 383px;
+    // padding-top: 50px;
+    margin: 0 auto;
+    img{
+      width: 325px;
+      height: 280px;
+    }
+    p{
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 160%;
+      text-align: center;
+      color: #FFFFFF;
+      padding: 20px;
+      margin: 0;
+    }
+    .check{
+      @include RtCon(470px, 100px, 0);
+      input{
+        width: 12px;
+        height: 12px;
+        border: 1px solid #E2E2E2;
+        background: transparent;
+        margin-left: 6px;
+      }
+    }
+  }
+  .form-check {
+    position: absolute;
+    bottom: 27px;
+    right: 0;
+    width: 100%;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    color: #FFFFFF;
+    label{
+      margin-right: 6px;
+      opacity: 0.5;
+    }
+    label + input[type="checkbox"]:before{
+      background: transparent;
+      border: 1px solid #e2e2e282;
+
+    }
+    label + input[type="checkbox"]:checked:before{
+      color: #fff;
+      content: '';
+      @include bg('check4' );
+      border: 1px solid #e2e2e282;
+      opacity: 1;
+    }
+  }
+  .swiper{height: 430px;}
+  .swiper-button-next, .swiper-rtl .swiper-button-prev, .swiper-button-prev, .swiper-rtl .swiper-button-next{top: 45%;};
+  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{bottom: 181px;}
+}
+// 스페이스 설정
+.SpaceSet {
+  color: #000;
+
+  .con-wrap {
+    padding: 20px 5px 20px 20px;
+    max-height: calc(100% - 139px);
+
+    .con-inner-col {
+      max-height: calc(100% - 76px);
+
+      .tit {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 100%;
+        color: #111111;
+      }
     }
   }
 
-  .ClientListAll{
-    .popCon.ty-01 {
-      max-height: calc(100vh - 155px);
-      padding: 20px 26px 20px 30px;
-      margin: 0 0 20px 0;
-    }
-    .popMoBar.bt {display: none;}
+  .top_box {
+    width: 335px;
+    height: 207px;
+    overflow: hidden;
   }
-  
+
+  .SpaceSet_input {
+    .input_con {
+      position: relative;
+      width: 100%;
+      margin-bottom: 30px;
+
+      .input_box {
+        padding: 18px 0 13px 10px;
+        border: 0;
+        border-bottom: 1px solid #eee;
+        width: 100%;
+        text-align: left;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 100%;
+        color: #222222;
+      }
+
+      .Toggle {
+        position: absolute;
+        width: 100%;
+        background: #FFFFFF;
+        border: 1px solid #E6E8F1;
+        border-radius: 5px;
+
+        button {
+          width: 100%;
+          text-align: left;
+          padding: 15px 10px;
+          font-weight: 400;
+          font-size: 11px;
+          line-height: 100%;
+          color: #222222;
+          opacity: 0.8;
+
+          &:hover {
+            background: rgba(245, 245, 245, 0.9);
+          }
+        }
+      }
+
+      .copyGy17 {
+        position: absolute;
+        bottom: 15px;
+        right: 10px;
+      }
+
+      .downArrow {
+        top: auto;
+        // bottom: 15px;
+        right: 10px;
+      }
+    }
+  }
+
+  .SpaceSet_lists {
+    .top_tit {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 20px;
+
+      button {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 100%;
+        color: #ccc;
+
+        img {
+          margin-right: 4px;
+        }
+      }
+    }
+
+    table {
+      display: block;
+      border-collapse: collapse;
+      background: #FFFFFF;
+      border: 1px solid #E6E8F1;
+      border-radius: 5px;
+      width: 331px;
+      height: 207px;
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 100%;
+      color: #222222;
+      opacity: 0.8;
+      overflow: hidden;
+      text-align: left;
+
+      thead th {
+        padding: 14px 0;
+        background: rgba(245, 245, 245, 0.6);
+        border-radius: 0px 5px 5px 0px;
+        font-weight: 700;
+      }
+
+      tbody {
+        display: block;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 160px;
+
+        tr {
+          height: 42px;
+        }
+      }
+
+      th:nth-of-type(1),
+      td:nth-of-type(1) {
+        width: 108px;
+        padding-left: 20px;
+      }
+
+      th:nth-of-type(2),
+      td:nth-of-type(2) {
+        width: 80px;
+      }
+
+      th:nth-of-type(3),
+      td:nth-of-type(3) {
+        width: 100px;
+      }
+
+      th:last-child {
+        width: 40px;
+      }
+
+      .accept {
+        color: rgba(34, 34, 34, 0.4);
+      }
+    }
+  }
+
+  .SpaceSet_lists.Bk {
+    .table th:last-child {
+      width: 140px;
+    }
+  }
+
+  .ellipsis54 {
+    width: 54px;
+    @include ellipsis(1);
+  }
+
+  .ellipsis66 {
+    width: 66px;
+    @include ellipsis(1);
+  }
+
+  .ellipsis100 {
+    width: 100px;
+    @include ellipsis(1);
+  }
+}
+// 홍보물 확인
+.Promotion09 {
+  width: 345px;
+  height: 571px;
+  background: #FFFFFF;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+
+  .con-wrap {
+    max-height: 512px;
+
+    .con-inner-col {
+      max-height: 493px;
+    }
+  }
+}
+// 안내 도우미 눈송이
+.UsersList {
+  width: 355px;
+  position: absolute;
+  right: auto;
+  left: 50%;
+  top: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  max-height: none;
+  border-radius: 20px;
+  margin-top: 0;
+
+  .guide_lists {
+    height: 224px;
+  }
+}
+// 상담 참여 요청
+.RequestMsg_con {
+  padding: 20px 15px;
+
+  input {
+    width: 100%;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 100%;
+    color: #555555;
+  }
+
+  .tit {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 100%;
+    color: rgba(0, 0, 0, 0.3);
+  }
+}
+
 }

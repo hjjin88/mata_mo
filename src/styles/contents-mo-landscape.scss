@@ -685,6 +685,7 @@ button[class*="-L"] {
   .Npc-guide{
     overflow: unset;
     top: auto;
+    left: 50%;
     bottom: 0;
     transform: translate(-50%, 0);
     width: 651px;
@@ -1538,7 +1539,7 @@ button[class*="-L"] {
       }
     }
     .requesting {
-
+      flex-direction: column;
       justify-content: center; 
       text-align: center;
       .txt-13Gy5 {
@@ -1553,7 +1554,7 @@ button[class*="-L"] {
       br {display: none;}
     }
     .flex-box {
-      @include flexSb(43px); align-items: flex-start;
+      @include flexSb(43px);
       .cam-box {flex-shrink: 0;}
       .requesting, div {width: 50%; padding-bottom: 0; gap: 30px;}
     }

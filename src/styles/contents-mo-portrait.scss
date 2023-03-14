@@ -602,8 +602,10 @@ button[class*="-L"] {
     overflow: unset;
     top: auto;
     bottom: 110px;
+    left: 50%;
     transform: translate(-50%, 0);
     width: 355px;
+    height: auto;
     border-radius: 20px; 
     .popTit{
       justify-content:unset;
@@ -710,11 +712,14 @@ button[class*="-L"] {
     .subclose {top: 24px; right: 25px;}
     .con-wrap {
       width: 100%;
-      max-height: none;
+      max-height: 100svh;
       padding: 20px;
+      justify-content: flex-start;
+      overflow-y: auto;
       .con-inner-col {
-        max-height: none;
+        max-height: calc(100svh - 100px);
         padding-right: 0;
+        
       }
     }
     .npc-box {

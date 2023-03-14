@@ -224,13 +224,21 @@ button[class*="-L"] {
   // 팝업창 타이틀
   .popTit{padding: 20px 0;font-size: 24px;}
 
+  .subTit{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    color: #000;
+    padding: 21px 0 18px;text-align: center
+  }
+
   // 우측 하단 팝업창 컨테이너
   .popCon{
     overflow-y: scroll;max-height: 844px;margin: 30px 10px 30px 0;padding: 0 15px 0 30px;
   }
   .popCon.ty-01{
-    max-height: 310px;
-    padding-bottom: 50px;
+    max-height: 260px;
+    //padding-bottom: 50px;
   }
   .CtPop{@include CenterCon();}
   .Invite, .Connect, .StudentCertified {@include CenterCon2();}  
@@ -436,8 +444,12 @@ button[class*="-L"] {
   // 메인 하단 채팅 버튼
   .Chat{
     .recentTxt{left: 50%; bottom: 95px; transform: translateX(-50%);}
+    .popMoBar {display: none;}
     .ChatCon{
-      max-height: 225px;        
+      max-height: 184px;        
+    }
+    .center {
+      padding: 20px 0 24px;
     }
   }
 
@@ -664,6 +676,10 @@ button[class*="-L"] {
     .ProfileView-btns {
       padding-top: 30px;
       width: 129px;
+      justify-content: space-between;
+      button:first-child::after {
+        display: none;
+      }
       .LRBar::before {display: none;}
     }
   }
@@ -862,8 +878,7 @@ button[class*="-L"] {
       padding: 0 20px 40px;
       gap: 0;
       flex-shrink: 0;
-      height: 100%;
-      max-height: 95%;
+      max-height: 90%;
     }
     .con-wrap .con-inner-col li{position: relative; width: 100%; height: 80px; justify-content: space-between; padding-left: 0; margin-right: 40px; padding: 10px 0;}
     .con-wrap .Profile-box{@include flexArCtr(12px);margin-right: 0;transition: all ease .3s 0s;}
@@ -913,7 +928,7 @@ button[class*="-L"] {
       max-height: calc(100vh - 68px);
       .con-inner-col {
         max-height: calc(100vh - 68px);
-        padding: 0 24px 0 0;
+        padding: 0 24px 10px 0;
         margin-right: 6px;
       }
     }
@@ -1126,20 +1141,19 @@ button[class*="-L"] {
   .Memo{    
     .write-con.memo{
       width: 84%;
-      height: calc(100vh - 78px);
+      height: calc(100vh - 85px);
       margin: 10px 10px 10px 118px;
       padding: 20px 0 20px 24px;      
       justify-content: unset;
       align-items: unset;
       box-sizing: border-box;
       .memo-txt {
-        overflow-y: scroll;
-        overflow-x: hidden;
+        overflow-y: auto;
         padding-right: 20px;
         margin-right: 2px;
         width: 100%;
         height: 100%;
-        .txt-14Gy2 {line-height: 140%;}
+        .txt-14Gy2 {line-height: 140%; height: auto;}
       }
     }
   }
@@ -1149,7 +1163,7 @@ button[class*="-L"] {
     .bgm-container {
       padding: 10px 46px 10px 158px;
       margin-right: 4px;
-      max-height: calc(100vh - 58px);
+      max-height: calc(100vh - 65px);
       overflow-y: auto;
     }
     .popCon {
@@ -1217,13 +1231,12 @@ button[class*="-L"] {
   
   .PrivateScreen.Library_Screen{
     height: 57%;
-    top: 81px;
+    top: 75px;
     left: 0;
     transform: translate(0,0);
     width: 100%;
     padding: 0 4px 0 40px;
     border-radius: 0;
-    border-bottom: 1px solid #fff;
     background: #222;
     [class*="pfp"]{
       background: rgba(0, 0, 0, 0.5);
@@ -1569,589 +1582,613 @@ button[class*="-L"] {
     .popMoBar.bt {display: none;}
   }
   // 맵
-.Map {
-  @include LtCon(0, 0, 11);
-  display: unset;
-  width: 100%;
-  height: 100vh;
-  background: #fff;
-
-  .MapCon {
-    @include bg('map_mo_02', $format: "png");
-    width: 100%;
-    height: 375px;
-    padding: 0;
-  }
-  .MapSearch{display: none;}
-  .MapSearch_ty02{
-    .searchbtn{
-      width: 54px;
-      height: 54px;
-      margin: 11px 0 0 40px;
-      box-shadow: 0px 18px 40px rgba(112, 144, 176, 0.12);
-      border-radius: 99px;
-      background: #fff;
-    }
-      .MapSearchBox {
-        position: relative;
-        padding: 11px 0 0 40px;
-      &::before{
-        content: '';
-    background: url(http://localhost:3000/resources/img/location12.svg) center no-repeat;
-    border: none;
-    @include LtCon(32px, 60px,0);
-    width: 12px;
-    height: 12px;
-      }
-      input {
-        width: 335px;
-        height: 54px;
-        padding: 0 49px 0 41px;
-        border: 0;
-        border-radius: 99px;
-        color: #222;
-        &::placeholder{
-          font-weight: 500;
-          font-size: 16px;
-          color: #ddd;
-        }
-      }
-
-      button {
-        @include LtCon(25px, 334px, 0)
-      }
-    }
-
-  }
-  .SearchList {
-    width: 335px;
-    padding: 11px 0 0 40px;
-    li {
-      width: 160px;
-      background: #fff;
-    }
-  }
-
-  .locationBtnMap40 {
-    @include LtCon(109px, 429px, 0)
-  }
-
-  .currentLocBg {
-    @include bg('currentLoc');
-    @include LtCon(192px, 355px, 0);
-    width: 40px;
-    height: 64px;
-    margin-top: 24px;
-
-    img {
-      width: 32px;
-      height: 32px;
-      margin: 4px;
-      border-radius: 100px;
-    }
-  }
-
-  .mapCurrentLocation40_02 {
-    @include BtRtCon(115px, 40px, 0);
-  }
-
-  .MapLists_mo {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    z-index: 0;
-    width: 100%;
-    .swiper{
-      width: 100%;
-      height: 80px;
-    }
-    .swiper-slide, swiper-slide{
-      width: 280px !important;
-    }
-    .MapList {
-      width: 280px;
-      height: 80px;
-      background: #fff;
-      box-shadow: 0px 18px 40px rgba(112, 144, 176, 0.12);
-      border-radius: 99px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 16px 9px;
-      font-weight: 400;
-      font-size: 13px;
-      line-height: 100%;
-      color: #707070;
-
-      .bldgImg {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-      }
-
-      .titDesc {
-        width: 115px;
-        @include ellipsis(1);
-        padding: 6.6px 0 3px;
-      }
-
-      .tit {
-        @include flexArCtr(8px);
-        width: 132px;
-
-        p {
-          @include ellipsis(1);
-        }
-      }
-    }
-  }
-}
-// 마이룸 메인페이지 버튼
-.CampusGoing{bottom: 70px;}
-// 마이룸 옷장
-.Closet{
-  position: relative;
-  display: flex;
-  width: 100%;
-  .Closet_character_box{
-    width: 50%;
-    @include flexCtr(0);
-    margin-bottom: 42px;
-    .Closet_character{
-      width: 87.39px;
-      height: 258px;
-    }
-  }
-  .Closet_con{
-    width: 375px;
-    height: 375px;
-    border-radius: 0;
-    .popCon{
-      padding: 0 15px;
-      max-height: unset;
-      overflow: hidden;
-    }
-    .con-left .nav-tabs{
-      padding-left: 15px;
-      gap: 29px;
-    }
-    .myroom-itemboxs{
-      height: 264px;
-      padding: 20px 5px 20px 19px;
-      .itembox{
-        .nav-item{
-          width: 69px;
-          height: 69px;
-          .item{
-            width: 59.39px;
-            height: 50.9px;
-          }
-        }
-        .nav-item.on::after{
-          bottom: 3px;
-        }
-      }
-    }
-    .sec-btns{
-      padding: 0;
-      @include BtLtCon(20px,25%,0);
-      transform: translatex(-50%);
-    }
-  }
-}
-// 마이룸 화장대
-.Closet.Makeup{
-  .Closet_character{
-    width: 264.24px;
-    height: 780.14px;
-    position: absolute;
-    top: 53px;
-  }
-}
-// 마이룸 캠퍼스 선택
-.CampusSelect{
-  .subTit{
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  .wrap-btn-selectcampus{
-    padding: 20px 30px;
-    gap: 12px;
-  }
-  .btn-selectcampus{
-    width: 241px;
-  }
-}
-// 공지사항
-.Announcement {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 11;
-
-  .Announcement-con {
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    .con-wrap {
-      padding: 0;
-    }
-
-    .swiper-slide {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .con-inner-slide {
-      position: relative;
-      width: 391px;
-      height: 239px;
-      padding: 10px 9px;
-      background: #FFFFFF;
-      border-radius: 5px;
-      border: 0;
-      display: flex;
-      justify-content: center;
-    }
-
-    .con-box {
-      width: 374px;
-      height: 197px;
-      background: #F2F3F8;
-      border: 1px solid #E2E2E2;
-      border-radius: 5px;
-
-      .con-tit {
-        padding: 15px 11px;
-      }
-
-      .con-txt {
-        overflow-y: scroll;
-        overflow-x: hidden;
-        height: 149px;
-        padding: 15px 14px;
-        font-weight: 400;
-        font-size: 13px;
-        line-height: 140%;
-        color: #000000;
-      }
-    }
-
-    .form-check {
-      bottom: 15px;
-      right: 14px;
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 100%;
-      text-align: right;
-      color: #111111;
-
-      label {
-        margin-right: 6px;
-      }
-    }
-  }
-
-  .swiper-button-next:after,
-  .swiper-button-prev:after {
-    font-size: 11.77px;
-    color: #fff;
-  }
-
-  .swiper-horizontal>.swiper-pagination-bullets,
-  .swiper-pagination-bullets.swiper-pagination-horizontal,
-  .swiper-pagination-custom,
-  .swiper-pagination-fraction {
-    // text-align: left;
-    bottom: 16px;
-    left: 32px;
-    top: auto;
-    width: auto;
-  }
-
-  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
-  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-    margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 5.71px);
-    background: #8265F6;
-    width: 9.14px;
-    height: 9.14px;
-  }
-
-  .swiper-button-next,
-  .swiper-rtl .swiper-button-prev {
-    right: -5px;
-  }
-
-  .swiper-button-prev,
-  .swiper-rtl .swiper-button-next {
-    left: -5px;
-  }
-}
-.Announcement02{
-  @include flexArCtr(0);
-  .con-inner-col{
-    margin: 0 auto;
+  .Map {
+    @include LtCon(0, 0, 11);
+    display: unset;
     width: 100%;
     height: 100vh;
-    img{
-      width: 391px;
-      height: 177px;
+    background: #fff;
+
+    .MapCon {
+      @include bg('map_mo_02', $format: "png");
+      width: 100%;
+      height: 375px;
+      padding: 0;
     }
-    p{
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 160%;
-      text-align: center;
-      color: #FFFFFF;
-      padding: 14px;
-      margin: 0;
-    }
-    .check{
-      @include RtCon(470px, 100px, 0);
-      input{
-        width: 12px;
-        height: 12px;
-        border: 1px solid #E2E2E2;
-        background: transparent;
-        margin-left: 6px;
+    .MapSearch{display: none;}
+    .MapSearch_ty02{
+      .searchbtn{
+        width: 54px;
+        height: 54px;
+        margin: 11px 0 0 40px;
+        box-shadow: 0px 18px 40px rgba(112, 144, 176, 0.12);
+        border-radius: 99px;
+        background: #fff;
       }
-    }
-  }
-  .form-check {
-    position: absolute;
-    bottom: 45px;
-    right: -4px;
-    width: 100%;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 100%;
-    color: #FFFFFF;
-    label{
-      margin-right: 6px;
-      opacity: 0.5;
-    }
-    label + input[type="checkbox"]:before{
-      background: transparent;
-      border: 1px solid #e2e2e282;
+        .MapSearchBox {
+          position: relative;
+          padding: 11px 0 0 40px;
+        &::before{
+          content: '';
+      background: url(http://localhost:3000/resources/img/location12.svg) center no-repeat;
+      border: none;
+      @include LtCon(32px, 60px,0);
+      width: 12px;
+      height: 12px;
+        }
+        input {
+          width: 335px;
+          height: 54px;
+          padding: 0 49px 0 41px;
+          border: 0;
+          border-radius: 99px;
+          color: #222;
+          &::placeholder{
+            font-weight: 500;
+            font-size: 16px;
+            color: #ddd;
+          }
+        }
+
+        button {
+          @include LtCon(25px, 334px, 0)
+        }
+      }
 
     }
-    label + input[type="checkbox"]:checked:before{
-      color: #fff;
-      content: '';
-      @include bg('check4' );
-      border: 1px solid #e2e2e282;
-      opacity: 1;
-    }
-  }
-  .swiper-slide{margin-top: 15px;}
-  .Tutorial .Tutorial-con .swiper-button-next, .Tutorial .Tutorial-con .swiper-button-prev{top:42%;margin: 0 5%;}
-  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{bottom: 20px;}
-}
-.Tutorial.Announcement02{
-  .swiper-button-prev:after, .swiper-button-next:after{font-size: 11px;}
-}
-// 스페이스 설정
-.SpaceSet{
-  color: #000;
-  .con-wrap{
-    padding: 20px 5px 20px 20px;    
-    max-height: 100vh;
-    margin-left: 108px;
-    .con-inner-col{
-      max-height: 100vh;
-      .tit{
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 100%;
-        color: #111111;
+    .SearchList {
+      width: 335px;
+      padding: 11px 0 0 40px;
+      li {
+        width: 160px;
+        background: #fff;
       }
     }
-  }
-  .top_box{
-    width: 100%;
-    height: 207px;
-    overflow: hidden;
-  }
-  .SpaceSet_input{
-    width: 645px;
-    display: flex;
-    gap: 50px;
-    .input_con{
-      position: relative;
+
+    .locationBtnMap40 {
+      @include LtCon(109px, 429px, 0)
+    }
+
+    .currentLocBg {
+      @include bg('currentLoc');
+      @include LtCon(192px, 355px, 0);
+      width: 40px;
+      height: 64px;
+      margin-top: 24px;
+
+      img {
+        width: 32px;
+        height: 32px;
+        margin: 4px;
+        border-radius: 100px;
+      }
+    }
+
+    .mapCurrentLocation40_02 {
+      @include BtRtCon(115px, 40px, 0);
+    }
+
+    .MapLists_mo {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      z-index: 0;
       width: 100%;
-      margin-bottom: 20px;
-      .input_box{
-        padding: 18px 0 13px 10px;
-        border: 0;
-        border-bottom: 1px solid #eee;
+      .swiper{
         width: 100%;
-        text-align: left;
-        font-weight: 400;
-        font-size: 11px;
-        line-height: 100%;
-        color: #222222;
+        height: 80px;
       }
-      .Toggle{
-        position: absolute;
-        z-index: 1;
-        margin-top: 6px;
-        width: 100%;
+      .swiper-slide, swiper-slide{
+        width: 280px !important;
+      }
+      .MapList {
+        width: 280px;
+        height: 80px;
+        background: #fff;
+        box-shadow: 0px 18px 40px rgba(112, 144, 176, 0.12);
+        border-radius: 99px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 9px;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 100%;
+        color: #707070;
+
+        .bldgImg {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+        }
+
+        .titDesc {
+          width: 115px;
+          @include ellipsis(1);
+          padding: 6.6px 0 3px;
+        }
+
+        .tit {
+          @include flexArCtr(8px);
+          width: 132px;
+
+          p {
+            @include ellipsis(1);
+          }
+        }
+      }
+    }
+  }
+  // 마이룸 메인페이지 버튼
+  .CampusGoing{bottom: 70px;}
+  // 마이룸 옷장
+  .Closet{
+    position: relative;
+    display: flex;
+    width: 100%;
+    gap: 0;
+    justify-content: space-between;
+    .Closet_character_box{
+      width: 50%;
+      @include flexCtr(0);
+      margin-bottom: 42px;
+      .Closet_character{
+        width: 87.39px;
+        height: 258px;
+      }
+    }
+    .Closet_con{
+      width: 375px;
+      height: 375px;
+      border-radius: 0;
+      .popCon{
+        padding: 0 15px;
+        max-height: unset;
+        overflow: hidden;
+      }
+      .con-left .nav-tabs{
+        padding-left: 15px;
+        gap: 29px;
+      }
+      .myroom-itemboxs{
+        height: 264px;
+        padding: 20px 5px 20px 19px;
+        .itembox{
+          height: 232px;
+          .nav-item{
+            width: 69px;
+            height: 69px;
+            .item{
+              width: 59.39px;
+              height: 50.9px;
+            }
+          }
+          .nav-item.on::after{
+            bottom: 3px;
+
+          }
+        }
+      }
+      .sec-btns{
+        padding: 0;
+        @include BtLtCon(20px,25%,0);
+        transform: translatex(-50%);
+      }
+    }
+  }
+  // 마이룸 화장대
+  .Closet.Makeup{
+    .Closet_character{
+      width: 264.24px;
+      height: 780.14px;
+      position: absolute;
+      top: 53px;
+    }
+  }
+  // 마이룸 캠퍼스 선택
+  .CampusSelect{
+    .subTit{
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .wrap-btn-selectcampus{
+      padding: 20px 30px;
+      gap: 12px;
+    }
+    .btn-selectcampus{
+      width: 241px;
+    }
+  }
+  // 공지사항
+  .Announcement {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 11;
+
+    .Announcement-con {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      .con-wrap {
+        padding: 0;
+      }
+
+      .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .con-inner-slide {
+        position: relative;
+        width: 391px;
+        height: 239px;
+        padding: 10px 9px;
         background: #FFFFFF;
-        border: 1px solid #E6E8F1;
         border-radius: 5px;
-        button{
+        border: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .con-box {
+        width: 374px;
+        height: 197px;
+        background: #F2F3F8;
+        border: 1px solid #E2E2E2;
+        border-radius: 5px;
+
+        .con-tit {
+          padding: 15px 11px;
+        }
+
+        .con-txt {
+          overflow-y: scroll;
+          overflow-x: hidden;
+          height: 149px;
+          padding: 15px 14px;
+          font-weight: 400;
+          font-size: 13px;
+          line-height: 140%;
+          color: #000000;
+        }
+      }
+
+      .form-check {
+        bottom: 15px;
+        right: 14px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 100%;
+        text-align: right;
+        color: #111111;
+
+        label {
+          margin-right: 6px;
+        }
+      }
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      font-size: 11.77px;
+      color: #fff;
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+      // text-align: left;
+      bottom: 16px;
+      left: 32px;
+      top: auto;
+      width: auto;
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+      margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 5.71px);
+      background: #8265F6;
+      width: 9.14px;
+      height: 9.14px;
+    }
+
+    .swiper-button-next,
+    .swiper-rtl .swiper-button-prev {
+      right: -5px;
+    }
+
+    .swiper-button-prev,
+    .swiper-rtl .swiper-button-next {
+      left: -5px;
+    }
+  }
+  .Announcement02{
+    @include flexArCtr(0);
+    .con-inner-col{
+      margin: 0 auto;
+      width: 100%;
+      height: 100vh;
+      img{
+        width: 391px;
+        height: 177px;
+      }
+      p{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 160%;
+        text-align: center;
+        color: #FFFFFF;
+        padding: 14px;
+        margin: 0;
+      }
+      .check{
+        @include RtCon(470px, 100px, 0);
+        input{
+          width: 12px;
+          height: 12px;
+          border: 1px solid #E2E2E2;
+          background: transparent;
+          margin-left: 6px;
+        }
+      }
+    }
+    .form-check {
+      position: absolute;
+      bottom: 45px;
+      right: -4px;
+      width: 100%;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 100%;
+      color: #FFFFFF;
+      label{
+        margin-right: 6px;
+        opacity: 0.5;
+      }
+      label + input[type="checkbox"]:before{
+        background: transparent;
+        border: 1px solid #e2e2e282;
+
+      }
+      label + input[type="checkbox"]:checked:before{
+        color: #fff;
+        content: '';
+        @include bg('check4' );
+        border: 1px solid #e2e2e282;
+        opacity: 1;
+      }
+    }
+    .swiper-slide{margin-top: 15px;}
+    .Tutorial .Tutorial-con .swiper-button-next, .Tutorial .Tutorial-con .swiper-button-prev{top:42%;margin: 0 5%;}
+    .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{bottom: 20px;}
+  }
+  .Tutorial.Announcement02{
+    .swiper-button-prev:after, .swiper-button-next:after{font-size: 11px;}
+  }
+  // 스페이스 설정
+  .SpaceSet{
+    color: #000;
+    .con-wrap{
+      padding: 20px 5px 20px 20px;    
+      max-height: 100vh;
+      margin-left: 108px;
+      .con-inner-col{
+        max-height: 100vh;
+        .tit{
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 100%;
+          color: #111111;
+        }
+      }
+    }
+    .top_box{
+      width: 100%;
+      height: 207px;
+      overflow: hidden;
+    }
+    .SpaceSet_input{
+      width: 645px;
+      display: flex;
+      gap: 50px;
+      .input_con{
+        position: relative;
+        width: 100%;
+        margin-bottom: 20px;
+        .input_box{
+          padding: 18px 0 13px 10px;
+          border: 0;
+          border-bottom: 1px solid #eee;
           width: 100%;
           text-align: left;
-          padding: 15px 10px;
           font-weight: 400;
           font-size: 11px;
           line-height: 100%;
           color: #222222;
-          opacity: 0.8;
-          &:hover{
-            background: rgba(245, 245, 245, 0.9);
+        }
+        .Toggle{
+          position: absolute;
+          z-index: 1;
+          margin-top: 6px;
+          width: 100%;
+          background: #FFFFFF;
+          border: 1px solid #E6E8F1;
+          border-radius: 5px;
+          button{
+            width: 100%;
+            text-align: left;
+            padding: 15px 10px;
+            font-weight: 400;
+            font-size: 11px;
+            line-height: 100%;
+            color: #222222;
+            opacity: 0.8;
+            &:hover{
+              background: rgba(245, 245, 245, 0.9);
+            }
           }
         }
-      }
-      .copyGy17{
-        position: absolute;
-        bottom: 15px;
-        right: 10px;
-      }
-      .downArrow{
-        top: auto;
-        // bottom: 15px;
-        right: 10px;
-      }
-    }
-  }
-  .SpaceSet_lists{
-    .top_tit{
-      width: 645px;
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 20px;
-      button{
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 100%;
-        color: #ccc;
-        img{
-          margin-right: 4px;
+        .copyGy17{
+          position: absolute;
+          bottom: 15px;
+          right: 10px;
         }
-      } 
-    }
-    table{
-      display: block;
-      border-collapse: collapse;
-      background: #FFFFFF;
-      border: 1px solid #E6E8F1;
-      border-radius: 5px;
-      width: 645px;
-      height: 207px;
-      font-weight: 400;
-      font-size: 11px;
-      line-height: 100%;
-      color: #222222;
-      opacity: 0.8;
-      overflow: hidden;
-      text-align: left;
-      thead th{
-        padding: 14px 0;
-        background: rgba(245, 245, 245, 0.6);
-        font-weight: 700;
+        .downArrow{
+          top: auto;
+          // bottom: 15px;
+          right: 10px;
+        }
       }
-      tbody {
+    }
+    .SpaceSet_lists{
+      .top_tit{
+        width: 645px;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 20px;
+        button{
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 100%;
+          color: #ccc;
+          img{
+            margin-right: 4px;
+          }
+        } 
+      }
+      table{
         display: block;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        height: 160px;
-        tr{
-          height: 42px;
+        border-collapse: collapse;
+        background: #FFFFFF;
+        border: 1px solid #E6E8F1;
+        border-radius: 5px;
+        width: 645px;
+        height: 207px;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 100%;
+        color: #222222;
+        opacity: 0.8;
+        overflow: hidden;
+        text-align: left;
+        thead th{
+          padding: 14px 0;
+          background: rgba(245, 245, 245, 0.6);
+          font-weight: 700;
+        }
+        tbody {
+          display: block;
+          overflow-y: scroll;
+          overflow-x: hidden;
+          height: 160px;
+          tr{
+            height: 42px;
+          }
+        }
+        th:nth-of-type(1), td:nth-of-type(1) { width: 160px; padding-left: 20px;}
+        th:nth-of-type(2), td:nth-of-type(2) { width: 210px;}
+        th:nth-of-type(3), td:nth-of-type(3) { width: 210px;}
+        th:last-child {width: 63px;}
+        .accept{
+          color: rgba(34, 34, 34, 0.4);
         }
       }
-      th:nth-of-type(1), td:nth-of-type(1) { width: 160px; padding-left: 20px;}
-      th:nth-of-type(2), td:nth-of-type(2) { width: 210px;}
-      th:nth-of-type(3), td:nth-of-type(3) { width: 210px;}
-      th:last-child {width: 63px;}
-      .accept{
-        color: rgba(34, 34, 34, 0.4);
+    }
+    .SpaceSet_lists.Bk{
+      padding-bottom: 70px;
+      .table th:last-child {width: 273px;}
+    }
+    .ellipsis54{
+      width: 160px;
+      @include ellipsis(1);
+    }
+    .ellipsis66{
+      width: 160px;
+      @include ellipsis(1);
+    }
+    .ellipsis100{
+      width: 230px;
+      @include ellipsis(1);
+    }
+  }
+  // 홍보물 확인
+  .Promotion09 {
+    width: 335px;
+    height: 335px;
+    background: #FFFFFF;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    .con-wrap {
+      max-height: 277px;
+      .con-inner-col {
+        max-height: 237px;
       }
     }
   }
-  .SpaceSet_lists.Bk{
-    padding-bottom: 70px;
-    .table th:last-child {width: 273px;}
-  }
-  .ellipsis54{
-    width: 160px;
-    @include ellipsis(1);
-  }
-  .ellipsis66{
-    width: 160px;
-    @include ellipsis(1);
-  }
-  .ellipsis100{
-    width: 230px;
-    @include ellipsis(1);
-  }
-}
-// 홍보물 확인
-.Promotion09 {
-  width: 335px;
-  height: 335px;
-  background: #FFFFFF;
-  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  .con-wrap {
-    max-height: 277px;
-    .con-inner-col {
-      max-height: 237px;
+  // 안내 도우미 눈송이
+  .UsersList {
+    width: 375px;
+    height: 347px;
+    position: absolute;
+    right: auto;
+    left: 50%;
+    top: 50%;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    max-height: none;
+    border-radius: 20px;
+    margin-top: 0;
+
+    .con-wrap {
+      max-height: 290px;
+    }
+
+    .guide_lists {
+      opacity:1;
+      height: 224px;
+      button{
+        opacity: 0.8;
+      }
     }
   }
-}
-// 안내 도우미 눈송이
-.UsersList {
-  width: 375px;
-  height: 347px;
-  position: absolute;
-  right: auto;
-  left: 50%;
-  top: 50%;
-  z-index: 10;
-  transform: translate(-50%, -50%);
-  max-height: none;
-  border-radius: 20px;
-  margin-top: 0;
+  // 상담 참여 요청
+  .RequestMsg_con {
+    padding: 20px 15px;
 
-  .con-wrap {
-    max-height: 290px;
-  }
+    input {
+      width: 100%;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 100%;
+      color: #555555;
+    }
 
-  .guide_lists {
-    height: 142px;
+    .tit {
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 100%;
+      color: rgba(0, 0, 0, 0.3);
+    }
   }
-}
-// 상담 참여 요청
-.RequestMsg_con {
-  padding: 20px 15px;
-
-  input {
-    width: 100%;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 100%;
-    color: #555555;
+  .Emoji {
+    width: 300px;
   }
-
-  .tit {
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 100%;
-    color: rgba(0, 0, 0, 0.3);
+  .EmojiAll {
+    max-height: 355px;
+    .popCon {
+      max-height: 295px;
+      margin-bottom: 0;
+      padding-bottom: 20px;      
+    }
   }
-}
+  .CamView .popCon {
+    margin: 5px;
+    padding: 15px 25px;
+    max-height: calc(100vh - 75px);
+  }
 }

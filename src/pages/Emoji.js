@@ -15,6 +15,7 @@ const Emoji = ({setPopName }) => {
                     <li><img src="/resources/img/icon.png" alt="이모티콘 이미지" /></li>
                     <li><img src="/resources/img/icon.png" alt="이모티콘 이미지" /></li>
                     <li><img src="/resources/img/icon.png" alt="이모티콘 이미지" /></li>
+                    <li><img src="/resources/img/icon.png" alt="이모티콘 이미지" /></li>
                 </ul>
             </div>
         </div>

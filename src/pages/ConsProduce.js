@@ -17,7 +17,7 @@ const ConsProduce = ({ popName, setPopName}) => {
                 <div className="con-inner-col">
                     <p className="tit-13Bk pdb15">상담실 공지사항을 입력해주세요 <span className="txt-13Bk3">(50자 이내로 입력)</span></p>
                     <div className={`write-con detail ${view ? "more" : null}`}>
-                        <textarea type="text" maxLength="50" rows="1" placeholder="1자 이상 입력하세요."/>
+                        <textarea type="text" maxLength="50" placeholder="1자 이상 입력하세요."/>
                     </div>
                     <div className="center">
                         <button type="button" 

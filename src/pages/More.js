@@ -7,7 +7,7 @@ const More = ({setPopName }) => {
         <>
         <div className="layer" />
         <div className="More">
-            <button type="button" className="subclose close16" onClick={ e => { setPopName(); }} />
+            <div className="popMoBar" />            
             <ul className="more-ty02 txt-11">
                 <li><img src="/resources/img/busyMessage.svg" alt="통화중 메세지 버튼 이미지" /><p>통화중 메시지</p></li>
                 <li><img src="/resources/img/screenShare24.svg" alt="화면공유 버튼 이미지" /><p>화면공유</p></li>

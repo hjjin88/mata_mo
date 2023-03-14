@@ -16,6 +16,10 @@ const CampusSelect = ({setPopName }) => {
                 <button type="button" onClick={(e) => {setView(1);}}className={`btn-selectcampus ${View === 1 ? 'on' : null }`}>숙명여자 대학교</button>
                 <button type="button" onClick={(e) => {setView(2);}}className={`btn-selectcampus ${View === 2 ? 'on' : null }`}>순천향 대학교</button>
                 <button type="button" onClick={(e) => {setView(3);}}className={`btn-selectcampus ${View === 3 ? 'on' : null }`}>청주대학교</button>
+                <button type="button" onClick={(e) => {setView(3);}}className={`btn-selectcampus ${View === 3 ? 'on' : null }`}>청주대학교</button>
+                <button type="button" onClick={(e) => {setView(3);}}className={`btn-selectcampus ${View === 3 ? 'on' : null }`}>청주대학교</button>
+                <button type="button" onClick={(e) => {setView(3);}}className={`btn-selectcampus ${View === 3 ? 'on' : null }`}>청주대학교</button>
+                <button type="button" onClick={(e) => {setView(3);}}className={`btn-selectcampus ${View === 3 ? 'on' : null }`}>청주대학교</button>
             </div>
             <div className="sec-btns tit-16Gy3">
                 <button type="button" className="sec-btn-M" onClick={(e) => {setPopName();}}>닫기</button>

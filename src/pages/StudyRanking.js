@@ -109,6 +109,51 @@ const StudyRanking = ({popName, setPopName }) => {
                                 00:00:00
                             </td>
                         </tr>
+                        <tr>
+                            <td><span>4</span></td>
+                            <td className="align-left">
+                                학생 입니다.
+                            </td>
+                            <td>
+                                00:00:00
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>4</span></td>
+                            <td className="align-left">
+                                학생 입니다.
+                            </td>
+                            <td>
+                                00:00:00
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>4</span></td>
+                            <td className="align-left">
+                                학생 입니다.
+                            </td>
+                            <td>
+                                00:00:00
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>4</span></td>
+                            <td className="align-left">
+                                학생 입니다.
+                            </td>
+                            <td>
+                                00:00:00
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>4</span></td>
+                            <td className="align-left">
+                                학생 입니다.
+                            </td>
+                            <td>
+                                00:00:00
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
                 </div>

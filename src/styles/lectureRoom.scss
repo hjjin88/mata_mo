@@ -1,4 +1,5 @@
-$res_root: 'http://localhost:3000';
+// $res_root: 'http://localhost:3000';
+$res_root: 'http://172.90.9.27:3000';
 
 // 말줄임
 @mixin ellipsis($line: 1) {
@@ -711,12 +712,13 @@ $res_root: 'http://localhost:3000';
         color: #e2e2e2;
       }
       cursor: pointer;
+      appearance: none;
 
       &:checked {
         border-color: #8265F6;
         background: {
           color: #fff;
-          image: url($res_root + '/resources/img/checkbox-pu.svg');
+          image: url($res_root + '/resources/img/check-purple.svg');
           position: 50% 50%;
           repeat: no-repeat;
         }
@@ -1967,6 +1969,7 @@ max-height: 337px;
           radius: 50%;
         }
         cursor: pointer;
+        appearance: none;
   
         &:checked {
           border-color: #8265F6;
@@ -2289,8 +2292,8 @@ max-height: 337px;
     &-right-bottom {
       bottom: 0;
       right: auto;
-      left: 0;
-      transform: translate(0, 0);
+      left: 50%;
+      transform: translate(-50%, 0);
       border-radius: 20px 20px 0 0;
       width: 100%;
       height: 451px;
@@ -2307,7 +2310,7 @@ max-height: 337px;
         }
   
         &-wrap {
-          max-height: calc(100% - 76px);
+          max-height: calc(100 svh - 76px);
           height: 100%;
         }
   
@@ -2339,15 +2342,10 @@ max-height: 337px;
       border-radius: 10px;
         
       .layer {
-        &-body {
-          overflow: hidden;
-          padding: {
-            top: 30px;
-            right: 30px;
-            bottom: 20px;
-            left: 30px;
-          };
-  
+        &-wrap {
+          max-height: 100%;
+        }
+        &-body {  
           p {
             line-height: 22px;
           }
@@ -2609,8 +2607,9 @@ max-height: 337px;
 
     button[class*="sec-btn"] {display: none;}
   }
-  .lecture-chromakey {gap: 20px;}
-  .lecture-chromakey-color-list {justify-content: space-between;}
+  .lecture-chromakey {gap: 20px; flex-wrap: wrap;}
+  .lecture-chromakey-color {width: 100%;}
+  .lecture-chromakey-color-list {justify-content: flex-start;}
   .lecture-setting .request-select-list{
     max-height: 119px;
     overflow-x: hidden;
@@ -2620,6 +2619,15 @@ max-height: 337px;
     }
   }
   .layer-center .layer-footer{gap: 11px;}
+
+  .LectureRoom01 {
+    .con-row {
+      flex-direction: column;
+      .con-col {
+        width: 100%;
+      }
+    }
+  }
 }
 
 //********** landscape
@@ -2839,6 +2847,7 @@ max-height: 337px;
           radius: 50%;
         }
         cursor: pointer;
+        appearance: none;
   
         &:checked {
           border-color: #8265F6;

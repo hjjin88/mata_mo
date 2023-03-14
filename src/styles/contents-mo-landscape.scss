@@ -129,7 +129,7 @@ $res_root: 'http://172.90.9.27:3000';
 @mixin CenterCon2(){@include LtCon(50%, 50%, 10);transform: translate(-50%, -50%);width: 335px; max-height:100%;overflow: hidden;background: #FFFFFF;border-radius: 10px;}
 
 // 우측 중앙 팝업창
-@mixin popCenter(){@include RtCon(0, 0, 10); transform: translateY(0); border-radius: 0; width: 100%; max-height: 100%;}
+@mixin popCenter(){@include RtCon(0, 0, 10); transform: translateY(0); border-radius: 0; width: 100%; height: 100%; max-height: 100svh;}
 
 // 우측 하단 팝업창
 @mixin popBtRt(){overflow: hidden;@include BtRtCon(0, 84px, 10);width: 375px;height: auto;max-height: 860px;color: #707070;background:#fff;border-radius: 20px 20px 0 0;}
@@ -340,7 +340,7 @@ button[class*="-L"] {
 
   // 메인 하단 바
   .BtBar{
-    @include BtLtCon(0px, 50%, 6); @include flexCol(0); width: 100%;
+    @include BtLtCon(20px, 50%, 6); @include flexCol(0); width: 100%;
     &::before{display: none;}
     .sayBox{width: 210px; margin-bottom: 5.42px;}
     .sayBoxCon{
@@ -446,14 +446,67 @@ button[class*="-L"] {
 
   // 메인 하단 채팅 버튼
   .Chat{
-    .recentTxt{left: 50%; bottom: 95px; transform: translateX(-50%);}
-    .popMoBar {display: none;}
+    bottom:0;
+    background: #fff;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 130%;
+    color: #333;
+    .layer{z-index: 10;}
+    .popMoBar{display: none;}
     .ChatCon{
-      max-height: 184px;        
+      max-height: 193px;
     }
-    .center {
-      padding: 20px 0 24px;
+    .ChatMessage .MessageBox .MessageBoxBtn .downArrow{top: 20px;}
+  }
+  .ChatMessage_con{
+    .layer{z-index: 10;}
+    .ChatMessage{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 40px;
+      background: #fff;
+      border: 1px solid #eee;
     }
+  .MessageBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7px;
+    width: 663px;
+    height: 28px;
+    margin: 5px auto 7px;
+    padding: 6px 6px 6px 20px;
+    position: relative;
+    border: 1px solid #eee;
+    border-radius: 29px;
+  }
+  .MessageBoxBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  height: 100%;
+  }
+  .downArrow {
+  top: 7px;
+  left: 51px;
+  }
+  .MessageBox .messageInput {
+  background: none;
+  border: none;
+  outline: none !important;
+  resize: none;
+  width: 82%;
+  height: 12px;
+  padding: 0 10px;
+  border-left: 1px solid rgba(221, 221, 221, 0.8);
+  }
+  .Message-toggle{
+  @include BtLtCon(0, 0, 0);display: flex;flex-direction: column;align-items: flex-start;justify-content: center;gap: 21px;width: 94px;height: 89px;padding: 12px 16px;background: #FFFFFF;border: 1px solid #EEEEEE;box-shadow: 2px 2px 3px rgba(153, 153, 153, 0.15);border-radius: 12px;
+  button:hover {color: #62BD53;}
+  }
   }
 
   // 메인 하단 주변 버튼
@@ -471,7 +524,7 @@ button[class*="-L"] {
   .ProfileDrawer{
     .subclose {top: 22px;right: 24px;}
     .layer-pop .layer-wrap {border-radius: 0;}
-    .login-wrap {width: 812px; height: 100%; padding: 74px 70px 0; margin-bottom: 0;}
+    .login-wrap {width: 100vw; height: 100vh; padding: 74px 70px 0; margin-bottom: 0;}
     .login-wrap .form-join {padding-bottom: 30px;}
     .login-wrap .form-join .form-label {margin-bottom: 24px;}
     .login-wrap .form-join dl dd.avatar .form-control-group {align-items: center; gap: 44px;}
@@ -501,7 +554,7 @@ button[class*="-L"] {
       height: auto;
       .layer-cont {
         overflow-y: scroll;
-        max-height: calc(100% - 100px);
+        max-height: calc(100svh - 100px);
         height: 100%;
         overflow-x: hidden;
         margin:0 3px 0 0;
@@ -979,8 +1032,8 @@ button[class*="-L"] {
     .cam-view .cam-box {
       position: relative; width: 315px; height: 186px;
     }
-    .con-wrap{padding:30px 26px 30px 138px; margin-right: 6px; height: 100%;}
-    .con-wrap .con-inner {gap: 30px; height: 100%; justify-content: space-between;}
+    .con-wrap{padding:30px 0 30px 138px; margin-right: 6px; height: 100svh;}
+    .con-wrap .con-inner {gap: 30px; height: 100%; justify-content: space-between; padding-right: 20px;}
     .con-right{
       width: 100%;
       padding-top: 0;
@@ -1035,7 +1088,7 @@ button[class*="-L"] {
         flex-direction: column;
         gap:50px; padding: 28px 20px 20px 138px;
         overflow-y: auto;
-        max-height: calc(100% - 40px);
+        max-height: calc(100dvh - 40px);
       }
     }
     .con-left{
@@ -1166,12 +1219,12 @@ button[class*="-L"] {
     .bgm-container {
       padding: 10px 46px 10px 158px;
       margin-right: 4px;
-      max-height: calc(100% - 65px);
+      max-height: calc(100svh - 65px);
       overflow-y: auto;
     }
     .popCon {
       width: 100%;
-      max-height: 100%;
+      max-height: 100svh;
       overflow-y: visible;
       padding: 0 0 0 15px;
       margin: 0;
@@ -1485,6 +1538,7 @@ button[class*="-L"] {
       }
     }
     .requesting {
+
       justify-content: center; 
       text-align: center;
       .txt-13Gy5 {
@@ -1499,9 +1553,9 @@ button[class*="-L"] {
       br {display: none;}
     }
     .flex-box {
-      @include flexSb(43px); align-items: center;
+      @include flexSb(43px); align-items: flex-start;
       .cam-box {flex-shrink: 0;}
-      .requesting, div {width: 50%; padding-bottom: 0;}
+      .requesting, div {width: 50%; padding-bottom: 0; gap: 30px;}
     }
     .flex-box.flexStart {
       align-items: flex-start;
@@ -1525,16 +1579,18 @@ button[class*="-L"] {
       padding: 0;
     }
     .con-wrap .con-inner-col{
-      padding: 20px 64px 20px 70px; margin-right: 4px;
-      max-height: calc(100% - 60px);
+      padding: 20px 64px 30px 70px; margin-right: 4px;
+      max-height: calc(100svh - 60px);
     }
     .write-con.detail{
       width: 100%;
       height: 157px;
       margin-bottom:20px;
+      flex-shrink: 0
     }
     .write-con.detail.more{
       height: 157px;
+      flex-shrink: 0;
     }
     .Lbtns{
       .sec-btn-L{
@@ -1579,7 +1635,7 @@ button[class*="-L"] {
 
   .ClientListAll{
     .popCon.ty-01 {
-      max-height: calc(100% - 155px);
+      max-height: calc(100svh - 155px);
       padding: 20px 26px 20px 30px;
       margin: 0 0 20px 0;
     }
@@ -1730,7 +1786,12 @@ button[class*="-L"] {
     position: relative;
     display: flex;
     width: 100%;
-    gap: 50px;
+    height: 100%;
+    gap: 0;
+    justify-content: space-between; 
+    left: 0;
+    top: 0;
+    transform: translate(0,0);
     .Closet_character_box{
       width: 50%;
       @include flexCtr(0);
@@ -1794,11 +1855,13 @@ button[class*="-L"] {
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
     .wrap-btn-selectcampus{
+      max-height: 55svh;
+      overflow-y: auto;
       padding: 20px 30px;
       gap: 12px;
     }
     .btn-selectcampus{
-      width: 241px;
+      width: 32%;
     }
   }
   // 공지사항
@@ -2126,10 +2189,15 @@ button[class*="-L"] {
     background: #FFFFFF;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     .con-wrap {
       max-height: 277px;
+      padding-right: 12px;
       .con-inner-col {
         max-height: 237px;
+        padding-right: 0;        
       }
     }
   }
@@ -2178,20 +2246,19 @@ button[class*="-L"] {
       color: rgba(0, 0, 0, 0.3);
     }
   }
-  .Emoji {
-    width: 300px;
-  }
+
   .EmojiAll {
     max-height: 355px;
     .popCon {
-      max-height: 295px;
+      max-height: 265px;
       margin-bottom: 0;
-      padding-bottom: 20px;      
+      margin-top: 30px;    
+      padding: 10px 15px 20px 30px;
     }
   }
   .CamView .popCon {
     margin: 5px;
     padding: 15px 25px;
-    max-height: calc(100% - 75px);
+    max-height: calc(100svh - 75px);
   }
 }

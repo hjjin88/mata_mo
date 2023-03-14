@@ -1,11 +1,13 @@
 // $res_root: 'http://localhost:3000';
 $res_root: 'http://172.90.9.27:3000';
 html {
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  height: 100svh;
   background:  url($res_root + '/resources/img/bg.png') center no-repeat;
   color: #fff;
+ 
 }
+
 .wrap{position: absolute;width: 100%;height: 100%;overflow: hidden;}
 // 백그라운드 
 @mixin bg($name, $path: $res_root +"/resources/img/", $format: "svg") {
@@ -54,6 +56,9 @@ html {
 .close12{@include bg('close12');width: 12px;height: 12px;}
 .Enter20{@include bg('Enter20');width: 20px;height: 20px;}
 .EnterOn20{@include bg('EnterOn20');width: 20px;height: 20px;}
+.EnterOff20{@include bg('EnterOff20');width: 20px;height: 20px;}
+.Enteron32{@include bg('Enteron32');width: 32px;height: 32px;}
+.Enteroff32{@include bg('Enteroff32');width: 32px;height: 32px;}
 .camera18{@include bg('camera18');width: 18px;height: 16px;}
 .copy17{@include bg('copy17');width: 17px;height: 17px;}
 .skip12{@include bg('skip12');width: 12px;height: 12px;}
@@ -235,7 +240,7 @@ html {
   }
 }
 // Around 프로필 이미지 공통 영역
-.allBtn{@include flexCtr(0);width: 50px;height: 48px;background: #8265F6;box-shadow: 0px 12px 12px rgba(130, 101, 246, 0.25);border-radius: 20px;font-weight: 800;font-size: 13px;line-height: 100%;color: #fff;}
+.allBtn{@include flexCtr(0);width: 50px;height: 48px;background: #8265F6;border-radius: 20px;font-weight: 800;font-size: 13px;line-height: 100%;color: #fff;}
 .Profile-set{
   position: relative;@include flexCol(11px);align-items:unset;
   .Profile-img{position: relative;width: 50px;height: 48px;border-radius: 20px;}
@@ -376,7 +381,7 @@ button[class*="off05"]{background: #F0F0F0;;color: #333333;border: 0;}
     }
     .IDBox{
       @include flexCol02(7px);
-      .message-txt{width: 379px;@include ellipsis(2);}
+      .message-txt{width: 379px;@include ellipsis(2); line-height: 120%;}
     }
   }
 }
@@ -805,11 +810,12 @@ button[class*="off05"]{background: #F0F0F0;;color: #333333;border: 0;}
 
 
 
-
+ 
 // 메인 하단 이모티콘 버튼
 .Emoji{
+  .EmojiCon {margin: 0; padding: 30px 15px 30px 30px;}
   .EmojiCon p{padding-bottom:16px;}
-  .EmojiList{@include flexArCtr(20px);overflow: hidden;}
+  .EmojiList{@include flexArCtr(20px);}
 }
 // 메인 하단 이모티콘-확대창 버튼
 .EmojiAll .EmojiList{flex-wrap: wrap;}
@@ -823,6 +829,15 @@ button[class*="off05"]{background: #F0F0F0;;color: #333333;border: 0;}
     button{@include flexCol(9px);}
   }
   .more-ty02{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 35px 12px;
+    flex-wrap: wrap;
+    li{@include flexCol(9px);width: 72px;}
+    button{@include flexCol(9px);width: 72px;}
+  }
+  .more-ty03{
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -2772,7 +2787,8 @@ table{
       color: rgba(0, 0, 0, 0.15);
     }
     .inp-btn{
-      width: 24%;
+      // width: 24%;      
+      min-width: 52px;
       height: 52px;
       padding: 9px;
       background: #0F182A;
@@ -2783,6 +2799,7 @@ table{
       text-align: center;
       color: #FFFFFF;
       opacity: 0.9;
+      flex-shrink: 0;
     }
   }
   .inp-con.ctr{
@@ -2959,7 +2976,8 @@ table{
     .layer-cont {overflow-y: auto;}
   }
   .stu-certi {
-    width: 335px; min-height: 349px; padding: 20px 15px;
+    // width: 335px; 
+    min-height: 349px; padding: 20px 15px;
     .txt-notice {
       color: #333; font-size: 14px; font-weight: 500; line-height: 140%;
       &.gray {color: rgba(0, 0, 0, 0.3); text-align: center;}
@@ -2976,7 +2994,7 @@ table{
         .form-control {
           @include flexArCtr(8px);
           input {
-            height: 48px; padding: 16px 20px; background: #fff; border: 1px solid #E6E8F1; border-radius: 8px; color: #0F182A; font-size: 15px;
+            width: 100%; height: 48px; padding: 16px 20px; background: #fff; border: 1px solid #E6E8F1; border-radius: 8px; color: #0F182A; font-size: 15px;
             &:focus {
               background: #F9FAFF; border: 1px solid #8265F6;
               &::placeholder {color: transparent;}
@@ -2985,7 +3003,7 @@ table{
           }
           .btn-squre {
             @include flexCtr(0);
-            width: 55px; height: 48px; padding: 16px 8px; background: #8265F6; border-radius: 8px; color: rgba(255, 255, 255, 0.9); font-size: 13px; font-weight: 700; line-height: 120%; text-align: center;}
+            width: 55px; height: 48px; padding: 16px 8px; background: #8265F6; border-radius: 8px; color: rgba(255, 255, 255, 0.9); font-size: 13px; font-weight: 700; line-height: 120%; text-align: center; flex-shrink: 0;}
         }
       }
       .form-request {
@@ -3000,9 +3018,9 @@ table{
 }
 // 학생/교직원인증
 .StudentCertified.ty02{
-  height: 272px;
+  height: auto;
   .popTit{border: 0;}
-  .stu-certi{padding-top: 9px}
+  .stu-certi{padding-top: 9px; min-height: auto;}
   .agr{
     @include flexArCtr(0);
     width: 295px;

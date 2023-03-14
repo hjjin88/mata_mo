@@ -31,8 +31,8 @@ const Message = ({ popName, setPopName }) => {
                                 <div className="-No ">99</div>
                             </div>
                             <div className="message-btn txt-13Wt">
-                                <button type="button" onClick={ e => { setPopName('MessageInner'); }}>읽음</button>
-                                <button type="button">나가기</button>
+                                <button type="button" onClick={ e => { setPopName('MessageInner'); }}>보기</button>
+                                <button type="button">삭제</button>
                             </div>
                         </li>
                         <li>
@@ -53,8 +53,8 @@ const Message = ({ popName, setPopName }) => {
                                 <div className="-No ">99</div>
                             </div>
                             <div className="message-btn txt-13Wt">
-                                <button className="">읽음</button>
-                                <button className="">나가기</button>
+                                <button className="">보기</button>
+                                <button className="">삭제</button>
                             </div>
                         </li>
                         <li className={`"message-check ${isOn ? "message-check" : null }`} onClick={toggleHandler}>
@@ -73,8 +73,8 @@ const Message = ({ popName, setPopName }) => {
                                 <div className="-No ">99</div>
                             </div>
                             <div className="message-btn txt-13Wt">
-                                <button className="">읽음</button>
-                                <button className="">나가기</button>
+                                <button className="">보기</button>
+                                <button className="">삭제</button>
                             </div>
                         </li>
                         <li>
@@ -92,8 +92,8 @@ const Message = ({ popName, setPopName }) => {
                                 <div className="-No ">99</div>
                             </div>
                             <div className="message-btn txt-13Wt">
-                                <button className="">읽음</button>
-                                <button className="">나가기</button>
+                                <button className="">보기</button>
+                                <button className="">삭제</button>
                             </div>
                         </li>
                         <li>
@@ -114,8 +114,8 @@ const Message = ({ popName, setPopName }) => {
                                 <div className="-No ">99</div>
                             </div>
                             <div className="message-btn txt-13Wt">
-                                <button className="">읽음</button>
-                                <button className="">나가기</button>
+                                <button className="">보기</button>
+                                <button className="">삭제</button>
                             </div>
                         </li>
                         <li>
@@ -134,8 +134,8 @@ const Message = ({ popName, setPopName }) => {
                                 <div className="-No ">99</div>
                             </div>
                             <div className="message-btn txt-13Wt">
-                                <button className="">읽음</button>
-                                <button className="">나가기</button>
+                                <button className="">보기</button>
+                                <button className="">삭제</button>
                             </div>
                         </li>
                         <li>
@@ -153,8 +153,8 @@ const Message = ({ popName, setPopName }) => {
                                 <div className="-No">99</div>
                             </div>
                             <div className="message-btn txt-13Wt">
-                                <button className="">읽음</button>
-                                <button className="">나가기</button>
+                                <button className="">보기</button>
+                                <button className="">삭제</button>
                             </div>
                         </li>
                         <li>
@@ -172,8 +172,8 @@ const Message = ({ popName, setPopName }) => {
                                 <div className="-No">99</div>
                             </div>
                             <div className="message-btn txt-13Wt">
-                                <button className="">읽음</button>
-                                <button className="">나가기</button>
+                                <button className="">보기</button>
+                                <button className="">삭제</button>
                             </div>
                         </li>
                         <li>
@@ -191,8 +191,8 @@ const Message = ({ popName, setPopName }) => {
                                 <div className="-No">99</div>
                             </div>
                             <div className="message-btn txt-13Wt">
-                                <button className="">읽음</button>
-                                <button className="">나가기</button>
+                                <button className="">보기</button>
+                                <button className="">삭제</button>
                             </div>
                         </li>
                         <li>
@@ -210,8 +210,8 @@ const Message = ({ popName, setPopName }) => {
                                 <div className="-No">99</div>
                             </div>
                             <div className="message-btn txt-13Wt">
-                                <button className="">읽음</button>
-                                <button className="">나가기</button>
+                                <button className="">보기</button>
+                                <button className="">삭제</button>
                             </div>
                         </li>
                         <li>
@@ -229,8 +229,8 @@ const Message = ({ popName, setPopName }) => {
                                 <div className="-No">99</div>
                             </div>
                             <div className="message-btn txt-13Wt">
-                                <button className="">읽음</button>
-                                <button className="">나가기</button>
+                                <button className="">보기</button>
+                                <button className="">삭제</button>
                             </div>
                         </li>
                     </ul>

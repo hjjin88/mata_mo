@@ -45,12 +45,12 @@ const MainPage = () => {
     <div id="unity_container">
       {/* 유니티 WebGL 캔버스 영역 */}
       <canvas id="react-unity-webgl-canvas"
-        ref={unityRef} 
+        // ref={unityRef} 
         style={{ 
-          position: 'absolute',
+          position: 'fixed',
           color: '#fff',
-          width: '100%', 
-          height: '100vh', 
+          width: '100vw', 
+          height: '100vh',
         }}
       />
       <div className="wrap">

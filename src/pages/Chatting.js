@@ -14,7 +14,7 @@ const Chatting = ({setPopName, selectedGnbIndex }) => {
             <div className="popMoBar" />
             <div className="subtop">
                 <button type="button" className="subclose close16" onClick={(e) => {setPopName();}}/>
-                <div className="subTit">채팅</div>
+                <div className="popTit">채팅</div>
             </div>
             <div className="ChatCon">
                 <div className="ChatInner Chat01">
@@ -226,7 +226,7 @@ const Chatting = ({setPopName, selectedGnbIndex }) => {
             <div className="Chat All">
                 <div className="subtop">
                     <button type="button" className="subclose close16" onClick={(e) => {setPopName();}}/>
-                    <div className="subTit">채팅</div>
+                    <div className="popTit">채팅</div>
                 </div>
                 <div className="ChatCon">
                     <div className="ChatInner Chat01">

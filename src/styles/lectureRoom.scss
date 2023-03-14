@@ -448,18 +448,18 @@ $res_root: 'http://172.90.9.27:3000';
       }
     }
 
-    // @media (max-width: 768px) {
-    //   flex-wrap: wrap;
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
 
-    //   &-color {
-    //     width: 100%;
-    //   }
+      &-color {
+        width: 100%;
+      }
 
-    //   &-video {
-    //     order: initial;
-    //     width: 100%;
-    //   }
-    // }
+      &-video {
+        order: initial;
+        width: 100%;
+      }
+    }
   }
 
   &-viewer {

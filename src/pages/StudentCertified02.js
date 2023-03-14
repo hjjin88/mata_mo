@@ -8,7 +8,7 @@ const StudentCertified02 = ({setPopName }) => {
     return (
         <>
             <div className="layer" />
-            <div className="StudentCertified ty02 CtPop">
+            <div className="StudentCertified ty02">
                 <button type="button" className="subclose close16" onClick={(e) => {setPopName();}}/>
                 <div className="popTit">학생/교직원 인증</div>
                 <div className="layer-wrap">

@@ -58,6 +58,102 @@ const LectureRoom00 = ({popName, setPopName }) => {
                                     <td>질문이 있습니다.</td>
                                     <td><span>답변완료</span></td>
                                 </tr>
+                                <tr>
+                                    <td>
+                                        <span className="question-list-user"><img src="/resources/img/bg.png" alt=""/></span>
+                                    </td>
+                                    <td>학생</td>
+                                    <td>질문이 있습니다.</td>
+                                    <td><span className="unanswered">미답변</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="question-list-user"><img src="/resources/img/bg.png" alt=""/></span>
+                                    </td>
+                                    <td>학생</td>
+                                    <td>질문이 있습니다.</td>
+                                    <td><span>답변완료</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="question-list-user"><img src="/resources/img/bg.png" alt=""/></span>
+                                    </td>
+                                    <td>학생</td>
+                                    <td>질문이 있습니다.</td>
+                                    <td><span className="unanswered">미답변</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="question-list-user"><img src="/resources/img/bg.png" alt=""/></span>
+                                    </td>
+                                    <td>학생</td>
+                                    <td>질문이 있습니다.</td>
+                                    <td><span>답변완료</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="question-list-user"><img src="/resources/img/bg.png" alt=""/></span>
+                                    </td>
+                                    <td>학생</td>
+                                    <td>질문이 있습니다.</td>
+                                    <td><span className="unanswered">미답변</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="question-list-user"><img src="/resources/img/bg.png" alt=""/></span>
+                                    </td>
+                                    <td>학생</td>
+                                    <td>질문이 있습니다.</td>
+                                    <td><span>답변완료</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="question-list-user"><img src="/resources/img/bg.png" alt=""/></span>
+                                    </td>
+                                    <td>학생</td>
+                                    <td>질문이 있습니다.</td>
+                                    <td><span className="unanswered">미답변</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="question-list-user"><img src="/resources/img/bg.png" alt=""/></span>
+                                    </td>
+                                    <td>학생</td>
+                                    <td>질문이 있습니다.</td>
+                                    <td><span>답변완료</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="question-list-user"><img src="/resources/img/bg.png" alt=""/></span>
+                                    </td>
+                                    <td>학생</td>
+                                    <td>질문이 있습니다.</td>
+                                    <td><span className="unanswered">미답변</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="question-list-user"><img src="/resources/img/bg.png" alt=""/></span>
+                                    </td>
+                                    <td>학생</td>
+                                    <td>질문이 있습니다.</td>
+                                    <td><span>답변완료</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="question-list-user"><img src="/resources/img/bg.png" alt=""/></span>
+                                    </td>
+                                    <td>학생</td>
+                                    <td>질문이 있습니다.</td>
+                                    <td><span className="unanswered">미답변</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="question-list-user"><img src="/resources/img/bg.png" alt=""/></span>
+                                    </td>
+                                    <td>학생</td>
+                                    <td>질문이 있습니다.</td>
+                                    <td><span>답변완료</span></td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>

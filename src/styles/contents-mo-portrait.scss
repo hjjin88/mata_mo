@@ -269,7 +269,7 @@ button[class*="-L"] {
     }
   }
   .CtPop{@include CenterCon();}
-  .Invite{@include CenterCon2();}  
+  .Invite,.StudentCertified, .Connect{@include CenterCon2();}  
   .ConsProduce, .ConsEntrance, .NpcInstlReg, .Npc-instl, .Npc-guide, .Announcement, .MyProfile, .MyFriend, .Follow, .Message, .MessageInner, .MyActivity, .MySetting{@include CenterCon();}
 
   // 메인 중앙 팝업창 하단 공통 영역
@@ -314,7 +314,7 @@ button[class*="-L"] {
 
   // 메인 우측바
   .RtBar{
-    overflow-y: hidden; @include RtCon(50%, 15px, 11); @include flexCol(0); justify-content: space-between; width: 54px; height: 214px; padding: 20px 15px 21px 16px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.3); border-radius: 50px;
+    overflow-y: hidden; @include RtCon(50%, 15px, 10); @include flexCol(0); justify-content: space-between; width: 54px; height: 214px; padding: 20px 15px 21px 16px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.3); border-radius: 50px;
     div{@include flexCol(30px);}
       button {position: relative;@include flexCol(10px);}
       .pfp{width: 22px;}
@@ -962,7 +962,25 @@ button[class*="-L"] {
       }
     }
   }
-
+  // 계정연결
+  .AccountAlarm{
+    width: 335px;
+    dl{
+padding: 0;
+    }
+    dt{
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    dd{
+      padding: 20px 69px;
+    }
+    .Btns button{
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 100%;
+    }
+  }
   // 학생인증
   .StudentCertified{
     .layer-wrap {
@@ -999,7 +1017,7 @@ button[class*="-L"] {
       border-right: 1px solid rgba(238, 238, 238, 0.6);
     }
   }
-  
+  .StudentCertified.ty02{height: 308px;}
   .StudyStatus{
     .con-wrap{
       height: auto;
@@ -2073,7 +2091,11 @@ button[class*="-L"] {
   margin-top: 0;
 
   .guide_lists {
+    opacity:1;
     height: 224px;
+    button{
+      opacity: 0.8;
+    }
   }
 }
 // 상담 참여 요청

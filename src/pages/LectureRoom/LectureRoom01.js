@@ -69,7 +69,7 @@ const LectureRoom00 = ({popName, setPopName}) => {
                                 <div className="con-col">
                                     <div className="request-group">
                                         <strong className="request-title">강사</strong>
-                                        <ToggleItem placeholder="강사님A" item={['강사님A', '강사님B']} />
+                                        <ToggleItem className="toggle" placeholder="강사님A" item={['강사님A', '강사님B']} />
                                     </div>
 
                                     <div className="request-group">

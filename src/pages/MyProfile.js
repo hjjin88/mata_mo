@@ -103,7 +103,7 @@ const MyProfile = ({ popName, setPopName }) => {
                     </dl>
                     <dl className="form-list">
                         <dt className="form-label">
-                            <p className="tit-13Bk">유니버스 ID</p>
+                            <p className="tit-13Bk">유버스 ID</p>
                             <p className="txt-13Bk3">(30일에 한 번 변경 가능)</p>
                         </dt>
                         <dd className="form-group">

@@ -26,16 +26,16 @@ $res_root: 'http://localhost:3000';
     width: 50%;
   }
 
-  @media (max-width: 768px) {
-    &-row {
-      flex-wrap: wrap;
-      gap: 50px;
-    }
+  // @media (max-width: 768px) {
+  //   &-row {
+  //     flex-wrap: wrap;
+  //     gap: 50px;
+  //   }
 
-    &-col {
-      width: 100%;
-    }
-  }
+  //   &-col {
+  //     width: 100%;
+  //   }
+  // }
 }
 
 .prompt {
@@ -225,14 +225,14 @@ $res_root: 'http://localhost:3000';
       transform: translate(-50%, -50%);
     }
 
-    @media (max-width: 768px) {
-      &-list {
-        width: auto;
-      }
-      &-item {
-        flex: 0 1 100%;
-      }
-    }
+    // @media (max-width: 768px) {
+    //   &-list {
+    //     width: auto;
+    //   }
+    //   &-item {
+    //     flex: 0 1 100%;
+    //   }
+    // }
   }
 
   &-chromakey {
@@ -447,18 +447,18 @@ $res_root: 'http://localhost:3000';
       }
     }
 
-    @media (max-width: 768px) {
-      flex-wrap: wrap;
+    // @media (max-width: 768px) {
+    //   flex-wrap: wrap;
 
-      &-color {
-        width: 100%;
-      }
+    //   &-color {
+    //     width: 100%;
+    //   }
 
-      &-video {
-        order: initial;
-        width: 100%;
-      }
-    }
+    //   &-video {
+    //     order: initial;
+    //     width: 100%;
+    //   }
+    // }
   }
 
   &-viewer {
@@ -682,7 +682,7 @@ $res_root: 'http://localhost:3000';
         border-color: #8265F6;
         background: {
           color: #8265F6;
-          image: url($res_root + '/resources/img/check.svg');
+          image: url($res_root + '/resources/img/checkbox-pu.svg');
           position: 50% 50%;
           repeat: no-repeat;
         }
@@ -716,7 +716,7 @@ $res_root: 'http://localhost:3000';
         border-color: #8265F6;
         background: {
           color: #fff;
-          image: url($res_root + '/resources/img/check-purple.svg');
+          image: url($res_root + '/resources/img/checkbox-pu.svg');
           position: 50% 50%;
           repeat: no-repeat;
         }
@@ -1754,15 +1754,15 @@ max-height: 337px;
 @media all and (orientation: portrait) {
 
   .con {
-    @media (max-width: 768px) {
-      &-row {
-        gap: 30px;
-      }
+    // @media (max-width: 768px) {
+    //   &-row {
+    //     gap: 30px;
+    //   }
   
-      &-col {
-        width: 100%;
-      }
-    }
+    //   &-col {
+    //     width: 100%;
+    //   }
+    // }
   }
 
   .lecture {
@@ -1849,14 +1849,14 @@ max-height: 337px;
         transform: translate(-50%, -50%);
       }
   
-      @media (max-width: 768px) {
-        &-list {
-          width: auto;
-        }
-        &-item {
-          flex: 0 1 auto;
-        }
-      }
+      // @media (max-width: 768px) {
+      //   &-list {
+      //     width: auto;
+      //   }
+      //   &-item {
+      //     flex: 0 1 auto;
+      //   }
+      // }
     }
   
     &-viewer {
@@ -1972,7 +1972,7 @@ max-height: 337px;
           border-color: #8265F6;
           background: {
             color: #8265F6;
-            image: url($res_root + '/resources/img/check.svg');
+            image: url($res_root + '/resources/img/checkbox-pu.svg');
             position: 50% 50%;
             repeat: no-repeat;
           }
@@ -2380,6 +2380,7 @@ max-height: 337px;
         }
         td:first-child {
           text-align: left;
+          @include ellipsis(1);
         }
         td:last-child {
           text-align: right;
@@ -2610,21 +2611,29 @@ max-height: 337px;
   }
   .lecture-chromakey {gap: 20px;}
   .lecture-chromakey-color-list {justify-content: space-between;}
-
+  .lecture-setting .request-select-list{
+    max-height: 119px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    .request-select-item:hover{
+      background: rgba(245, 245, 245, 0.6);
+    }
+  }
+  .layer-center .layer-footer{gap: 11px;}
 }
 
 //********** landscape
 @media all and (orientation: landscape) {
   .con {
-    @media (max-width: 768px) {
-      &-row {
-        gap: 30px;
-      }
+    // @media (max-width: 768px) {
+    //   &-row {
+    //     gap: 30px;
+    //   }
   
-      &-col {
-        width: 100%;
-      }
-    }
+    //   &-col {
+    //     width: 100%;
+    //   }
+    // }
   }
 
   .lecture {
@@ -2712,14 +2721,14 @@ max-height: 337px;
         transform: translate(-50%, -50%);
       }
   
-      @media (max-width: 768px) {
-        &-list {
-          width: 424px;
-        }
-        &-item {
-          flex: 1 1 auto;
-        }
-      }
+      // @media (max-width: 768px) {
+      //   &-list {
+      //     width: 424px;
+      //   }
+      //   &-item {
+      //     flex: 1 1 auto;
+      //   }
+      // }
     }
   
     &-viewer {
@@ -2835,7 +2844,7 @@ max-height: 337px;
           border-color: #8265F6;
           background: {
             color: #8265F6;
-            image: url($res_root + '/resources/img/check.svg');
+            image: url($res_root + '/resources/img/checkbox-pu.svg');
             position: 50% 50%;
             repeat: no-repeat;
           }

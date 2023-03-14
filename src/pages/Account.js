@@ -11,7 +11,7 @@ const Account = ({setPopName }) => {
             <div className="layer" />
             <div className="Account CtPop">
                 <button type="button" className="subclose close16" onClick={(e) => {setPopName();}}/>
-                <div className="popTit">경찬 님의 스터디 현황</div>
+                <div className="popTit">계정 연결</div>
                 <div className="Account-con">
                     <div className="con-left">
                         <div className="left-tit">

@@ -45,7 +45,7 @@ const LectureRoom14 = ({popName, setPopName }) => {
                             </div>
                             <div className="request-group request-inline">
                                 <strong className="request-title">투표시간</strong>
-                                <ToggleItem placeholder="1분" item={['1분','2분']} />
+                                <ToggleItem placeholder="1분" item={['1분','2분','3분','4분']} />
                             </div>
                         </div>
                     </div>

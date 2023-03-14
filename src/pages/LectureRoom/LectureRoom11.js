@@ -19,7 +19,7 @@ const LectureRoom00 = ({popName, setPopName }) => {
                         <div className="lecture-call-list">
                             <div className="lecture-call-item">
                                 <div className="webcam">
-                                    <video className="webcam-video" src="http://amssamples.streaming.mediaservices.windows.net/2e91931e-0d29-482b-a42b-9aadc93eb825/AzurePromo.mp4" />
+                                    <video className="webcam-video" src="" />
                                     <button type={"button"} className="webcam-end">발표끝내기</button>
                                     <div className="webcam-info">
                                         <div className="webcam-user">

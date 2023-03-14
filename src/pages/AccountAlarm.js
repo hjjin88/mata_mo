@@ -12,7 +12,7 @@ const AccountAlarm = ({setPopName }) => {
                 <dd className="txt-15Gy5 lh160">
                     지금 인증한 계정은 사용중입니다.<br/>
                     <div className="name">[혜진킴]</div>
-                    기존 계정을 삭제하고 현재 계정으로 연결하시겠습니까?
+                    기존 계정을 삭제하고 <br />현재 계정으로 연결하시겠습니까?
                 </dd>
             </dl>
             <div className="Btns">

@@ -11,7 +11,7 @@ const Connect = ({setPopName }) => {
 
     return (
         <>
-        <div className="Connect CtPop02">
+        <div className="Connect">
             <button type="button" className="subclose close16" onClick={(e) => {setPopName();}} />
             <div className="popTit">학생/교직원 인증</div>
             <div className="popCon">

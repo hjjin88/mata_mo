@@ -1,5 +1,5 @@
-$res_root: 'http://localhost:3000';
-
+// $res_root: 'http://localhost:3000';
+$res_root: 'http://172.90.9.27:3000';
 html {
   width: 100%;
   height: 100vh;
@@ -313,7 +313,7 @@ html {
 @mixin form-btn($color, $border){@include flexCtr(0);width: 56px;padding: 9px 0;background: #fff;border-radius: 999px;font-weight: 500;font-size: 13px;color: $color;border: 1px solid $border;}
 .form-btn{@include form-btn(#ddd, #ddd);}
 .form-btn.on{@include form-btn(#8265F6, #8265F6);}
-.form-btn-data{@include form-btn(#777,#ddd);}
+.form-btn-data{@include form-btn(#777,#ddd); flex-shrink: 0;}
 // 마이 프로필 유저 아이디
 .userID{@include ellipsis(1); width: 131px}
 // 마이 친구 버튼 공통 영역

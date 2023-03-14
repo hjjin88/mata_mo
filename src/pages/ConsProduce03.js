@@ -8,6 +8,7 @@ const ConsProduce02 = ({ popName, setPopName}) => {
     <>
         <div className="layer" />
         <div className="ConsProduce">
+            <div className="popMoBar bt" />
             <button type="button" className="subclose close16" onClick={(e) => {setPopName();}}/>
             <div className="popTit">상담 등록</div>
             <div className="con-wrap">
@@ -24,7 +25,7 @@ const ConsProduce02 = ({ popName, setPopName}) => {
                         </button>
                     </div>
                     <p className="txt-15Gy5 center pdb20">상담 등록을 하셔야 코드가 발급됩니다</p>
-                    <div className="Lbtns pdb60">
+                    <div className="Lbtns">
                         <button type="button" 
                             className="sec-btn tit-20Gy3"
                             onClick={() => {setErrorPop(!ErrorPop)}}
